@@ -40,6 +40,14 @@ module Apostrophe
     # well as the setting, because the "auto" scheme follows the system and
     # changes the sheet without the setting changing.
     def build(display: Gdk::Display.default)
+      # Upstream registers its five symbolic icons by shipping them inside the
+      # GResource bundle, under the prefix GTK scans by itself. The port ships
+      # them as files, so the directory holding them goes on the display's icon
+      # theme search path, where GTK finds a bare `<name>.svg` without the
+      # theme/size/context subdirectories a full icon theme would need.
+      Gtk::IconTheme.get_for_display(display)
+        .add_search_path(File.expand_path('resources/icons', __dir__))
+
       Gtk::StyleContext.add_provider_for_display(display, base_provider, BASE_PRIORITY)
       Gtk::StyleContext.add_provider_for_display(display, theme_provider, THEME_PRIORITY)
 

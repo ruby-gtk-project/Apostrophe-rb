@@ -90,6 +90,11 @@ application.app.signal_connect('activate') do
       Apostrophe::ExportFormat.find_by_name('HTML').html?
   end
 
+  check(failures, 'the preview layout icons are registered') do
+    Gtk::IconTheme.get_for_display(Gdk::Display.default)
+      .has_icon?('preview-layout-half-width-symbolic')
+  end
+
   check(failures, 'the current theme has a web stylesheet') do
     File.exist?(Apostrophe::Theme.current.web_css.to_s)
   end
