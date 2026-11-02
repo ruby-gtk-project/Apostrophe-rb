@@ -15,18 +15,24 @@ not the file.
 
 | | Upstream | `ruby` branch |
 |---|---:|---:|
-| Source files contributing UI | 29 `.py` + 15 `.ui` | 3 `.rb` |
-| Component units (templates, named roots, standalone `.ui`, app class) | 23 | 1 (placeholder) |
-| Distinct CSS classes applied | 32 (11 app-defined in `data/media/css/gtk/style.css`) | 0 |
-| GActions installed | 7 `app.*` + 16 `win.*` | 0 |
-| Accelerators declared | 12 in `application.py`, 10 more as `GtkShortcut` in `TextView.ui` | 0 |
-| GSettings keys | 13 (+2 enums) | 0 |
+| Source files contributing UI | 29 `.py` + 15 `.ui` | 18 `.rb` |
+| Component units (templates, named roots, standalone `.ui`, app class) | 23 | 18 of the 38 rows below |
+| Distinct CSS classes applied | 32 (11 app-defined in `data/media/css/gtk/style.css`) | all 8 stylesheets vendored |
+| GActions installed | 7 `app.*` + 16 `win.*` | 0 `app.*` + 11 `win.*` |
+| Accelerators declared | 12 in `application.py`, 10 more as `GtkShortcut` in `TextView.ui` | 11 |
+| GSettings keys | 13 (+2 enums) | 13 (+2 enums), own schema |
 | Translated catalogues | 33 locales in `po/`, 42 files in `POTFILES.in` | none |
 
-The `ruby` branch today is a stub: `lib/apostrophe/application.rb` opens one
-`Adwaita::ApplicationWindow` with an `Adwaita::ToolbarView`,
-`Adwaita::HeaderBar` and an `Adwaita::StatusPage` reading "The Ruby port has
-not been written yet." No upstream component is ported.
+Status as of the editor-backbone commit: the `ruby` branch holds the editor
+backbone — the buffer, the markdown highlighter, the insertion helpers, the
+grammar, the statistics counter, the smooth scroller, the settings and their
+schema, the themes, the stylesheets, the icons, the document model and the
+shell-out workers (`preview_converter`, `latex_to_png`, `fix_table`,
+`inhibitor`, `helpers`). What is missing is the *chrome*: the real
+`MainWindow`, the headerbar and its menus, the open/recents popover, the
+search-and-replace bar, the statistics popover, the preview (handler,
+renderer, web view, window, layout switcher) and every dialog (preferences,
+shortcuts, about, Hemingway, export, TeXLive warning).
 
 ## File-naming decision
 
@@ -46,7 +52,15 @@ otherwise follow the pilot's shape exactly (`# frozen_string_literal: true`,
 ### 1. `apostrophe/application.py` — the application: actions, accels, theming
 
 Target `lib/apostrophe/application.rb` · kind **application** · **exists
-(placeholder only)**
+(partial)** — ported: the `Gtk::Application`, the stylesheet loading, the
+icon-theme path, an `Adwaita::HeaderBar` with a menu button whose popover
+holds the theme switcher, and 11 `win.*` markdown-insert / unindent /
+fix-table actions with their accelerators. Not ported: all 7 `app.*` actions
+(`color_scheme`, `new_window`, `preferences`, `shortcuts`, `about`, `quit`,
+`stat_default`), the `Gtk::WindowGroup` per window, the sepia provider
+add/remove per display and the `Adwaita::StyleManager` notify handlers. The
+window chrome that upstream keeps in `main_window.py` (§2) is temporarily
+assembled here
 
 | Item | × | Notes |
 |---|---:|---|
@@ -162,7 +176,7 @@ search filter is a plain substring match over display names.
 
 Target `lib/apostrophe/theme_switcher.rb` (widget) and
 `lib/apostrophe/theme.rb` (the `Theme` value object + `defaultThemes`) ·
-kind **menu custom widget** · **missing**
+kind **menu custom widget** · **exists** (both files ported)
 
 | Widget | × | CSS | Signals |
 |---|---:|---|---|
@@ -255,7 +269,7 @@ Four blocked deletes within 70s re-arm the Hemingway toast.
 ### 10. `apostrophe/text_buffer.py` — the buffer: Hemingway mode, list indent
 
 Target `lib/apostrophe/text_buffer.rb` · kind **model (GtkTextBuffer
-subclass)** · **missing**
+subclass)** · **exists**
 
 Own signal `attempted-hemingway`. Property `hemingway_mode`. `_indent` /
 `_unindent` cycle unordered-list markers `- * +` and renumber ordered lists;
@@ -264,7 +278,7 @@ when Hemingway mode is on, deletions emit `attempted-hemingway` instead.
 ### 11. `apostrophe/text_view_markup_handler.py` — live markdown highlighting
 
 Target `lib/apostrophe/markup_handler.rb` · kind **behaviour (TextTag
-table)** · **missing**
+table)** · **exists**
 
 Creates 10+ `Gtk.TextTag`s: italic, bold, bold-italic, strikethrough, center,
 wrap-none, plain-text, gray-text, code-text, code-block, unfocused-text, plus
@@ -274,7 +288,7 @@ dropping it loses the editor's entire visual identity.**
 
 ### 12. `apostrophe/text_view_format_inserter.py` — markdown insert helpers
 
-Target `lib/apostrophe/format_inserter.rb` · kind **behaviour** · **missing**
+Target `lib/apostrophe/format_inserter.rb` · kind **behaviour** · **exists**
 
 Handlers for the ten `GtkShortcut` signals in §9: italic, bold, strikethrough,
 horizontal rule, list item, ordered list item, header levels 1–4. Inserts
@@ -283,14 +297,14 @@ placeholder help text and selects it.
 ### 13. `apostrophe/text_view_scroller.py` — smooth scrolling
 
 Target `lib/apostrophe/text_view_scroller.rb` · kind **behaviour** ·
-**missing**
+**exists**
 
 `TextViewScroller` plus `SmoothScroller` (frame-clock tick, ease-out-cubic).
 Supplies `scroll_scale` for editor/preview sync.
 
 ### 14. `apostrophe/markup_regex.py` — the markdown grammar
 
-Target `lib/apostrophe/markup_regex.rb` · kind **constants** · **missing**
+Target `lib/apostrophe/markup_regex.rb` · kind **constants** · **exists**
 
 20 named regexes (`ITALIC_ASTERISK`, `BOLD`, `IMAGE`, `LINK`, `TABLE`,
 `CODE_BLOCK`, `HEADER`, `FOOTNOTE`, …) shared by the markup handler, the stats
@@ -311,7 +325,7 @@ is a selection; read time renders as `H:MM:SS Read Time`.
 
 ### 16. `apostrophe/stats_counter.py` — counting worker
 
-Target `lib/apostrophe/stats_counter.rb` · kind **behaviour** · **missing**
+Target `lib/apostrophe/stats_counter.rb` · kind **behaviour** · **exists**
 
 Strips markup via the §14 regexes, then counts characters, words, sentences and
 paragraphs and derives read time at 200 wpm. Upstream runs it in a
@@ -348,7 +362,7 @@ JavaScript state loop that reads and writes `scrollTop`, MathJax-aware
 ### 20. `apostrophe/preview_converter.py` — markdown → HTML worker
 
 Target `lib/apostrophe/preview_converter.rb` · kind **behaviour** ·
-**missing**
+**exists**
 
 Background thread over a queue; calls pandoc with `--standalone --mathjax
 --css=<theme web css>` and the two Lua filters.
@@ -463,7 +477,8 @@ Computed properties gate the groups: `show_page_size_options`,
 
 Targets `lib/apostrophe/export_dialog.rb` (the quick PDF/HTML/ODT path) and
 `lib/apostrophe/export_format.rb` (the `Format` model + `formats.json`) ·
-kind **dialog (file chooser) + model** · **missing**
+kind **dialog (file chooser) + model** · **partial** — `export_format.rb`
+exists (the `Format` model); `export_dialog.rb` does not
 
 `win.export` with target `pdf` / `html` / `odt` opens a
 `Gtk.FileChooserNative` ("Export", "Export to %s", one mime filter, name
@@ -506,13 +521,13 @@ TCP socket, or to port this component last.
 
 ### 30. `apostrophe/latex_to_PNG.py` — formula rendering
 
-Target `lib/apostrophe/latex_to_png.rb` · kind **behaviour** · **missing**
+Target `lib/apostrophe/latex_to_png.rb` · kind **behaviour** · **exists**
 
 Shells out to LaTeX + dvipng into a cache dir; feeds §29's `Gtk.Image`.
 
 ### 31. `apostrophe/fix_table.py` — markdown table reflow
 
-Target `lib/apostrophe/fix_table.rb` · kind **behaviour** · **missing**
+Target `lib/apostrophe/fix_table.rb` · kind **behaviour** · **exists**
 
 Pure buffer transformation: finds the table around the cursor and rewrites it
 with aligned columns. Listed in `POTFILES.in`; reachable in upstream only
@@ -520,7 +535,10 @@ through the table code path, with no menu item.
 
 ### 32. `apostrophe/settings.py` + `data/org.gnome.gitlab.somas.Apostrophe.gschema.xml`
 
-Target `lib/apostrophe/settings.rb` · kind **settings** · **missing**
+Target `lib/apostrophe/settings.rb` · kind **settings** · **exists** —
+the port ships its own schema at
+`data/schemas/org.rubygtkproject.Apostrophe.gschema.xml`, compiled by the
+flake and exported on `GSETTINGS_SCHEMA_DIR` by the dev shell
 
 13 keys — `color-scheme` (auto/light/dark/sepia), `spellcheck`, `sync-scroll`,
 `input-format`, `autohide-headerbar`, `open-file-path`, `stat-default` (enum),
@@ -532,7 +550,7 @@ XML, compiled and on `GSETTINGS_SCHEMA_DIR`, before any of this binds.
 
 ### 33. `apostrophe/inhibitor.py` — logout inhibitor
 
-Target `lib/apostrophe/inhibitor.rb` · kind **behaviour** · **missing**
+Target `lib/apostrophe/inhibitor.rb` · kind **behaviour** · **exists**
 
 Wraps `Gtk.Application.inhibit` with the reason "Unsaved documents"; engaged
 whenever the title shows the unsaved bullet.
@@ -540,7 +558,7 @@ whenever the title shows the unsaved bullet.
 ### 34. `apostrophe/helpers.py` — shared helpers, including the error dialog
 
 Target `lib/apostrophe/helpers.rb` · kind **behaviour + dialog** ·
-**missing**
+**exists**
 
 `show_error(parent, message)` builds an `Adw.MessageDialog` headed "Error" with
 one "Close" response — **the app's only generic error state**, used by save,
@@ -550,7 +568,7 @@ load and export. Also `user_action` (undo grouping), `get_media_path`,
 
 ### 35. `apostrophe/main_window.py` (`File` dataclass) — the open document
 
-Target `lib/apostrophe/document.rb` · kind **model** · **missing**
+Target `lib/apostrophe/document.rb` · kind **model** · **exists**
 
 Tracks the `Gio.File`, encoding, path, title ("New File" when unsaved) and the
 `.md`-stripped name; writes `open-file-path` on every change.
@@ -558,7 +576,9 @@ Tracks the `Gio.File`, encoding, path, title ("New File" when unsaved) and the
 ### 36. `data/media/css/gtk/style.css`, `style-dark.css`, `style-sepia.css`
 
 Target `lib/apostrophe/style.rb` (a `Gtk::CssProvider` loading a sibling
-stylesheet) · kind **stylesheet** · **missing**
+stylesheet) · kind **stylesheet** · **exists** — all eight upstream
+sheets (three GTK, five web) are vendored under
+`lib/apostrophe/resources/css/`
 
 App-defined classes the port must keep for the UI to look like Apostrophe:
 `apostrophe-editor`, `apostrophe-window`, `lexikon`, `open-popover`,
@@ -572,7 +592,9 @@ Target: ship the five symbolic icons
 (`preview-layout-{full-width,half-width,half-height,windowed}-symbolic`,
 `checkmark-symbolic`) plus `apostrophe_markdown.md` (the tutorial document
 opened by the Open Tutorial menu item) and register the icon path. kind
-**resources** · **missing**
+**resources** · **exists** — all five icons, the tutorial document and both
+Lua filters are vendored under `lib/apostrophe/resources/`, and the
+application registers the icon path on the display's icon theme
 
 ### 38. `po/` — translations
 
@@ -607,9 +629,10 @@ upstream's only tests, both over `markup_regex`).
    orientation/fold-policy/reveal-progress API. Decide deliberately between a
    literal `Adwaita::Flap` port and `Adwaita::OverlaySplitView` (also present)
    before writing §2 and §18 — the two choices change both files.
-4. **No GSettings schema yet.** §32 must be authored, compiled with
-   `glib-compile-schemas` (present) and exported on `GSETTINGS_SCHEMA_DIR` by
-   the flake, or every settings binding raises at startup.
+4. ~~**No GSettings schema yet.**~~ *Resolved:* the port ships
+   `data/schemas/org.rubygtkproject.Apostrophe.gschema.xml`; the flake
+   compiles it into the package and the dev shell exports
+   `GSETTINGS_SCHEMA_DIR=$PWD/data/schemas`.
 5. **`Adwaita::Application` / `Adwaita::ApplicationWindow` are broken** per the
    `ruby-gtk` skill, while upstream's window *is* an `Adw.ApplicationWindow`
    with `Adw.ToastOverlay` inside. The existing placeholder uses
@@ -628,6 +651,7 @@ upstream's only tests, both over `markup_regex`).
    `Adwaita::PreferencesDialog` and (per the pilot)
    `Adwaita::ShortcutsDialog`. Pick one convention for the whole port — the
    pilot picked the modern ones — and apply it to §22, §23, §24, §25, §27, §34.
-9. **No `test/` directory on `ruby`.** The dev shell advertises
-   `xvfb-run ruby test/drive_*.rb`, and `spec/` holds only `spec_helper.rb`.
-   Every component below will need a driver before it can be claimed working.
+9. **Drivers are thin.** `test/drive_editor.rb` now exists and the dev shell
+   advertises `xvfb-run ruby test/drive_*.rb`, but `spec/` still holds only
+   `spec_helper.rb`. Every component below still needs its own driver before
+   it can be claimed working.
