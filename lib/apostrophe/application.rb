@@ -3,16 +3,20 @@
 require "gtk4"
 require "adwaita"
 
+require_relative "about_dialog"
 require_relative "document"
 require_relative "fix_table"
 require_relative "format_inserter"
 require_relative "helpers"
+require_relative "hemingway_dialog"
 require_relative "inhibitor"
 require_relative "markup_handler"
+require_relative "search_bar"
 require_relative "settings"
-require_relative "stats_counter"
+require_relative "shortcuts_window"
+require_relative "stats_handler"
 require_relative "style"
-require_relative "text_buffer"
+require_relative "text_view"
 require_relative "text_view_scroller"
 require_relative "theme_switcher"
 
@@ -23,10 +27,10 @@ module Apostrophe
   #
   # Ported from apostrophe/application.py. The window's own chrome — the
   # discard infobar, the save progress bar, the file choosers and the preview
-  # pane — belongs to MainWindow upstream, and the editor widget's own
-  # behaviour (its drop target, its scroll-scale property, its margins) to
-  # ApostropheTextView; until those files exist in the port, the editor is
-  # assembled here so everything that is ported is reachable from the app.
+  # pane — belongs to MainWindow upstream, which does not exist in the port
+  # yet; until it does, the editor's chrome (header bar, search bar, stats
+  # button) is assembled here so everything that is ported is reachable from
+  # the app.
   #
   # House style (see .claude/skills/ruby-gtk): every widget is a memoized
   # method, all configuration lives in its `tap`, assembly happens only in
@@ -64,14 +68,14 @@ module Apostrophe
 
           toolbar_view.tap do |view|
             view.add_top_bar(header_bar)
-            view.content = editor_scrolled_window
+            view.content = editor_overlay
           end
 
           header_bar.tap do |bar|
             bar.pack_start(focus_mode_button)
             bar.pack_start(hemingway_button)
             bar.pack_end(menu_button)
-            bar.pack_end(stats_label)
+            bar.pack_end(stats_button)
 
             menu_button.tap do |button|
               button.popover = menu_popover
@@ -85,6 +89,11 @@ module Apostrophe
             hemingway_button.signal_connect("toggled") { on_hemingway_toggled }
           end
 
+          editor_overlay.tap do |overlay|
+            overlay.child = editor_scrolled_window
+            overlay.add_overlay(search_bar.build)
+          end
+
           editor_scrolled_window.tap do |scrolled|
             scrolled.child = text_view
 
@@ -96,15 +105,14 @@ module Apostrophe
             end
           end
 
-          text_view.tap do |view|
-            view.buffer = text_buffer
-          end
+          text_view.scroller = scroller
 
           text_buffer.tap do |buffer|
             buffer.signal_connect("changed") { on_text_changed }
             buffer.signal_connect("mark-set") { |_buffer, _location, mark| on_mark_set(mark) }
           end
 
+          stats_handler
           install_actions
           markup_handler
           style.on_change { markup_handler.on_style_updated }
@@ -157,12 +165,14 @@ module Apostrophe
       end
     end
 
-    def stats_label
-      @stats_label ||= Gtk::Label.new("0 Words").tap do |label|
-        label.add_css_class("stats-button")
-        label.margin_end = 6
+    def stats_button
+      @stats_button ||= Gtk::MenuButton.new.tap do |button|
+        button.add_css_class("stats-button")
+        button.margin_end = 6
       end
     end
+
+    def editor_overlay = @editor_overlay ||= Gtk::Overlay.new
 
     def editor_scrolled_window
       @editor_scrolled_window ||= Gtk::ScrolledWindow.new.tap do |scrolled|
@@ -172,20 +182,11 @@ module Apostrophe
     end
 
     def text_view
-      @text_view ||= Gtk::TextView.new.tap do |view|
-        view.add_css_class("apostrophe-editor")
-        view.wrap_mode = :word_char
-        view.left_margin = 24
-        view.right_margin = 24
-        view.top_margin = 24
-        view.bottom_margin = 24
-        view.monospace = true
-      end
+      @text_view ||= TextView.new(on_attempted_hemingway: -> { on_attempted_hemingway })
     end
 
-    def text_buffer
-      @text_buffer ||= TextBuffer.new(on_attempted_hemingway: -> { on_attempted_hemingway })
-    end
+    def text_buffer = text_view.text_buffer
+    def search_bar = @search_bar ||= SearchBar.new(text_view)
 
     def markup_handler = @markup_handler ||= MarkupHandler.new(text_view)
     def format_inserter = @format_inserter ||= FormatInserter.new
@@ -196,10 +197,10 @@ module Apostrophe
     def settings = Settings.instance
     def style = Style.instance
     def theme_switcher = @theme_switcher ||= ThemeSwitcher.new
-
-    def stats_counter
-      @stats_counter ||= StatsCounter.new { |result| on_counted(result) }
-    end
+    def stats_handler = @stats_handler ||= StatsHandler.new(stats_button, text_view)
+    def shortcuts_window = @shortcuts_window ||= ShortcutsWindow.new
+    def about_dialog = @about_dialog ||= AboutDialog.new
+    def hemingway_dialog = @hemingway_dialog ||= HemingwayDialog.new
 
     private
 
@@ -211,6 +212,30 @@ module Apostrophe
           end
           app.set_accels_for_action("win.#{name}", [SHORTCUTS.fetch(name)])
         end
+
+        install_window_action("find", "<Control>f") { toggle_search }
+        install_window_action("find_replace", "<Control>h") { search_bar.replace_mode_enabled = true }
+        install_app_action("shortcuts") { shortcuts_window.present(window) }
+        install_app_action("about") { about_dialog.present(window) }
+      end
+
+      def install_window_action(name, accelerator, &block)
+        Gio::SimpleAction.new(name).tap do |action|
+          action.signal_connect("activate") { block.call }
+          window.add_action(action)
+        end
+        app.set_accels_for_action("win.#{name}", [accelerator])
+      end
+
+      def install_app_action(name, &block)
+        Gio::SimpleAction.new(name).tap do |action|
+          action.signal_connect("activate") { block.call }
+          app.add_action(action)
+        end
+      end
+
+      def toggle_search
+        search_bar.search_mode_enabled = !search_bar.search_mode_enabled
       end
 
       def dispatch(name)
@@ -226,12 +251,12 @@ module Apostrophe
         end
       end
 
-      # Every edit re-highlights, re-counts, scrolls the cursor back into view
-      # and marks the document dirty, which is what holds the logout inhibitor
-      # open until it is saved.
+      # Every edit re-highlights, scrolls the cursor back into view and marks
+      # the document dirty, which is what holds the logout inhibitor open
+      # until it is saved. The word/character counts themselves are kept by
+      # StatsHandler, which watches the buffer on its own.
       def on_text_changed
         markup_handler.apply
-        stats_counter.count(buffer_text)
         smooth_scroll_to_cursor
         inhibitor.inhibit(:logout)
       end
@@ -254,12 +279,12 @@ module Apostrophe
         end
       end
 
-      def on_counted(result)
-        stats_label.text = "#{result.words} Words"
-      end
-
       def on_focus_mode_toggled
-        markup_handler.focus_mode = focus_mode_button.active?
+        focus_mode_button.active?.then do |active|
+          markup_handler.focus_mode = active
+          text_view.focus_mode = active
+          text_view.update_vertical_margin
+        end
         markup_handler.apply
       end
 
@@ -270,15 +295,20 @@ module Apostrophe
         end
       end
 
-      # Upstream counts the attempts and offers the explainer dialog after a
-      # few in quick succession; until that dialog is ported, the toast it
-      # shows alongside is what tells the user why the deletion did nothing.
+      # Upstream's on_attempted_hemingway: every attempted deletion is logged,
+      # and when four of them land within 70 seconds of each other the
+      # explainer dialog is shown instead of (alongside, upstream also keeps
+      # the toast underneath it) the plain toast.
       def on_attempted_hemingway
-        toast_overlay.add_toast(Adwaita::Toast.new("Hemingway Mode is on; text cannot be deleted"))
-      end
+        now = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+        @hemingway_attempts = (@hemingway_attempts || [0, 0, 0, 0]).last(3) + [now]
 
-      def buffer_text
-        text_buffer.get_text(text_buffer.start_iter, text_buffer.end_iter, false)
+        if now - @hemingway_attempts.first <= 70
+          @hemingway_attempts = [0, 0, 0, 0]
+          hemingway_dialog.present(window)
+        else
+          toast_overlay.add_toast(Adwaita::Toast.new("Hemingway Mode is on; text cannot be deleted"))
+        end
       end
   end
 end
