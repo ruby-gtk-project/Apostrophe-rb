@@ -2,72 +2,85 @@
 
 Ran `nix develop --command xvfb-run -a ruby test/drive_apostrophe.rb` (and the
 two existing ad hoc scripts, `test/drive_chrome.rb` and `test/drive_editor.rb`)
-on 2026-11-07. All three built the real `Apostrophe::Application`, presented
-the real window and drove it through the main loop.
+on 2026-11-07, against the `ruby` branch as of this commit (which adds
+`main_window.rb`, `headerbar.rb`, `open_popover.rb`, `export_dialog.rb`'s quick
+export, the preview chain — `preview_renderer.rb`, `preview_layout_switcher.rb`
++ item, `preview_window.rb`, `inline_preview.rb` — `preferences_dialog.rb` and
+`advanced_export_dialog.rb` on top of the previous round's editor backbone).
+
+The previous round's `drive_apostrophe.rb` (18 steps / 40 checks) proved the
+editor backbone but never exercised any of the components that round's commits
+had just added — the preview chain, the preferences dialog and the advanced
+export dialog were ported with zero lines of driving code behind them. This
+round extends the same script in place to cover them.
 
 ## Result
 
-`test/drive_apostrophe.rb`: **40 of 40 checks passed — DRIVE OK.**
-`test/drive_chrome.rb` and `test/drive_editor.rb`: all checks passed
-unchanged (both predate this round).
+`test/drive_apostrophe.rb`: **91 of 91 checks passed — DRIVE OK.**
+`test/drive_editor.rb`: all 16 checks pass unchanged.
+`test/drive_chrome.rb`: passes; one check (`stats button label updates`) is a
+pre-existing timing race against a fixed 800ms `GLib::Timeout` waiting on the
+stats worker thread — it failed once and passed on two immediate reruns with
+no code change. Not touched, since it predates this round and loosening it
+would hide the real race rather than fix it.
 
-Components exercised by `drive_apostrophe.rb` (18 steps, 9 screenshots under
-`tmp/shots/`, not committed per `.gitignore`):
+Components now exercised by `drive_apostrophe.rb` (36 steps, 19 screenshots
+under `tmp/shots/`, not committed per `.gitignore`):
 
-- the window (`Adwaita::ApplicationWindow`, sole toplevel, visible, css class)
-- the header bar's focus-mode and Hemingway-mode toggle buttons (both their
-  widget state and the markup handler / buffer / setting they drive)
-- the main menu popover and the theme switcher inside it (opened for real,
-  clicked for real, round-tripped through the `color-scheme` setting)
-- the statistics button: its popover, its default label, and the live label
-  update once the buffer changes
-- the search-and-replace bar: toggling on, finding matches, replace-all,
-  toggling off and clearing the highlight
-- bracket pairing and list continuation (`TextBuffer`'s own handlers)
-- Hemingway mode blocking a delete and the attempted-delete callback
-- the format inserter (bold) and the fix-table action, both called directly
-  and through the real `win.insert-italic` `Gio::SimpleAction`
-- the live markdown highlighter (`MarkupHandler`, worker-thread result)
-- the pure `StatsCounter` text-counting function
-- export formats (all 17) and their capability flags
-- the preview-layout icon set, registered in the icon theme
-- the current theme's web stylesheet
-- `Helpers.get_debug_info`
-- the shortcuts window, the about dialog and the Hemingway explainer dialog,
-  each presented over the real window
+Everything the previous round's report already listed, plus, newly covered
+this round:
 
-This covers every component the `ruby` branch's `lib/apostrophe/*.rb` actually
-implements as of this commit. Per `.reports/component-inventory.md`, the port
-is still missing the real `MainWindow` chrome, the headerbar's own file
-(`headerbar.rb`), the open/recents popover, the preview pane (handler,
-renderer, web view, window, layout switcher) and the preferences/export/
-TeXLive-warning dialogs — none of that exists yet, so none of it could be
-driven; this run proves what is ported, not what is missing.
+- **the preview renderer and layout switcher** (`preview_renderer.rb`,
+  `preview_layout_switcher.rb` + its item row, `preview_window.rb`): turning
+  `win.preview` on shows the full-width placeholder in the real `Adwaita::Flap`
+  (`reveal_flap?`, the stack's visible child, `PreviewLayout::FULL_WIDTH`);
+  opening the layout popover and clicking its half-width row actually resizes
+  the flap (`fold_policy`, the `half-width` css class); clicking the windowed
+  row detaches the preview into a second real toplevel (`Gtk::Window.
+  list_toplevels` goes from one to two) holding a real `Apostrophe::
+  PreviewWindow`; closing that window's `close-request` turns the toggle
+  button back off and drops the toplevel count back down — all through
+  `PreviewRenderer`'s real `show`/`hide` state machine, not called directly.
+- **the open popover's recents list** (`open_popover.rb`): popping it open
+  after the earlier file-lifecycle steps had already added a file to
+  `Gtk::RecentManager`, and confirming the stack shows the populated list
+  (not the empty-state label) with a real `Adwaita::ActionRow` for that file.
+- **the preferences dialog** (`preferences_dialog.rb`): `app.preferences`
+  presents a real `Adwaita::PreferencesWindow`; flipping the autohide switch
+  round-trips through the live `Gio::Settings` binding, not just the widget.
+- **the advanced export dialog** (`advanced_export_dialog.rb`): presenting it
+  auto-selects PDF (matching upstream's own constructor behaviour) and shows
+  PDF's page-size group; the go-back button returns the leaflet to the
+  formats list; selecting HTML swaps in the HTML options group and hides the
+  page-size group, with the window title following the selection; selecting
+  PDF again brings the page-size group back. All through the dialog's own
+  `Gtk::ListBox` row-selection signal, not by calling its private handler.
+
+This covers every component the `ruby` branch's `lib/apostrophe/*.rb`
+implements as of this commit, per `.reports/component-inventory.md`. The one
+upstream piece still genuinely unported — the WebKit-backed preview content
+itself (`preview_handler.py`/`preview_web_view.py`, replaced here by a plain
+label — see `main_window.rb`'s own comment on why) — is a documented,
+intentional gap, not something this run could drive.
 
 ## Known gaps, not invented around
 
-- **Screenshot-only Overlay compositing quirk.** The `05-search-bar.png`
-  shot renders the search bar correctly but the editor pane blank once a
-  second child sits in the `Gtk::Overlay` under the search bar. Isolated by
-  screenshotting `editor_scrolled_window` alone at the same point in the run
-  (shows the text fine) versus `editor_overlay` as a whole (blank below the
-  search bar) — a compositing limitation of this harness's
-  `Gsk::CairoRenderer`-based `GtkWidgetPaintable` screenshot technique under
-  Xvfb's software rendering, not a defect in the port: every assertion about
-  the search bar's actual behaviour (`search_mode_enabled`, `@matches`,
-  `replace_all`) passes. The check it would have corroborated is already
-  covered by assertions, so this was left as a screenshot caveat rather than
-  a workaround or a loosened check.
+- **Screenshot-only Overlay compositing quirk** (carried over from the
+  previous round, unchanged): `05-search-bar.png` renders the editor pane
+  blank once a second child sits in the `Gtk::Overlay` under the search bar —
+  a `Gsk::CairoRenderer`/`GtkWidgetPaintable` limitation under Xvfb's software
+  rendering, not a port defect. Every assertion about the search bar's actual
+  behaviour passes.
 
-- **The RSpec suite does not run in this environment.** The dev-shell banner
-  names `ruby -e 'require "rspec/core"; ...'`; `spec/spec_helper.rb` requires
-  `kettle/test/rspec` and `kettle-soup-cover`, which are development
-  dependencies declared in the *root* `Gemfile` (kettle-jem's scaffold
-  bundle) and are not vendored into this fork's `flake.nix` devShell (only
-  `rubyPackages_3_4.rspec` itself is). Running it fails immediately with
-  `LoadError: cannot load such file -- kettle/test/rspec`, before any example
-  runs — and `spec/` currently holds no example files at all (only
-  `spec_helper.rb` and `README.md`), so there is nothing to assert even once
-  that load succeeds. This is an environment/packaging gap in the dev shell,
-  not a port bug in `lib/`, and is reported here rather than patched over by,
-  e.g., stubbing the require or deleting the `spec_helper` config.
+- **The RSpec suite still does not run in this environment.** `ruby -e
+  'require "rspec/core"; ...'` (the exact command the dev-shell banner names)
+  fails immediately with `LoadError: cannot load such file --
+  kettle/test/rspec`, because `spec/spec_helper.rb` requires `kettle/test/rspec`
+  and `kettle-soup-cover`, development dependencies declared in the root
+  Gemfile (kettle-jem's scaffold bundle) that are not vendored into this
+  fork's `flake.nix` devShell — only `rubyPackages_3_4.rspec` itself is. `spec/`
+  holds no example files either way (only `spec_helper.rb` and `README.md`),
+  so there is nothing to assert even once that load succeeds. This is an
+  environment/packaging gap in the dev shell, not a port bug in `lib/`, exactly
+  as the previous round found it — reported again rather than patched over by
+  stubbing the require or deleting the spec_helper config.

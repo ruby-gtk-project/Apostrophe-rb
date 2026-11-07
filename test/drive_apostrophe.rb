@@ -324,4 +324,159 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
     pump(200)
     d.check('one window is left') { app.windows.length == 1 }
   end
+
+  # --- preview_renderer.rb / preview_layout_switcher.rb / preview_window.rb -
+
+  d.step('turning on the preview shows the full-width placeholder in the flap') do
+    app.main_window.preview_toggle_button.active = true
+    pump(300)
+    d.check('the flap reveals the preview') { app.main_window.flap.reveal_flap? == true }
+    d.check('the stack shows the placeholder content') do
+      app.main_window.preview_stack.visible_child == app.main_window.preview_placeholder
+    end
+    d.check('full-width is the default layout') do
+      app.main_window.preview_renderer.preview_layout == Apostrophe::PreviewLayout::FULL_WIDTH
+    end
+    d.shot('11-preview-full-width')
+  end
+
+  d.step('the layout switcher popover opens with four rows, one of them checked') do
+    switcher = app.main_window.preview_layout_switcher
+    switcher.send(:popover).popup
+    pump(200)
+    items = switcher.instance_variable_get(:@items)
+    d.check('four layout rows exist') { items.length == 4 }
+    d.check('the full-width row is the one checked') { items[Apostrophe::PreviewLayout::FULL_WIDTH].selected? }
+    d.shot('12-preview-layout-popover')
+  end
+
+  d.step('activating the half-width row resizes the flap to a side-by-side layout') do
+    switcher = app.main_window.preview_layout_switcher
+    items = switcher.instance_variable_get(:@items)
+    switcher.send(:on_row_activated, items[Apostrophe::PreviewLayout::HALF_WIDTH])
+    pump(400)
+    d.check('the renderer followed the switch') do
+      app.main_window.preview_renderer.preview_layout == Apostrophe::PreviewLayout::HALF_WIDTH
+    end
+    d.check('the flap never folds in this layout') { app.main_window.flap.fold_policy == :never }
+    d.check('the stack carries the half-width css class') do
+      app.main_window.preview_stack.css_classes.include?('half-width')
+    end
+    d.shot('13-preview-half-width')
+  end
+
+  d.step('activating the windowed row detaches the preview into its own window') do
+    switcher = app.main_window.preview_layout_switcher
+    items = switcher.instance_variable_get(:@items)
+    @toplevels_before_windowed = Gtk::Window.list_toplevels.length
+    switcher.send(:on_row_activated, items[Apostrophe::PreviewLayout::WINDOWED])
+    pump(400)
+    d.check('a second toplevel window appeared') do
+      Gtk::Window.list_toplevels.length == @toplevels_before_windowed + 1
+    end
+    @preview_window = app.main_window.preview_renderer.instance_variable_get(:@preview_window)
+    d.check('it is a real PreviewWindow') { @preview_window.is_a?(Apostrophe::PreviewWindow) }
+    d.shot('14-preview-windowed', @preview_window.window_object)
+  end
+
+  d.step('closing the detached preview window turns the preview button off again') do
+    @preview_window.window_object.close
+    pump(300)
+    d.check('the toggle button followed the window closing') { app.main_window.preview_toggle_button.active? == false }
+    d.check('back down to one toplevel') { Gtk::Window.list_toplevels.length == @toplevels_before_windowed }
+  end
+
+  # --- open_popover.rb: the recent-files list -------------------------------
+
+  d.step('the open button holds a recents popover that already lists the file we opened') do
+    open_popover = app.main_window.send(:header_bar_assembly).open_popover_object
+    open_popover.send(:popover).popup
+    pump(200)
+    d.check('the list is showing, not the empty state') do
+      open_popover.send(:stack).visible_child == open_popover.send(:list_box)
+    end
+    rows = []
+    child = open_popover.send(:list_box).first_child
+    while child
+      rows << child
+      child = child.next_sibling
+    end
+    d.check('our drive file is in the recent list') do
+      rows.any? { |row| row.subtitle.to_s.include?(File.basename(@tmp_markdown)) }
+    end
+    d.shot('15-open-popover')
+    open_popover.popdown
+  end
+
+  # --- preferences_dialog.rb -------------------------------------------------
+
+  d.step('app.preferences opens the preferences window bound to the live settings') do
+    app.app.lookup_action('preferences').activate(nil)
+    pump(300)
+    @prefs_window = app.preferences_dialog.send(:window)
+    d.check('it is a real PreferencesWindow') { @prefs_window.is_a?(Adwaita::PreferencesWindow) }
+    d.check('it is on screen') { @prefs_window.visible? }
+    d.shot('16-preferences')
+  end
+
+  d.step('toggling the autohide switch writes straight through to gsettings') do
+    switch = app.preferences_dialog.send(:autohide_headerbar_switch)
+    before = switch.active?
+    switch.active = !before
+    pump(200)
+    d.check('the setting followed the switch') { Apostrophe::Settings.instance.autohide_headerbar? == !before }
+    @prefs_window.close
+  end
+
+  # --- export_dialog.rb (AdvancedExportDialog) ------------------------------
+
+  d.step('the advanced export dialog opens on the formats list') do
+    @advanced_export = Apostrophe::AdvancedExportDialog.new(app.window, app.document, app.text_view.text)
+    @advanced_export.present
+    pump(300)
+    # present() selects the first row itself (PDF, per ExportFormat::ALL's
+    # order), which is what immediately flips the leaflet to the options page
+    # showing PDF's own groups — matching upstream's constructor behaviour.
+    d.check('the leaflet already shows the options page for the first format') do
+      @advanced_export.send(:leaflet).visible_child == @advanced_export.send(:options_page)
+    end
+    d.check('PDF (the first format) shows the page-size group') { @advanced_export.send(:page_size_group).visible? }
+    d.check('every shipped format got a row') do
+      @advanced_export.send(:formats_list).observe_children.n_items == Apostrophe::ExportFormat::ALL.length
+    end
+    d.shot('17-advanced-export-formats')
+  end
+
+  d.step('the go-back button returns the leaflet to the formats list') do
+    @advanced_export.send(:go_previous_button).clicked
+    pump(100)
+    d.check('the leaflet went back to the formats page') do
+      @advanced_export.send(:leaflet).visible_child == @advanced_export.send(:formats_page)
+    end
+    d.shot('18-advanced-export-formats-after-back')
+  end
+
+  d.step('selecting HTML swaps in the HTML options group instead of the page-size one') do
+    html_index = Apostrophe::ExportFormat::ALL.index { |format| format.name == 'HTML' }
+    row = @advanced_export.send(:formats_list).get_row_at_index(html_index)
+    @advanced_export.send(:formats_list).select_row(row)
+    pump(200)
+    d.check('the leaflet switched back to the options page') do
+      @advanced_export.send(:leaflet).visible_child == @advanced_export.send(:options_page)
+    end
+    d.check('HTML shows its own options group') { @advanced_export.send(:html_options_group).visible? }
+    d.check('and hides the page-size group PDF needed') { !@advanced_export.send(:page_size_group).visible? }
+    d.check('the window title followed the new selection') { @advanced_export.send(:window).title == 'Export to HTML' }
+    d.shot('19-advanced-export-html-options')
+  end
+
+  d.step('selecting PDF again brings the page-size group back') do
+    pdf_index = Apostrophe::ExportFormat::ALL.index { |format| format.name == 'PDF' }
+    row = @advanced_export.send(:formats_list).get_row_at_index(pdf_index)
+    @advanced_export.send(:formats_list).select_row(row)
+    pump(200)
+    d.check('PDF shows the page-size group again') { @advanced_export.send(:page_size_group).visible? }
+    d.check('and hides the HTML options group') { !@advanced_export.send(:html_options_group).visible? }
+    @advanced_export.send(:window).close
+  end
 end
