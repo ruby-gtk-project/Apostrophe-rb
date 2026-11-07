@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 require_relative 'settings'
 
 module Apostrophe
@@ -14,6 +15,7 @@ module Apostrophe
   # `visible=False` (neither feature is wired up there either), so there is
   # nothing behind them to port.
   class PreferencesDialog
+    Helpers.bind_gettext(self)
     # Upstream's `formats` list, each a Pandoc input format with the
     # documentation URL its help button opens.
     FORMATS = [
@@ -62,8 +64,8 @@ module Apostrophe
 
       def autohide_headerbar_row
         @autohide_headerbar_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Autohide headerbar'
-          row.subtitle = 'Autohide header and statusbars while typing'
+          row.title = _('Autohide headerbar')
+          row.subtitle = _('Autohide header and statusbars while typing')
           row.activatable_widget = autohide_headerbar_switch
           row.add_suffix(autohide_headerbar_switch)
         end
@@ -73,8 +75,8 @@ module Apostrophe
 
       def bigger_text_row
         @bigger_text_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Use bigger text'
-          row.subtitle = 'Reduce the margins width and increase the text size when possible'
+          row.title = _('Use bigger text')
+          row.subtitle = _('Reduce the margins width and increase the text size when possible')
           row.activatable_widget = bigger_text_switch
           row.add_suffix(bigger_text_switch)
         end
@@ -84,8 +86,8 @@ module Apostrophe
 
       def input_format_comborow
         @input_format_comborow ||= Adwaita::ComboRow.new.tap do |row|
-          row.title = 'Input format'
-          row.subtitle = 'Flavor of markdown Apostrophe will use'
+          row.title = _('Input format')
+          row.subtitle = _('Flavor of markdown Apostrophe will use')
           row.model = Gtk::StringList.new(FORMATS.map { |format| format.fetch(:name) })
           row.add_suffix(input_format_help_button)
         end
@@ -95,7 +97,7 @@ module Apostrophe
         @input_format_help_button ||= Gtk::Button.new.tap do |button|
           button.valign = :center
           button.icon_name = 'dialog-information-symbolic'
-          button.tooltip_text = 'Markdown flavor documentation'
+          button.tooltip_text = _('Markdown flavor documentation')
           button.add_css_class('flat')
           button.add_css_class('circular')
           button.signal_connect('clicked') { on_input_format_help }

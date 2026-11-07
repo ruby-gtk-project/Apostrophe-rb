@@ -1,0 +1,897 @@
+# Indonesian translation for apostrophe.
+# Copyright (C) 2021 apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apostrophe package.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apostrophe main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-03-08 22:18+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} Karakter"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} Paragraf"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} Kalimat"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} Kata"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+msgid "%{selected} of %{total} Characters"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:141
+msgid "%{selected} of %{total} Paragraphs"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+msgid "%{selected} of %{total} Sentences"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+msgid "About Apostrophe"
+msgstr "Tentang Apostrophe"
+
+#: ../lib/apostrophe/headerbar.rb:151
+msgid "Advanced Export…"
+msgstr "Ekspor Lanjutan…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Kesalahan terjadi saat mencoba mengekspor:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Sembunyi otomatis bilah tajuk dan bilah status saat mengetik"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Sembunyi Otomatis Bilah Tajuk"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Tebal"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Peka Huruf Besar Kecil"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Tutup dokumen"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+msgid "Copy HTML"
+msgstr "Salin HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Salin dan tempel"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Salin teks yang dipilih ke papan klip"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Salin teks yang dipilih ke papan klip"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Potong teks yang dipilih ke papan klip"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Galat"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Ekspor"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Ekspor ke {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Cari"
+
+#: ../lib/apostrophe/headerbar.rb:104
+msgid "Find and Replace"
+msgstr "Cari dan Ganti"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Cari dan ganti"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "Varian markdown yang akan dipakai oleh Aposthrope"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+msgid "Focus Mode"
+msgstr "Mode Fokus"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Mode fokus"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Rumus terlihat salah:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Lebar Penuh"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Layar Penuh"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Umum"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#, fuzzy
+msgid "HTML"
+msgstr "Salin HTML"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "Opsi HTML"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Setengah Tinggi"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Setengah Lebar"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Tajuk"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Mode Hemingway"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Mode Hemingway"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Gaya sorot"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Bulatan inkremental"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Format masukan"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Miring"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Butir"
+
+#: ../lib/apostrophe/headerbar.rb:128
+msgid "Keyboard Shortcuts"
+msgstr "Pintasan Papan Tik"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Daftar butir"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Berkas Markdown"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Dokumentasi varian markdown"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Mode"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Baru"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Berkas Baru"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Cocok Berikutnya"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Tidak Ada Dokumen Terkini"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Tidak ada catatan kaki yang cocok ditemukan"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Bagian Angka"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Buka"
+
+#: ../lib/apostrophe/headerbar.rb:137
+msgid "Open Tutorial"
+msgstr "Buka Tutorial"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Buka berkas .md"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "Opsi HTML"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Ukuran Halaman"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Tempel teks yang dipilih dari papan klip"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Berkas Teks Biasa"
+
+#: ../lib/apostrophe/headerbar.rb:105
+msgid "Preferences"
+msgstr "Preferensi"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Presentasi"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Pratinjau"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Cocok Sebelumnya"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Hasilkan berkas HTML tanpa dependensi eksternal"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Keluar aplikasi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Jadi lagi jalankan perintah sebelumnya"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr "Kurangi lebar marjin dan perbesar ukuran teks ketika mungkin"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Ekspresi Reguler"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Ganti"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Ganti Semua"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Simpan"
+
+#: ../lib/apostrophe/headerbar.rb:149
+msgid "Save As…"
+msgstr "Simpan Sebagai…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Simpan sebagai"
+
+#: ../lib/apostrophe/main_window.rb:701
+#, fuzzy
+msgid "Save changes?"
+msgstr "Simpan sebagai"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Simpan berkas Anda"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Tidak Ada Dokumen Terkini"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Pilih semua teks"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Pilih folder"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Pilihan"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Mandiri"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Pemisah"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Tampilkan Statistik"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Tampilkan satu poin demi satu dalam tayangan salindia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Mandiri"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Coret"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Penyorotan Sintaks"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Daftar isi"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Ukuran teks"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Tak jadi dan jadi lagi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Tak jadi jalankan perintah sebelumnya"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Dokumen yang belum disimpan"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Gunakan Warna Gelap"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Gunakan Warna Terang"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Gunakan Warna Sepia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Penyorotan Sintaks"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Gunakan Warna Sistem"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Gunakan tajuk dan kaki untuk menyertakan hal-hal seperti stylesheet dan "
+"informasi meta"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Pakai teks yang lebih besar"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Berjendela"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "teks tebal"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "teks miring"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "teks coretan"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr "Jika tidak disimpan, seluruh perubahan yang Anda buat akan hilang."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrophe;markdown;penyunting;teks;menulis;editor;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe, penyunting markdown yang elegan dan bebas gangguan"
+
+#~ msgid "Color scheme"
+#~ msgstr "Skema warna"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr "Gunakan skema warna di UI aplikasi dan di area teks."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Memeriksa ejaan saat mengetik"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Aktifkan atau nonaktifkan pemeriksaan ejaan."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Sinkronkan penyunting/pratinjau menggulir"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "Jaga agar penyunting dan pratinjau gulir dalam posisi sinkron."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "Format masukan yang akan digunakan saat mempratinjau dan diekspor "
+#~ "menggunakan Pandoc."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Sembunyi Otomatis Bilah Tajuk"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Sembunyikan bilah tajuk dan status saat mengetik."
+
+#~ msgid "Open file base path"
+#~ msgstr "Buka base path berkas"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Membuka path berkas dari sesi saat ini"
+
+#~ msgid "Default statistic"
+#~ msgstr "Statistik bawaan"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Statistik mana yang ditampilkan di jendela utama."
+
+#~ msgid "Characters per line"
+#~ msgstr "Karakter per baris"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Cacah maksimum karakter per baris dalam penyunting."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Apakah pengguna dapat menghapus teks atau tidak."
+
+#~ msgid "Preview mode"
+#~ msgstr "Mode pratinjau"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Cara menampilkan pratinjau."
+
+#~ msgid "Preview active"
+#~ msgstr "Pratinjau aktif"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr ""
+#~ "Apakah menampilkan pratinjau aktif saat meluncurkan suatu jendela baru."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "Ukuran relatif yang disukai bagi teks."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Sunting Markdown dalam gaya"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Fokus pada tulisan Anda dengan penyunting markdown yang bersih dan bebas "
+#~ "gangguan."
+
+#~ msgid "Features:"
+#~ msgstr "Fitur:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "UI yang disesuaikan dengan tulisan yang nyaman"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Mode bebas gangguan"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Tema gelap, terang dan sepia"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Semua yang Anda harapkan dari penyunting teks, seperti pemeriksaan ejaan "
+#~ "atau statistik dokumen"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Pratinjau langsung dari apa yang Anda tulis"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Ekspor ke semua jenis format: PDF, Word/Libreoffice, LaTeX, atau bahkan "
+#~ "tayangan salindia HTML"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Hak Cipta (C) 2020, Manuel G., Wolf V."
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Situs web Apostrophe"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021.\n"
+#~ "Andika Triwidada <andika@gmail.com>, 2022."
+
+#~ msgid "Donations:"
+#~ msgstr "Donasi:"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Bantu untuk menerjemahkan:"
+
+#~ msgid "Damned Lies"
+#~ msgstr "Damned Lies"
+
+#~ msgid "CSS File"
+#~ msgstr "Berkas CSS"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Pilih berkas CSS"
+
+#~ msgid "Save as…"
+#~ msgstr "Simpan sebagai…"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "New Window"
+#~ msgstr "Jendela Baru"
+
+#~ msgid "Restore session"
+#~ msgstr "Pulihkan sesi"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Kembali ke sesi sebelumnya ketika Aposthrope dimulai"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Tata Letak Layar"
+
+#~ msgid "No Results Found"
+#~ msgstr "Tidak Ditemukan Hasil"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Baru"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Buka"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Simpan"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Pratinjau"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Cari"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Ekspor ke %s"
+
+#~ msgid "noun"
+#~ msgstr "kata benda"
+
+#~ msgid "verb"
+#~ msgstr "kata kerja"
+
+#~ msgid "adjective"
+#~ msgstr "kata sifat"
+
+#~ msgid "adverb"
+#~ msgstr "kata keterangan"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "Simpan perubahan ke dokumen \"%s\" sebelum menutup?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Tutup tanpa menyimpan"
+
+#~ msgid "Save now"
+#~ msgstr "Simpan sekarang"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "Waktu Baca {:d}:{:02d}:{:02d}"
+
+#~ msgid "web page"
+#~ msgstr "halaman web"

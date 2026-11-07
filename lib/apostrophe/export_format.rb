@@ -21,6 +21,8 @@ module Apostrophe
   ExportFormat = Data.define(:name, :ext, :to)
 
   class ExportFormat
+    Helpers.bind_gettext(self)
+
     # Formats with a page size, so the dialog offers paper size and margins.
     PAGED = %w[pdf odt docx].freeze
 
@@ -33,24 +35,31 @@ module Apostrophe
     # Extensions produced by a TeX toolchain, which the TexLive warning gates.
     TEXLIVE = %w[tex pdf].freeze
 
+    # `_` runs once, here, when this file is first required — which is
+    # late enough: the process's locale comes from the environment it was
+    # started in (`LANG`/`LANGUAGE`), already set before Ruby itself
+    # booted, and nothing in this app changes locale while running. That
+    # makes a frozen constant exactly as translation-safe as a method
+    # would be, and `ALL`/`QUICK` stay constants because the drive script
+    # and specs reach into them by that name.
     ALL = [
-      { name: 'PDF', ext: 'pdf', to: 'pdf' },
-      { name: 'LibreOffice Text Document', ext: 'odt', to: 'odt' },
-      { name: 'Microsoft Word (docx)', ext: 'docx', to: 'docx' },
-      { name: 'EPUB v3', ext: 'epub', to: 'epub' },
-      { name: 'HTML5 Slideshow (reveal.js)', ext: 'html', to: 'revealjs' },
-      { name: 'LaTeX Beamer Slideshow (pdf)', ext: 'pdf', to: 'beamer' },
-      { name: 'LaTeX Beamer Slideshow (tex)', ext: 'tex', to: 'beamer' },
-      { name: 'HTML5 Slideshow (DZSlides)', ext: 'html', to: 'dzslides' },
-      { name: 'LaTeX (tex)', ext: 'tex', to: 'latex' },
-      { name: 'HTML', ext: 'html', to: 'html5' },
-      { name: 'MediaWiki Markup', ext: 'txt', to: 'mediawiki' },
-      { name: 'ConTeXt', ext: 'tex', to: 'context' },
-      { name: 'Textile', ext: 'txt', to: 'textile' },
-      { name: 'reStructuredText', ext: 'txt', to: 'rst' },
-      { name: 'Texinfo', ext: 'texi', to: 'texinfo' },
-      { name: 'Rich Text Format', ext: 'rtf', to: 'rtf' },
-      { name: 'Groff Man', ext: 'man', to: 'man' },
+      { name: _('PDF'), ext: 'pdf', to: 'pdf' },
+      { name: _('LibreOffice Text Document'), ext: 'odt', to: 'odt' },
+      { name: _('Microsoft Word (docx)'), ext: 'docx', to: 'docx' },
+      { name: _('EPUB v3'), ext: 'epub', to: 'epub' },
+      { name: _('HTML5 Slideshow (reveal.js)'), ext: 'html', to: 'revealjs' },
+      { name: _('LaTeX Beamer Slideshow (pdf)'), ext: 'pdf', to: 'beamer' },
+      { name: _('LaTeX Beamer Slideshow (tex)'), ext: 'tex', to: 'beamer' },
+      { name: _('HTML5 Slideshow (DZSlides)'), ext: 'html', to: 'dzslides' },
+      { name: _('LaTeX (tex)'), ext: 'tex', to: 'latex' },
+      { name: _('HTML'), ext: 'html', to: 'html5' },
+      { name: _('MediaWiki Markup'), ext: 'txt', to: 'mediawiki' },
+      { name: _('ConTeXt'), ext: 'tex', to: 'context' },
+      { name: _('Textile'), ext: 'txt', to: 'textile' },
+      { name: _('reStructuredText'), ext: 'txt', to: 'rst' },
+      { name: _('Texinfo'), ext: 'texi', to: 'texinfo' },
+      { name: _('Rich Text Format'), ext: 'rtf', to: 'rtf' },
+      { name: _('Groff Man'), ext: 'man', to: 'man' },
     ].map { |attributes| new(**attributes) }.freeze
 
     # The three quick exports the main menu offers, each with the extension it
@@ -58,19 +67,19 @@ module Apostrophe
     # `ExportDialog.formats` upstream.
     QUICK = {
       'pdf'  => {
-        name:      'PDF',
+        name:      _('PDF'),
         extension: 'pdf',
         to:        'pdf',
         mimetype:  'application/pdf',
       },
       'html' => {
-        name:      'HTML',
+        name:      _('HTML'),
         extension: 'html',
         to:        'html5',
         mimetype:  'text/html',
       },
       'odt'  => {
-        name:      'ODT',
+        name:      _('ODT'),
         extension: 'odt',
         to:        'odt',
         mimetype:  'application/vnd.oasis.opendocument.text',

@@ -102,7 +102,9 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
 
   d.step('the stats button has a popover and a default label') do
     d.check('the stats button got a popover') { !app.stats_button.popover.nil? }
-    d.check('the stats button shows a default stat') { app.stats_button.label.include?('Words') }
+    # Substring, not 'Words': upstream pluralizes this label ("1 Word" vs.
+    # "4 Words"), and 'Word' matches either.
+    d.check('the stats button shows a default stat') { app.stats_button.label.include?('Word') }
   end
 
   d.step('typing updates the statistics button label') do

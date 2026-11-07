@@ -14,6 +14,8 @@ module Apostrophe
   # port wires the same behaviour with plain signal handlers, which is the
   # same result without a template to parse.
   class SearchBar < Adwaita::Bin
+    Helpers.bind_gettext(self)
+
     def initialize(text_view)
       super()
       @text_view = text_view
@@ -197,14 +199,14 @@ module Apostrophe
 
       def previous_result_button
         @previous_result_button ||= Gtk::Button.new(icon_name: 'go-up-symbolic').tap do |button|
-          button.tooltip_text = 'Previous Match'
+          button.tooltip_text = _('Previous Match')
           button.signal_connect('clicked') { scroll_to(@active - 1) }
         end
       end
 
       def next_result_button
         @next_result_button ||= Gtk::Button.new(icon_name: 'go-down-symbolic').tap do |button|
-          button.tooltip_text = 'Next Match'
+          button.tooltip_text = _('Next Match')
           button.signal_connect('clicked') { scroll_to(@active + 1) }
         end
       end
@@ -222,7 +224,7 @@ module Apostrophe
       def case_button
         @case_button ||= Gtk::ToggleButton.new.tap do |button|
           button.label = 'aA'
-          button.tooltip_text = 'Case Sensitive'
+          button.tooltip_text = _('Case Sensitive')
           button.signal_connect('clicked') { search }
         end
       end
@@ -230,14 +232,14 @@ module Apostrophe
       def regex_button
         @regex_button ||= Gtk::ToggleButton.new.tap do |button|
           button.label = '(.*)'
-          button.tooltip_text = 'Regular Expression'
+          button.tooltip_text = _('Regular Expression')
           button.signal_connect('clicked') { search }
         end
       end
 
       def replace_toggle
         @replace_toggle ||= Gtk::ToggleButton.new(icon_name: 'edit-find-replace-symbolic').tap do |button|
-          button.tooltip_text = 'Replace'
+          button.tooltip_text = _('Replace')
           button.signal_connect('toggled') do
             replace_revealer.reveal_child = button.active?
             if button.active?
@@ -282,13 +284,13 @@ module Apostrophe
       end
 
       def replace_one_button
-        @replace_one_button ||= Gtk::Button.new(label: 'Replace').tap do |button|
+        @replace_one_button ||= Gtk::Button.new(label: _('Replace')).tap do |button|
           button.signal_connect('clicked') { replace_one }
         end
       end
 
       def replace_all_button
-        @replace_all_button ||= Gtk::Button.new(label: 'Replace All').tap do |button|
+        @replace_all_button ||= Gtk::Button.new(label: _('Replace All')).tap do |button|
           button.signal_connect('clicked') { replace_all }
         end
       end

@@ -1,0 +1,987 @@
+# French translation of apostrophe.
+# Copyright (C) 2021 Free Software Foundation, Inc.
+# This file is distributed under the same license as the apostrophe package.
+#
+# Claude Paroz <claude@2xlibre.net>, 2021
+# Charles Monzat <charles.monzat@free.fr>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apostrophe master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-09-18 00:46+0200\n"
+"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} caractère"
+msgstr[1] "{:n} caractères"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} paragraphe"
+msgstr[1] "{:n} paragraphes"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} phrase"
+msgstr[1] "{:n} phrases"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} mot"
+msgstr[1] "{:n} mots"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+msgid "%{selected} of %{total} Characters"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:141
+msgid "%{selected} of %{total} Paragraphs"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+msgid "%{selected} of %{total} Sentences"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "À _propos d’Apostrophe"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "_Exportation avancée"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Une erreur s’est produite lors d’une tentative d’exportation :\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr ""
+"Cacher automatiquement l’en-tête et les barres d’état pendant la saisie"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Cacher automatiquement la barre d’en-tête"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Gras"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Sensible à la casse"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr "Fermer"
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Fermer le document"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "_Copier le code HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Copier et coller"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Copier le texte sélectionné dans le presse-papiers"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Copier le texte sélectionné dans le presse-papiers"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Couper le texte sélectionné dans le presse-papiers"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr "Abandonner"
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Erreur"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Exporter"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Exporter vers {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Rechercher"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Rechercher et _remplacer"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Rechercher et remplacer"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "La version de markdown qu’Apostrophe utilisera"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "Mode c_oncentration"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Mode concentration"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "La formule semble incorrecte :"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Pleine largeur"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Général"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "Options HTML"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Divisé dans la hauteur"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Divisé dans la largeur"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "En-tête"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Mode Hemingway"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Mode Hemingway"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Style de coloration"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Liste à puce incrémentielle"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Format d’entrée"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Italique"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Élément"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis c_lavier"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Élément de liste"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Fichiers Markdown"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Documentation des versions de markdown"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Modes"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Nouveau"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Nouveau fichier"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Suivant"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Aucun document récent"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Aucune note de bas de page correspondante"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Numéroter les sections"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Ouvrir"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "Ouvrir le _tutoriel"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Ouvrir un fichier .md"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "Options HTML"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Format de page"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Coller le texte sélectionné depuis le presse-papiers"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Fichiers de texte brut"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "_Préférences"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Présentation"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Aperçu"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Précédent"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Génère un fichier HTML sans dépendances externes"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Quitter l’application"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Rétablir l’action précédente"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+"Réduire la largeur des marges et augmenter la taille du texte lorsque cela "
+"est possible"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Expression régulière"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Remplacer"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Tout remplacer"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Enregistrer sous…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Enregistrer sous"
+
+#: ../lib/apostrophe/main_window.rb:701
+msgid "Save changes?"
+msgstr "Enregistrer les modifications ?"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Enregistrer le document"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Aucun document récent"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Sélectionner tout le texte"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Sélectionnez un dossier"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Sélection"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Fichier unique"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Séparateur"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Voir les statistiques"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Afficher une puce après l’autre dans un diaporama"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Autonome"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Barré"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Coloration syntaxique"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Table des matières"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Taille du texte"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+#, fuzzy
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+"Le mode Hemingway imite l’expérience de l’écriture sur une machine à écrire, "
+"ne vous permettant pas de supprimer du texte ou d’effectuer une quelconque "
+"modification. \n"
+"\n"
+"Le fait de ne pouvoir qu’avancer peut être frustrant, mais peut constituer "
+"un exercice intéressant pour améliorer vos compétences en matière "
+"d’écriture, gagner en concentration ou affronter la tâche à accomplir avec "
+"un état d’esprit différent.\n"
+"  "
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Annuler et rétablir"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Annuler l’action précédente"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Documents non enregistrés"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Utiliser des couleurs sombres"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Utiliser des couleurs claires"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Utiliser des couleurs Sépia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Coloration syntaxique"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Utiliser les couleurs du système"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Utiliser un en-tête et un pied de page pour incorporer des feuilles de "
+"styles et des métadonnées"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Utiliser un texte plus grand"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Fenêtré"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "texte gras"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "texte italique"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "texte barré"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr ""
+"« %s » contient des modifications non enregistrées. Si vous n’enregistrez "
+"pas, celles-ci seront définitivement perdues."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrophe;markdown;éditeur;texte;écrire;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe, un éditeur markdown élégant et sans distraction"
+
+#~ msgid "Color scheme"
+#~ msgstr "Jeu de couleurs"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr ""
+#~ "Utiliser le jeu de couleurs dans l’interface de l’application et dans la "
+#~ "zone de texte."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Vérifier l’orthographe lors de la saisie"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Activer ou désactiver le correcteur orthographique."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Synchroniser le défilement de l’éditeur et de l’aperçu"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr ""
+#~ "Garder synchronisées les positions de défilement de l’éditeur et de "
+#~ "l’aperçu."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "Format d’entrée à employer lors de l’aperçu et de l’exportation avec "
+#~ "Pandoc."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Cacher automatiquement la barre d’en-tête"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Cacher l’en-tête et les barres d’état lors de la saisie."
+
+#~ msgid "Open file base path"
+#~ msgstr "Ouvrir le chemin de base des fichiers"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Ouvrir les chemins d’accès aux fichiers de la session en cours"
+
+#~ msgid "Default statistic"
+#~ msgstr "Statistique par défaut"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Quelle statistique est affichée dans la fenêtre principale."
+
+#~ msgid "Characters per line"
+#~ msgstr "Caractères par ligne"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Nombre maximum de caractères par ligne au sein de l’éditeur."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Indique si l’utilisateur peut ou non supprimer du texte."
+
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Compteur de bannières d’information Hemingway"
+
+#~ msgid "Number of times the Hemingway Toast has been shown"
+#~ msgstr ""
+#~ "Nombre de fois où la bannière d’information Hemingway a été affichée"
+
+#~ msgid "Preview mode"
+#~ msgstr "Mode d’aperçu"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Comment afficher l’aperçu."
+
+#~ msgid "Preview active"
+#~ msgstr "Aperçu actif"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr ""
+#~ "Indique si l’affichage de l’aperçu est actif lors du lancement d’une "
+#~ "nouvelle fenêtre."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "Taille relative préférée pour le texte."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Éditer du Markdown avec style"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Se concentrer sur son écriture avec un éditeur markdown élégant et sans "
+#~ "distraction."
+
+#~ msgid "Features:"
+#~ msgstr "Fonctionnalités :"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "Une interface pensée pour une écriture confortable"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Un mode sans distraction"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Thèmes sombre, clair et sépia"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Tout ce que vous attendez d’un éditeur de texte, comme la correction "
+#~ "orthographique ou les statistiques des documents"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Aperçu direct de ce que vous écrivez"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Exportation vers toutes sortes de formats : PDF, Word/Libreoffice, LaTeX, "
+#~ "ou même des diaporamas HTML"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Copyright (C) 2022, Manuel G., Wolf V."
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Claude Paroz <claude@2xlibre.net>\n"
+#~ "Charles Monzat <charles.monzat@free.fr>"
+
+#~ msgid "_Close"
+#~ msgstr "_Fermer"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "_Hemingway Mode"
+#~ msgstr "Mode _Hemingway"
+
+#~ msgid "_Save As..."
+#~ msgstr "Enregistrer _sous"
+
+#~ msgid "Restore session"
+#~ msgstr "Restaurer la session"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Revenir à votre session précédente au démarrage d’Apostrophe"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Disposition de l’écran"
+
+#~ msgid "No Results Found"
+#~ msgstr "Aucun résultat trouvé"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Nouveau"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Ouvrir"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Enregistrer"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Aperçu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Rechercher"
+
+#~ msgid "0 Words"
+#~ msgstr "0 mots"
+
+#~ msgid "Donate"
+#~ msgstr "Faire un don"
+
+#~ msgid "Translations"
+#~ msgstr "Traductions"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Exporter vers %s"
+
+#~ msgid "noun"
+#~ msgstr "nom"
+
+#~ msgid "verb"
+#~ msgstr "verbe"
+
+#~ msgid "adjective"
+#~ msgstr "adjectif"
+
+#~ msgid "adverb"
+#~ msgstr "adverbe"
+
+#~ msgid "Text can't be deleted while on Hemingway mode"
+#~ msgstr "En mode Hemingway, le texte ne peut pas être supprimé"
+
+#~ msgid "Tell me more"
+#~ msgstr "En savoir plus"
+
+#~ msgid "{:n} of "
+#~ msgstr "{:n} de "
+
+#~ msgid "{:d}:{:02d}:{:02d} of "
+#~ msgstr "{:d}:{:02d}:{:02d} de "
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "Temps de lecture {:d}:{:02d}:{:02d}"
+
+#~ msgid "web page"
+#~ msgstr "page web"
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Site web d’Apostrophe"
+
+#~ msgid "Paypal"
+#~ msgstr "PayPal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Aidez à la traduction :"
+
+#~ msgid "Damned Lies"
+#~ msgstr "Damned Lies"
+
+#~ msgid "CSS File"
+#~ msgstr "Fichier CSS"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Sélectionnez un fichier CSS"
+
+#~ msgid "New Window"
+#~ msgstr "Nouvelle fenêtre"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr ""
+#~ "Enregistrer les modifications apportées au document « %s » avant la "
+#~ "fermeture ?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Fermer sans enregistrer"
+
+#~ msgid "Save now"
+#~ msgstr "Enregistrer maintenant"
+
+#~ msgid "An elegant, distraction-free markdown editor"
+#~ msgstr "Un éditeur markdown élégant et sans distraction"
+
+#~ msgid "Wolf V., Manuel G."
+#~ msgstr "Wolf V., Manuel G."
+
+#~ msgid "Poeditor"
+#~ msgstr "Poeditor"
+
+#~ msgid "page0"
+#~ msgstr "page0"
+
+#~ msgid "page1"
+#~ msgstr "page1"
+
+#~ msgid "Sync Views"
+#~ msgstr "Synchroniser les vues"
+
+#~ msgid "Open Recent"
+#~ msgstr "Ouvrir un fichier récent"
+
+#~ msgid "(.*)"
+#~ msgstr "(.*)"

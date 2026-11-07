@@ -1,0 +1,966 @@
+# Croatian translation for apostrophe.
+# Copyright (C) 2022 apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apostrophe package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apostrophe main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-10-07 20:40+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} znak"
+msgstr[1] "{:n} znaka"
+msgstr[2] "{:n} znakova"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} odlomak"
+msgstr[1] "{:n} odlomka"
+msgstr[2] "{:n} odlomka"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} rečenica"
+msgstr[1] "{:n} rečenice"
+msgstr[2] "{:n} rečenica"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} riječ"
+msgstr[1] "{:n} riječi"
+msgstr[2] "{:n} riječi"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+#, fuzzy
+msgid "%{selected} of %{total} Characters"
+msgstr "{:n} od {:n} znaka"
+
+#: ../lib/apostrophe/stats_handler.rb:141
+#, fuzzy
+msgid "%{selected} of %{total} Paragraphs"
+msgstr "{:n} od {:n} odlomaka"
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+#, fuzzy
+msgid "%{selected} of %{total} Sentences"
+msgstr "{:n} od {:n} rečenica"
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "_O Apostrofu"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "_Napredan izvoz…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Greška se dogodila pri pokušaju izvoza:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Automatski sakrij trake zaglavlja i stanja pri tipkanju"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Automatski sakrij traku zaglavlja"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Podebljano"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Odustani"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Velika/Mala slova"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr "Zatvori"
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Zatvori dokument"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "_Kopiraj HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Kopiraj i zalijepi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Kopiraj odabrani tekst u međuspremnik"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Kopiraj odabrani tekst u međuspremnik"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Izreži odabrani tekst u međuspremnik"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr "Odbaci"
+
+#: ../lib/apostrophe/main_window.rb:275
+#, fuzzy
+msgid "Discard Changes and Reload"
+msgstr "_Odbaci promjene i ponovno učitaj"
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Greška"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Izvezi"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Izvezi u {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr "Datoteka je promijenjena na disku"
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Pretraži"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Pretraži i _zamijeni"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Pretraži i zamijeni"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "Markdown označavanje koje će Apostrof koristiti"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "_Način fokusa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Način fokusa"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Formula izgleda netočno:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Puna širina"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Cjelozaslonski prikaz"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Općenito"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "HTML moućnosti"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Pola širine"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Pola širine"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Zaglavlje"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingway način pisanja"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingway način pisanja"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Stil isticanja"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Pojedinačni prikaz točaka"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Način unosa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Ukošeno"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Stavka"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "_Prečaci tipkovnice"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Stavka popisa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Markdown datoteke"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Dokumentacija markdown označavanja"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Načini prikaza"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Nova"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Nova datoteka"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Sljedeće podudaranje"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Nema nedavnih dokumenata"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Nema pronađena podudarajuće napomene"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Broj odlomaka"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Otvori"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "Otvori _priručnik"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Otvori a .md datoteku"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "HTML moućnosti"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Veličina stranice"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Zalijepi odabrani tekst iz međuspremnik"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Datoteke običnog teksta"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "_Osobitosti"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Prezentacija"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Pregled"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Prijašnje podudaranje"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Izrađuje HTML datoteku bez vanjskih zavisnosti"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Zatvori aplikaciju"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Ponovi prijašnju naredbu"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr "Smanji širinu rubova i povećaj veličinu teksta kada je moguće"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Uobičajen izraz"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Zamijeni"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Zamijeni sve"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Spremi"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Spremi kao…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Spremi kao"
+
+#: ../lib/apostrophe/main_window.rb:701
+msgid "Save changes?"
+msgstr "Spremi promjene?"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Spremite svoje datoteke"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Nema nedavnih dokumenata"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Odaberi sav tekst"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Odaberi mapu"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Odabir"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Samo-sadržavajuće"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Razdjelnik"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Prikaži statistiku"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "U prezentaciji prikaži točke prezentacije jednu za drugom"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Samostalan"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Precrtano"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Isticanje sintakse"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Sadržaj"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Veličina teksta"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+#, fuzzy
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+"Hemingway način pisanja oponaša iskustvo pisanja na pisaćem stroju, ne "
+"dopuštajući brisanje teksta ili bilo kakvo uređivanje. \n"
+"\n"
+"Mogućnost samo pomicanja unaprijed može biti frustrirajuća, ali može biti "
+"zanimljiva vježba za poboljšanje vaših vještina pisanja, stjecanje fokusa "
+"ili suočavanje sa zadatkom s drugačijim načinom razmišljanja.\n"
+"  "
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr "Datoteka je promijenjena od strane drugog programa."
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Poništi i ponovi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Poništi prijašnju naredbu"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Nespremljeni dokument"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Koristi tamne boje"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Koristi svijetle boje"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Koristi crvenkasto-smeđe boje"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Isticanje sintakse"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Koristi boje sustava"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Koristi zaglavlje i podnožje za uključivanje stvari poput stilova i meta "
+"informacija"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Koristi veći tekst"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Zasebni prozori"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "podebljni tekst"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "ukošeni tekst"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "precrtani tekst"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr ""
+"“%s” sadrži nespremljene promjene. Ako ne spremite, sve vaše promjene će "
+"biti trajno izgubljene."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrof"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrof;markdown;uređivač;tekst;pisati;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrof, elegantan i jednostavan markdown uređivač"
+
+#~ msgid "Color scheme"
+#~ msgstr "Shema boja"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr ""
+#~ "Koristi shemu boja u korisničkom sučelju aplikacije i području teksta."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Provjeri pravopis pri tipkanju"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Omogući ili onemogući provjeru pravopisa."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Uskladi pomicanje uređivača/pregleda"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "Održavaj usklađene položaje pomicanja uređivača i pregleda."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr "Način unosa pri pregledu i izvozu koristeći Pandoc."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Automatsko sakrivanje trake zaglavlja"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Sakrij trake zaglavlja i stanja pri tipkanju."
+
+#~ msgid "Open file base path"
+#~ msgstr "Otvori izvornu putanju datoteke"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Otvori putanje datoteke trenutne sesije"
+
+#~ msgid "Default statistic"
+#~ msgstr "Zadana statistika"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Koja statistiku treba prikazati u glavnom prozoru."
+
+#~ msgid "Characters per line"
+#~ msgstr "Znakova po retku"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Najveći broj znakova po retku unutar uređivača."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Treba li korisnik obrisati tekst."
+
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Hemingway Toast brojenje"
+
+#~ msgid "Number of times the Hemingway Toast has been shown"
+#~ msgstr "Broj puta koliko je Hemingway Toast prikazan"
+
+#~ msgid "Preview mode"
+#~ msgstr "Način pregleda"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Kao prikazati pregled."
+
+#~ msgid "Preview active"
+#~ msgstr "Pregled aktivan"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr "Trebali prikazati pregled aktivnim pri pokretanju novog prozora."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "Željena relativna veličina teksta."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Uredite Markdown elegantno"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Usredotočite se na pisanje pomoću jednostavnog markdown uređivača bez "
+#~ "ometanja."
+
+#~ msgid "Features:"
+#~ msgstr "Značajke:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "Korisničko sučelje prilagođeno za ugodno pisanje"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Način rada bez ometanja"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Tamna, svijetla i crvenkasto-smeđa tema"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Sve što očekujete od uređivača teksta, poput provjere pravopisa ili "
+#~ "statistike dokumenata"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Trenutni pregled onoga što pišete"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Izvoz u sve vrste formata: PDF, Word/Libreoffice, LaTeX, pa čak i HTML "
+#~ "prezentacije"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Autorsko pravo (C) 2022, Manuel G., Wolf V."
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  gogo https://launchpad.net/~trebelnik-stefina\n"
+#~ "Milo Ivir <mail@milotype.de>, 2022."
+
+#~ msgid "_Close"
+#~ msgstr "_Zatvori"
+
+#~ msgid "Menu"
+#~ msgstr "Izbornik"
+
+#~ msgid "_Hemingway Mode"
+#~ msgstr "_Hemingway način pisanja"
+
+#~ msgid "_Save As..."
+#~ msgstr "_Spremi kao…"
+
+#~ msgid "Restore session"
+#~ msgstr "Obnovi sesiju"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Vrati prijašnju sesiju kada se Apostrof pokrene"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Raspored zaslona"
+
+#~ msgid "No Results Found"
+#~ msgstr "Nema pronađenih rezultata"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Novo"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Otvori"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Spremi"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Pregled"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Pretraži"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "Zaglavlje"
+
+#~ msgid "0 Words"
+#~ msgstr "0 riječi"
+
+#~ msgid "Donate"
+#~ msgstr "Donirajte"
+
+#~ msgid "Translations"
+#~ msgstr "Prijevodi"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Izvezi u %s"
+
+#~ msgid "noun"
+#~ msgstr "imenica"
+
+#~ msgid "verb"
+#~ msgstr "glagol"
+
+#~ msgid "adjective"
+#~ msgstr "pridjev"
+
+#~ msgid "adverb"
+#~ msgstr "prilog"
+
+#~ msgid "Text can't be deleted while on Hemingway mode"
+#~ msgstr "Tekst se ne može obrisati dok je u Hemingway načinu pisanja"
+
+#~ msgid "Tell me more"
+#~ msgstr "Reci mi više"
+
+#~ msgid "{:n} of {:n} Words"
+#~ msgstr "{:n} od {:n} riječi"
+
+#~ msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} od {:d}:{:02d}:{:02d} vrijeme čitanja"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} vrijeme čitanja"
+
+#~ msgid "web page"
+#~ msgstr "web stranica"
+
+#~ msgid "{:n} of "
+#~ msgstr "{:n} od "
+
+#~ msgid "{:d}:{:02d}:{:02d} of "
+#~ msgstr "{:d}:{:02d}:{:02d} od "
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Apostrof web stranica"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Pomozite prevesti:"
+
+#~ msgid "Damned Lies"
+#~ msgstr "Damned Lies"
+
+#~ msgid "CSS File"
+#~ msgstr "CSS datoteka"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Odaberi CSS datoteku"
+
+#~ msgid "New Window"
+#~ msgstr "Novi prozor"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "Spremi promjene dokumenta “%s” prije zatvaranja?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Zatvori bez spremanja"
+
+#~ msgid "Save now"
+#~ msgstr "Spremi odmah"

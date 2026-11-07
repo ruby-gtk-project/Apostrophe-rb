@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 
 module Apostrophe
   # OpenPopover is the "Open" menu button's popover: a search entry over the
@@ -20,6 +21,8 @@ module Apostrophe
   # the manager changes or the search entry's text does — the same end
   # result (the box always mirrors the manager) with one fewer class.
   class OpenPopover
+    Helpers.bind_gettext(self)
+
     # Upstream's RecentManager filters by mime type in Recents.ui through a
     # Gtk::RecentFilter the port does not build; it filters by extension
     # instead, which is the same set of files Apostrophe can actually open.
@@ -65,7 +68,7 @@ module Apostrophe
 
       def search_entry
         @search_entry ||= Gtk::SearchEntry.new.tap do |entry|
-          entry.placeholder_text = 'Search Documents'
+          entry.placeholder_text = _('Search Documents')
         end
       end
 
@@ -80,7 +83,7 @@ module Apostrophe
       def stack = @stack ||= Gtk::Stack.new
 
       def empty_label
-        @empty_label ||= Gtk::Label.new('No Recent Documents').tap do |label|
+        @empty_label ||= Gtk::Label.new(_('No Recent Documents')).tap do |label|
           label.margin_top = 24
           label.margin_bottom = 24
           label.add_css_class('dim-label')

@@ -17,18 +17,20 @@ module Apostrophe
   # Each insertion runs inside `Helpers.user_action`, so one shortcut press is
   # one undo step.
   class FormatInserter
+    Helpers.bind_gettext(self)
+
     LIST_BULLETS = ['- ', '* ', '+ '].freeze
 
     def insert_italic(text_view)
-      wrap(text_view, '_', 'italic text')
+      wrap(text_view, '_', _('italic text'))
     end
 
     def insert_bold(text_view)
-      wrap(text_view, '**', 'bold text')
+      wrap(text_view, '**', _('bold text'))
     end
 
     def insert_strikethrough(text_view)
-      wrap(text_view, '~~', 'strikethrough text')
+      wrap(text_view, '~~', _('strikethrough text'))
     end
 
     def insert_horizontal_rule(text_view)
@@ -63,7 +65,7 @@ module Apostrophe
             text = buffer.get_text(start_iter, end_iter, false)
             buffer.delete(start_iter, end_iter)
           else
-            text = 'Header'
+            text = _('Header')
           end
 
           buffer.insert_at_cursor("#{'#' * level} #{text}")
@@ -175,7 +177,7 @@ module Apostrophe
       # and otherwise a new list is opened with however many blank lines the
       # text above it still needs.
       def start_or_continue_list(text_view, buffer)
-        helptext = 'Item'
+        helptext = _('Item')
         cursor_iter = buffer.get_iter_at(mark: buffer.get_mark('insert'))
         start_ext = cursor_iter.copy
         start_ext.backward_lines(3)

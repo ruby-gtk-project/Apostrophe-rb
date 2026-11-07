@@ -1,0 +1,28 @@
+# List of source files `rake po:pot` extracts translatable strings from.
+# Ported from upstream's own po/POTFILES.in, which lists its .ui files and
+# the .py modules with user-visible text; this port has no .ui files (every
+# widget is built in Ruby) and a different file layout, so the list below is
+# this port's own lib/*.rb files that call `_`, `n_` or `N_` — one entry per
+# class `Helpers.bind_gettext` (or, for the two PreviewLayout/N_ cases,
+# `include`/`extend GetText` directly) binds a text domain to.
+lib/apostrophe/advanced_export_dialog.rb
+lib/apostrophe/document.rb
+lib/apostrophe/export_dialog.rb
+lib/apostrophe/export_format.rb
+lib/apostrophe/format_inserter.rb
+lib/apostrophe/headerbar.rb
+lib/apostrophe/helpers.rb
+lib/apostrophe/hemingway_dialog.rb
+lib/apostrophe/inhibitor.rb
+lib/apostrophe/inline_preview.rb
+lib/apostrophe/main_window.rb
+lib/apostrophe/open_popover.rb
+lib/apostrophe/preferences_dialog.rb
+lib/apostrophe/preview_layout_switcher.rb
+lib/apostrophe/preview_layout_switcher_item.rb
+lib/apostrophe/preview_window.rb
+lib/apostrophe/search_bar.rb
+lib/apostrophe/shortcuts_window.rb
+lib/apostrophe/stats_handler.rb
+lib/apostrophe/texlive_warning.rb
+lib/apostrophe/theme_switcher.rb

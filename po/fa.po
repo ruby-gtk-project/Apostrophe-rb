@@ -1,0 +1,891 @@
+# Persian translation for apostrophe.
+# Copyright (C) 2022 apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apostrophe package.
+# MohammadSaleh Kamyab <mskf1383@protonmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apostrophe main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-06-28 15:44+0430\n"
+"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+"Language-Team: Persian <fa@li.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} نویسه"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} بند"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} جمله"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} کلمه"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+msgid "%{selected} of %{total} Characters"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:141
+msgid "%{selected} of %{total} Paragraphs"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+msgid "%{selected} of %{total} Sentences"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+msgid "About Apostrophe"
+msgstr "دربارهٔ آپوستروف"
+
+#: ../lib/apostrophe/headerbar.rb:151
+msgid "Advanced Export…"
+msgstr "برون‌ریزی پیش‌رفته…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"هنگام برون‌ریزی خطایی رخ داد:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "نهفتن خودکار نوارهای سرایند و وضعیت هنگام نوشتن"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "نهفتن خودکار نوار سرایند"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "کلفت کردن"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "لغو"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "حساس به حروف کوچک و بزرگ"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "بستن سند"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+msgid "Copy HTML"
+msgstr "رونوشت HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "رونوشت و جای‌گذاری"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "رونوشت متن گزیده به تخته‌گیره"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "رونوشت متن گزیده به تخته‌گیره"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "برش متن گزیده به تخته‌گیره"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "خطا"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "برون‌ریزی"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "برون‌ریزی به {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "یافتن"
+
+#: ../lib/apostrophe/headerbar.rb:104
+msgid "Find and Replace"
+msgstr "یافتن و جایگزینی"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "یافتن و جایگزینی"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "طعم مارک‌دونی که آپوستروف استفاده خواهد کرد"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+msgid "Focus Mode"
+msgstr "حالت تمرکز"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "حالت تمرکز"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "فرمول‌ها نادرست به نظر می‌رسند:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "تمام‌صفحه"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "عمومی"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#, fuzzy
+msgid "HTML"
+msgstr "رونوشت HTML"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "گزینه‌های HTML"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "نیم‌صفحهٔ عمودی"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "نیم‌صفحهٔ افقی"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "سرایند"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "حالت همینگ‌وی"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "حالت همینگ‌وی"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "برجسته کردن سبک"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "گلوله‌های افزایشی"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "قالب ورودی"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "مورب کردن"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "مورد"
+
+#: ../lib/apostrophe/headerbar.rb:128
+msgid "Keyboard Shortcuts"
+msgstr "میان‌برهای صفحه‌کلید"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "فهرست کردن مورد"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "مارک‌دون"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "مارک‌دون"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "پرونده‌های مارک‌دون"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "مستندات طعم مارک‌دون"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "حالت‌ها"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "جدید"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "پروندهٔ جدید"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "نتیجهٔ بعدی"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "اسناد اخیری وجود ندارد"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "هیچ پاورقی متناسبی یافت نشد"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "تعداد بخش‌ها"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "گشودن"
+
+#: ../lib/apostrophe/headerbar.rb:137
+msgid "Open Tutorial"
+msgstr "گشودن خودآموز"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "گشودن یک پروندهٔ ‎.md"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "گزینه‌های HTML"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "اندارهٔ صفحه"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "جای‌گذاری متن گزیده از تخته‌گیره"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "پرونده‌های متنی ساده"
+
+#: ../lib/apostrophe/headerbar.rb:105
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "ارائه"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "نتیجهٔ قبلی"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "یک پروندهٔ HTML بدون وابستگی‌های خارجی تولید می‌کند"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "ترک برنامه"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "انجام دوبارهٔ فرمان قبلی"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr "کاهش پهنای حاشیه‌ها و افزایش اندازهٔ متن در صورت امکان"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "عبارت منظم"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "جایگزینی"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "جایگزینی همه"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "ذخیره"
+
+#: ../lib/apostrophe/headerbar.rb:149
+msgid "Save As…"
+msgstr "ذخیره به عنوان…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "ذخیره به عنوان"
+
+#: ../lib/apostrophe/main_window.rb:701
+#, fuzzy
+msgid "Save changes?"
+msgstr "ذخیره به عنوان"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "ذخیرهٔ پرونده‌تان"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "اسناد اخیری وجود ندارد"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "گزینش تمام متن"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "گزینش شاخه"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "گزینش"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "خودمشمول"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "جداساز"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "نمایش آمار"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "نمایش گلوله‌ای پس از دیگری در نمایش اسلاید"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "تنها"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "باطل کردن"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "برجسته‌سازی نحو"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "جدول محتویات"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "اندازهٔ متن"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "برگردان و دوباره"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "برگرداندن فرمان قبلی"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "اسناد ذخیره نشده"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "استفاده از رنگ‌های تاریک"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "استفاده از رنگ‌ها روشن"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "استفاده از رنگ‌های سوبیایی"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "برجسته‌سازی نحو"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "استفاده از رنگ‌های سامانه"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"استفاده از یک سرایند و پاورقی برای شمول چیزهایی مثل سبک‌برگ‌ها و فراداده‌ها"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "استفاده از متن بزرگ‌تر"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "پنجره‌ای"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "متن کلفت"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "متن مورب"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "متن باطل شده"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr "اگر ذخیره نکنید، تمامی تغییرات‌تان برای همیشه از دست خواهند رفت."
+
+#~ msgid "Apostrophe"
+#~ msgstr "آپاستروف"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr ""
+#~ "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;اوبررایتر;اوبر "
+#~ "رایتر;آپاستروف;آپوستروف;مارک‌دان;مارک‌داون;مارک‌دون;ویرایشگر;ادیتور;متن;نوشتن;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "آپاستروف؛ ویرایشگر مارک‌دونی شیک و بدون حواس‌پرتی"
+
+#~ msgid "Color scheme"
+#~ msgstr "شمای رنگی"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr "استفاده از شمای رنگی در رابط کاربری برنامه و ناحیهٔ متن."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "بررسی املایی هنگام نوشتن"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "به کار انداختن یا از کار انداختن بررسی املایی."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "همگام‌سازی پیمایش ویرایشگر/پیش‌نمایش"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "پیمایش ویرایشگر و پیش‌نمایش را همگام نگه می‌دارد."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "قالب ورودی برای استفاده هنگام پیش‌نمایش و برون‌ریزی با استفاده از پَنداک."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "نهفتن خودکار نوار سرایند"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "نهفتن نوارهای سرایند و وضعیت هنگام نوشتن."
+
+#~ msgid "Open file base path"
+#~ msgstr "گشودن مسیر پایهٔ پرونده"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "گشودن مسیرهای پروندهٔ نشست کنونی"
+
+#~ msgid "Default statistic"
+#~ msgstr "آمار پیش‌گزیده"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "کدام آمار در پنجرهٔ اصلی نشان داده شود."
+
+#~ msgid "Characters per line"
+#~ msgstr "نویسه در خط"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "بیشینهٔ تعداد نویسه‌ها در هر خط در ویرایشگر."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "این که کاربر می‌تواند متن را حذف کند یا نه."
+
+#~ msgid "Preview mode"
+#~ msgstr "حالت پیش‌نمایش"
+
+#~ msgid "How to display the preview."
+#~ msgstr "چگونگی نمایش پیش‌نمایش."
+
+#~ msgid "Preview active"
+#~ msgstr "پیش‌نمایش فعّال است"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr "این که نشان دادن پیش‌نمایش، هنگام اجرای یک پنجرهٔ جدید، فعّال باشد."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "اندازهٔ نسبی ترجیحی برای متن."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "ویرایش مارک‌دون در سبک"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr "با ویرایشگر مارک‌دونی تمیز و بدون حواس‌پرتی، روی نوشتن‌تان تمرکز کنید."
+
+#~ msgid "Features:"
+#~ msgstr "ویژگی‌ها:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "رابط کاربری‌ای طراحی شده برای نوشتن راحت"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "حالتی بدون حواس‌پرتی"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "پوسته‌های تاریک، روشن و سوبیایی"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "هر آن‌چه از یک ویرایشگر متن انتظار دارید، همچون بررسی املایی یا آمارهای سند"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "پیش‌نمایش زنده از آن‌چه می‌نویسید"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "به تمامی قالب‌ها برون‌ریزی کنید: PDF، لیبره‌آفیس/ورد، لاتک، یا حتی نمابرگ‌های "
+#~ "HTML"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "مانویل جی.، وُلف وی."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "حق رونوشت © ۲۰۲۲، مانویل جی.، وُلف وی."
+
+#~ msgid "Apostrophe website"
+#~ msgstr "وبگاه آپوستروف"
+
+#~ msgid "translator-credits"
+#~ msgstr "محمدصالح کامیاب <mskf1383@protonmail.com>"
+
+#~ msgid "Donations:"
+#~ msgstr "اعانه‌ها:"
+
+#~ msgid "Paypal"
+#~ msgstr "پی‌پال"
+
+#~ msgid "Help to translate:"
+#~ msgstr "کمک به ترجمه:"
+
+#~ msgid "Damned Lies"
+#~ msgstr "دروغ‌های ملعون"
+
+#~ msgid "CSS File"
+#~ msgstr "پروندهٔ CSS"
+
+#~ msgid "Select CSS file"
+#~ msgstr "گزینش پروندهٔ CSS"
+
+#~ msgid "Save as…"
+#~ msgstr "ذخیره به عنوان…"
+
+#~ msgid "Menu"
+#~ msgstr "فهرست"
+
+#~ msgid "New Window"
+#~ msgstr "پنجرهٔ جدید"
+
+#~ msgid "Restore session"
+#~ msgstr "بازیابی نشست"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "بازگشت به نشتس قبلی‌تان هنگام آغاز آپوستروف"
+
+#~ msgid "Screen Layout"
+#~ msgstr "چیدمان صفحه‌نمایش"
+
+#~ msgid "No Results Found"
+#~ msgstr "نتیجه‌ای یافت نشد"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "جدید"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "گشودن"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "ذخیره"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "پیش‌نمایش"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "یافتن"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "برون‌ریزی به %s"
+
+#~ msgid "noun"
+#~ msgstr "هیچ‌کدام"
+
+#~ msgid "verb"
+#~ msgstr "فعل"
+
+#~ msgid "adjective"
+#~ msgstr "صفت"
+
+#~ msgid "adverb"
+#~ msgstr "قید"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "ذخیرهٔ تغییرات به سند «‎%s» پیش از بستن؟"
+
+#~ msgid "Close without saving"
+#~ msgstr "بستن بدون ذخیره"
+
+#~ msgid "Save now"
+#~ msgstr "هم‌اکنون ذخیره کن"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} زمان خواندن"
+
+#~ msgid "web page"
+#~ msgstr "صفحهٔ وب"

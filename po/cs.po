@@ -1,0 +1,981 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Apostrophe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-DamnedLies-Scope: partial\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} znaků"
+msgstr[1] "{:n} znaků"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} odstavců"
+msgstr[1] "{:n} odstavců"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} vět"
+msgstr[1] "{:n} vět"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} slov"
+msgstr[1] "{:n} slov"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+#, fuzzy
+msgid "%{selected} of %{total} Characters"
+msgstr "{:n} znaků"
+
+#: ../lib/apostrophe/stats_handler.rb:141
+#, fuzzy
+msgid "%{selected} of %{total} Paragraphs"
+msgstr "{:n} odstavců"
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+#, fuzzy
+msgid "%{selected} of %{total} Sentences"
+msgstr "{:n} vět"
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "O aplikaci Apostrophe"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "Rozšířený export…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Došlo k chybě při pokusu exportovat:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Automaticky skrývat záhlaví okna a stavový řádek během psaní"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Automaticky skrývat záhlaví okna"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Tučné"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Rozlišování velikosti písmen"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Zavřít dokument"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "Kopírovat HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Kopírování a vkládání"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Kopírovat vybraný text do schránky"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Kopírovat vybraný text do schránky"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Vyjmout vybraný text do schránky"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Chyba"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Exportovat"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Exportovat do {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Hledat"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Hledat a nahradit"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Najít a nahradit"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "Režim soustředění"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Režim soustředění"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Vzorec vypadá nesprávně:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Plná šířka"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Obecné"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "Možnosti HTML"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Poloviční výška"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Poloviční šířka"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Nadpis"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingwayův režim"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingwayův režim"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Styl zvýraznění"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Vnořené odrážky"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Vstupní formát"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Kurzíva"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Položka"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Položka seznamu"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Soubory Markdown"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Režimy"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Nový"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Nový soubor"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Najít následující shodu"
+
+#: ../lib/apostrophe/open_popover.rb:86
+#, fuzzy
+msgid "No Recent Documents"
+msgstr "Zavřít dokument"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Nebyla nalezena žádná odpovídající poznámka pod čarou"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Číslování oddílů"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Otevřít"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "Otevřít Průvodce"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Otevřít soubor .md"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "Možnosti HTML"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Velikost stránky"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Vložit text ze schránky"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Soubory prostého textu"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Prezentace"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Náhled"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Najít předchozí shodu"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Vytvoří soubor HTML bez externích závislostí"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Ukončit aplikaci"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Znovu provést předchozí vrácený příkaz"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Regulární výraz"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Nahradit"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Nahradit vše"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Uložit"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Uložit jako..."
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Uložit jako"
+
+#: ../lib/apostrophe/main_window.rb:701
+#, fuzzy
+msgid "Save changes?"
+msgstr "Uložit jako"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Uložit váš soubor"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Zavřít dokument"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Vybrat všechen text"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Vybrat složku"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Výběr"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Samostatný"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Oddělovač"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Zobrazit statistiku"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Zobrazovat odrážky jednu za druhou jako v prezentaci."
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Samostatný"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Přeškrtnuté"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Zvýrazňování syntaxe"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Obsah"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Soubory prostého textu"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Zpět a znovu"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Vrátit zpět předchozí příkaz"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Neuložené dokumenty"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+#, fuzzy
+msgid "Use Dark Colors"
+msgstr "Použít tmavý vzhled"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr ""
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Zvýrazňování syntaxe"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Pomocí záhlaví a zápatí můžete zahrnout například soubory stylů a "
+"metainformace."
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Samostatné okno"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "tučný text"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "text psaný kurzívou"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "přeškrtnutý text"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr "Bez uložení budou všechny vaše změny nenávratně ztraceny."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#, fuzzy
+#~| msgid "uberwriter;UberWriter;apostrophe;markdown;editor;"
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrophe;markdown;editor;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrohpe, elegantní Markdown editor bez rušivých elementů"
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Kontrolovat pravopis při psaní"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Povolit nebo zakázat kontrolu pravopisu."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Synchronizace posouvání editoru/náhledu"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "Udržovat synchronizované pozice editoru a náhledu."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "Vstupní formát, který se použije při náhledu a exportu pomocí aplikace "
+#~ "Pandoc."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Automaticky skrývat záhlaví okna"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Při psaní skrýt záhlaví okna a stavový řádek."
+
+#~ msgid "Open file base path"
+#~ msgstr "Základní cesta k otevřenému souboru"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Cesty k otevřeným souborům aktuální relace"
+
+#~ msgid "Default statistic"
+#~ msgstr "Výchozí statistika"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Která statistika se zobrazuje v hlavním okně."
+
+#~ msgid "Characters per line"
+#~ msgstr "Znaků na řádku"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Maximální počet znaků na řádek v editoru."
+
+#, fuzzy
+#~| msgid "Hemingway Mode"
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Hemingwayův režim"
+
+#~ msgid "Preview mode"
+#~ msgstr "Režim náhledu"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Jak zobrazit náhled."
+
+#, fuzzy
+#~| msgid "Preview mode"
+#~ msgid "Preview active"
+#~ msgstr "Režim náhledu"
+
+#, fuzzy
+#~| msgid "Markdown Files"
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Soubory Markdown"
+
+#, fuzzy
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr "Soustřeďte se na vaše psaní s elegantním editorem Markdown."
+
+#~ msgid "Features:"
+#~ msgstr "Funkce:"
+
+#, fuzzy
+#~ msgid "A distraction-free mode"
+#~ msgstr "Elegantní Markdown editor bez rušivých elementů"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Tmavý, světlý a sépiový vzhled"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Všechno, co očekáváte od textového editoru, včetně kontroly pravopisu "
+#~ "nebo statistiky dokumentu"
+
+#, fuzzy
+#~ msgid "Live preview of what you write"
+#~ msgstr "Živý náhled do vašeho psaní"
+
+#, fuzzy
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Exportujte do různých formátů: PDF, Word/Libreoffice, LaTeX, nebo dokonce "
+#~ "HTML prezentace"
+
+#, fuzzy
+#~| msgid "Copyright (C) 2020, Wolf Vollprecht"
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Copyright (C) 2020, Wolf Vollprecht"
+
+#~ msgid "translator-credits"
+#~ msgstr "Zásluhy překladatelů"
+
+#~ msgid "Menu"
+#~ msgstr "Nabídka"
+
+#, fuzzy
+#~| msgid "Hemingway Mode"
+#~ msgid "_Hemingway Mode"
+#~ msgstr "Hemingwayův režim"
+
+#, fuzzy
+#~| msgid "Save As…"
+#~ msgid "_Save As..."
+#~ msgstr "Uložit jako…"
+
+#, fuzzy
+#~| msgid "Regular Expression"
+#~ msgid "Restore session"
+#~ msgstr "Regulární výraz"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Nový"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Otevřít"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Uložit"
+
+#, fuzzy
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Náhled"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Najít"
+
+#, fuzzy
+#~| msgid "Header"
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "Nadpis"
+
+#, fuzzy
+#~| msgid "{:n} Words"
+#~ msgid "0 Words"
+#~ msgstr "{:n} slov"
+
+#, fuzzy
+#~| msgid "Donations:"
+#~ msgid "Donate"
+#~ msgstr "Dary:"
+
+#, fuzzy
+#~| msgid "Donations:"
+#~ msgid "Translations"
+#~ msgstr "Dary:"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Export do %s"
+
+#~ msgid "noun"
+#~ msgstr "podstatné jméno"
+
+#~ msgid "verb"
+#~ msgstr "sloveso"
+
+#~ msgid "adjective"
+#~ msgstr "přídavné jméno"
+
+#~ msgid "adverb"
+#~ msgstr "příslovce"
+
+#, fuzzy
+#~| msgid "{:n} Words"
+#~ msgid "{:n} of {:n} Words"
+#~ msgstr "{:n} slov"
+
+#, fuzzy
+#~| msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} doba čtení"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} doba čtení"
+
+#~ msgid "web page"
+#~ msgstr "webová stránka"
+
+#~ msgid "An elegant, distraction-free markdown editor"
+#~ msgstr "Elegantní Markdown editor bez rušivých elementů"
+
+#~ msgid "Wolf V., Manuel G."
+#~ msgstr "Wolf V., Manuel G."
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Webové stránky Apostrophe"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Pomozte s překladem:"
+
+#~ msgid "Poeditor"
+#~ msgstr "Poeditor"
+
+#~ msgid "CSS File"
+#~ msgstr "CSS soubor"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Vybrat CSS soubor"
+
+#~ msgid "page0"
+#~ msgstr "strana0"
+
+#~ msgid "page1"
+#~ msgstr "strana1"
+
+#~ msgid "Sync Views"
+#~ msgstr "Synchronizovat zobrazení"
+
+#, fuzzy
+#~ msgid "Open Recent"
+#~ msgstr "Otevřít poslední soubor"
+
+#~ msgid "(.*)"
+#~ msgstr "(.*)"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "Uložit před zavřením změny do dokumentu “%s”?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Zavřít bez uložení"
+
+#~ msgid "Save now"
+#~ msgstr "Uložit nyní"
+
+#~ msgid ""
+#~ "Apostrophe is a GTK based distraction free Markdown editor, originally "
+#~ "created by Wolf Vollprecht and maintained by Manuel Genovés. It uses "
+#~ "pandoc as backend for markdown parsing and offers a very clean and sleek "
+#~ "user interface."
+#~ msgstr ""
+#~ "Apostrophe je Markdown editor bez rušivých elementů založený na GTK, "
+#~ "původně vytvořený Wolfem Vollprechtem a udržovaný Manuelem Genovésem. "
+#~ "Používá pandoc jako backend pro parsování Markdown a nabízí velmi čisté a "
+#~ "elegantní uživatelské rozhraní."
+
+#~ msgid "You can install the recommended TexLive extension with the command:"
+#~ msgstr "Doporučené rozšíření TexLive můžete nainstalovat pomocí příkazu:"
+
+#~ msgid ""
+#~ "flatpak install flathub org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive"
+#~ msgstr ""
+#~ "flatpak install flathub\n"
+#~ "org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive"
+
+#~ msgid "or from Gnome-Software"
+#~ msgstr "nebo pomocí Gnome-Software"
+
+#~ msgid "Apostrophe, a simple and distraction free Markdown Editor"
+#~ msgstr "Apostrophe, jednoduchý Markdown editor bez rušivých elementů"
+
+#~ msgid "Enable or disable the dark mode."
+#~ msgstr "Povolit nebo zakázat tmavý vzhled"
+
+#~ msgid "Light mode isn’t available while using a dark global theme"
+#~ msgstr ""
+#~ "Světlý vzhled není k dispozici při použití globálního tmavého motivu"

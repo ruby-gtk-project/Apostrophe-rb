@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'gtk4'
+require_relative 'helpers'
 require_relative 'preview_layout_switcher_item'
 require_relative 'settings'
 
@@ -11,16 +12,22 @@ module Apostrophe
   # `preview-mode` gsettings enum, so a layout's integer value is always its
   # index into either list.
   module PreviewLayout
+    extend GetText
+    bindtextdomain(Helpers::GETTEXT_DOMAIN, path: Helpers::LOCALE_DIRECTORY)
+
     FULL_WIDTH  = 0
     HALF_WIDTH  = 1
     HALF_HEIGHT = 2
     WINDOWED    = 3
 
+    # `text` is only marked with `N_` here (see its docs); callers run it
+    # through `_` when they actually show it, in
+    # PreviewLayoutSwitcherItem#initialize.
     ALL = [
-      { value: FULL_WIDTH, text: 'Full-Width', icon: 'preview-layout-full-width-symbolic' },
-      { value: HALF_WIDTH, text: 'Half-Width', icon: 'preview-layout-half-width-symbolic' },
-      { value: HALF_HEIGHT, text: 'Half-Height', icon: 'preview-layout-half-height-symbolic' },
-      { value: WINDOWED, text: 'Windowed', icon: 'preview-layout-windowed-symbolic' },
+      { value: FULL_WIDTH, text: N_('Full-Width'), icon: 'preview-layout-full-width-symbolic' },
+      { value: HALF_WIDTH, text: N_('Half-Width'), icon: 'preview-layout-half-width-symbolic' },
+      { value: HALF_HEIGHT, text: N_('Half-Height'), icon: 'preview-layout-half-height-symbolic' },
+      { value: WINDOWED, text: N_('Windowed'), icon: 'preview-layout-windowed-symbolic' },
     ].freeze
 
     def self.icon_for(value) = ALL.fetch(value).fetch(:icon)
@@ -42,6 +49,8 @@ module Apostrophe
   # (`win.preview`) is wired by whoever embeds this switcher, the same way
   # HeaderBar's other toggle buttons are wired by MainWindow.
   class PreviewLayoutSwitcher
+    Helpers.bind_gettext(self)
+
     def initialize(on_layout_changed: nil)
       @on_layout_changed = on_layout_changed
       @preview_layout = PreviewLayout.from_settings
@@ -80,7 +89,7 @@ module Apostrophe
 
       def toggle_button
         @toggle_button ||= Gtk::ToggleButton.new.tap do |button|
-          button.tooltip_text = 'Preview'
+          button.tooltip_text = _('Preview')
           button.icon_name = 'view-dual-symbolic'
           button.add_css_class('preview_button_left')
           button.signal_connect('notify::active') { revealer.reveal_child = button.active? }

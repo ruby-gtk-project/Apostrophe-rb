@@ -1,0 +1,880 @@
+#
+# Kdwk <kdwkleung@protonmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apostrophe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-01-22 10:30+0800\n"
+"Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
+"Language-Team: Chinese (Taiwan) <>\n"
+"Language: zh-TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 41.0\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} 字元"
+msgstr[1] "{:n} 字元"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} 段落"
+msgstr[1] "{:n} 段落"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} 句子"
+msgstr[1] "{:n} 句子"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} 字"
+msgstr[1] "{:n} 字"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+msgid "%{selected} of %{total} Characters"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:141
+msgid "%{selected} of %{total} Paragraphs"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+msgid "%{selected} of %{total} Sentences"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+msgid "About Apostrophe"
+msgstr "關於 Apostrophe"
+
+#: ../lib/apostrophe/headerbar.rb:151
+msgid "Advanced Export…"
+msgstr "進階匯出..."
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"匯出文件時發生錯誤：\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "打字時自動隱藏標題欄和狀態欄"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "自動隱藏標題欄"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "粗體字"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "取消"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "區分大小寫"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "關閉文件"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+msgid "Copy HTML"
+msgstr "複製 HTML"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "複製並貼上"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "複製已選文字"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "複製已選文字"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "剪下已選文字"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "錯誤"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "匯出"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "匯出至 {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "尋找"
+
+#: ../lib/apostrophe/headerbar.rb:104
+msgid "Find and Replace"
+msgstr "搜尋並取代"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "搜尋並取代"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+msgid "Focus Mode"
+msgstr "鎖定模式"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "專注模式"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "算式看來不正確："
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "全形"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "全螢幕"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "一般"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#, fuzzy
+msgid "HTML"
+msgstr "複製 HTML"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "HTML 選項"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "半高"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "半形"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "頁頭"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingway 模式"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingway 模式"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "上色風格"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "遞增的項目符號列表"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "輸入格式"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "斜體字"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "項目"
+
+#: ../lib/apostrophe/headerbar.rb:128
+msgid "Keyboard Shortcuts"
+msgstr "鍵盤捷徑"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "清單項目"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Markdown 文件"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "模式"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "新增"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "新文件"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "下一搜尋結果"
+
+#: ../lib/apostrophe/open_popover.rb:86
+#, fuzzy
+msgid "No Recent Documents"
+msgstr "關閉文件"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "沒有發現相符和的註解"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "數字區間"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "開啟"
+
+#: ../lib/apostrophe/headerbar.rb:137
+msgid "Open Tutorial"
+msgstr "怎麼用？"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "開啟 .md 文件"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "HTML 選項"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "頁面大小"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "貼上文字"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "文字文件"
+
+#: ../lib/apostrophe/headerbar.rb:105
+msgid "Preferences"
+msgstr "設定"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "幻燈片演示"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "預覽"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+# If I'm not mistaken, this is used in search (and replace), so I changed it to 'previous search result' to avoid an awkward and inelegant Chinese translation.
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "上一搜尋結果"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "匯出沒有依賴項的 HTML 檔案"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "關閉視窗"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "重做上一指令"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "正則表達式"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "取代"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "全部取代"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "儲存"
+
+#: ../lib/apostrophe/headerbar.rb:149
+msgid "Save As…"
+msgstr "儲存為..."
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "儲存為"
+
+#: ../lib/apostrophe/main_window.rb:701
+#, fuzzy
+msgid "Save changes?"
+msgstr "儲存為"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "存取您的檔案"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "未儲存檔案"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "全選文字"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "選擇文件夾"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "已選"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "自給自足"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "分隔線"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "顯示數據"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "在幻燈片演示時逐點顯示項目符號列表"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "獨立"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "刪除線"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Markdown 句法上色"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "目錄"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "文字文件"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "復原和重做"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "復原上一指令"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "未儲存檔案"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+#, fuzzy
+msgid "Use Dark Colors"
+msgstr "深色色調"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr ""
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Markdown 句法上色"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr "使用頁眉或是頁腳來引入樣式表及元數據"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "視窗模式"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "粗體字"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "斜體字"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "刪除線"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr "如果不儲存，將永久失去所有變更。"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "匯出至 %s"
+
+#~ msgid "noun"
+#~ msgstr "名詞"
+
+#~ msgid "verb"
+#~ msgstr "動詞"
+
+#~ msgid "adjective"
+#~ msgstr "形容詞"
+
+#~ msgid "adverb"
+#~ msgstr "副詞"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "是否於關閉前儲存對 \"%s\" 的變更？"
+
+#~ msgid "Close without saving"
+#~ msgstr "不儲存並關閉"
+
+#~ msgid "Save now"
+#~ msgstr "現在存取"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "需時 {:d}:{:02d}:{:02d} 閱讀"
+
+#~ msgid "web page"
+#~ msgstr "網頁"
+
+#~ msgid "Copyright (C) 2020, Wolf Vollprecht"
+#~ msgstr "版權 (C) 2020, Wolf Vollprecht"
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Apostrophe 網頁"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Kdwk\n"
+#~ "<kdwkleung@protonmail.com>"
+
+#~ msgid "Donations:"
+#~ msgstr "捐款："
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "協助翻譯："
+
+#~ msgid "Poeditor"
+#~ msgstr "Poeditor"
+
+#~ msgid "CSS File"
+#~ msgstr "CSS 檔案"
+
+#~ msgid "Select CSS file"
+#~ msgstr "選取 CSS 檔案"
+
+#~ msgid "page0"
+#~ msgstr "頁0"
+
+#~ msgid "page1"
+#~ msgstr "頁1"
+
+#~ msgid "Sync Views"
+#~ msgstr "同步視圖"
+
+#~ msgid "Open Recent"
+#~ msgstr "開啟最近"
+
+#~ msgid "Save as…"
+#~ msgstr "儲存為..."
+
+#~ msgid "Menu"
+#~ msgstr "菜單"
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "打字時檢查串法"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "新增"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "開啟"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "儲存"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "預覽"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "搜尋"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgid "(.*)"
+#~ msgstr "(.*)"
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "An elegant, distraction-free markdown editor"
+#~ msgstr "一個簡約、不干擾你工作的 Markdown 編輯器"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr "在這個簡潔、不干擾你工作的 Markdown 編輯器裡專注於你的寫作。"
+
+#~ msgid "Features:"
+#~ msgstr "功能："
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "專為舒適寫作而設計的界面"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "專注模式"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "淺色、深色和 Sepia 色調"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr "所有你對文字編輯軟件的期望，例如串字檢查及文件數據"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "一邊寫作，一邊即時預覽內容"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr "匯出文件至：PDF, Word/ LibreOffice, LaTeX, 甚或是 HTML 幻燈片"
+
+#~ msgid "Wolf V., Manuel G."
+#~ msgstr "Wolf V., Manuel G."
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;"
+#~ msgstr ""
+#~ "uberwriter;UberWriter;apostrophe;markdown;editor;編輯器;寫作;寫字;文字;文"
+#~ "件;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe，優雅、簡約、不干擾你寫作的 Markdown 編輯器"
+
+#~ msgid "Color scheme"
+#~ msgstr "色調主題"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr "在 Apostrophe 的界面使用此色調。"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "啟用或停用串字檢查。"
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "同步滾動編輯器和預覽器"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "同步編輯器和預覽器的滾動位置。"
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr "當用 Pandoc 預覽和匯出時所用的輸入模式。"
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "自動隱藏標題欄"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "打字時隱藏標題欄和狀態欄"
+
+#~ msgid "Open file base path"
+#~ msgstr "開啟文件所在的文件夾"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "打開所有已開啟的文件所在的文件夾"
+
+#~ msgid "Default statistic"
+#~ msgstr "預設數據"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "哪項數據在主視窗中顯示。"
+
+#~ msgid "Characters per line"
+#~ msgstr "每行字元數目"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "在編輯器中每行最多字元數目。"
+
+#~ msgid "Preview mode"
+#~ msgstr "預覽模式"
+
+#~ msgid "How to display the preview."
+#~ msgstr "如何顯示預覽模式。"

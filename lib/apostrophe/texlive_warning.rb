@@ -13,6 +13,8 @@ module Apostrophe
   # Ported from the `TexliveWarning` class in apostrophe/export_dialog.py and
   # data/ui/TexliveWarning.ui.
   class TexliveWarning
+    Helpers.bind_gettext(self)
+
     FLATPAK_COMMAND = 'flatpak install org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive'
 
     def build
@@ -39,13 +41,7 @@ module Apostrophe
       def flatpak_panel
         @flatpak_panel ||= panel_box.tap do |box|
           box.append(title_label)
-          box.append(label(<<~TEXT.strip))
-            Apostrophe needs the TeXLive extension
-            in order to export PDF or LaTeX files.
-
-            Install it from Apostrophe's page in Software
-            or by running the following command in a terminal:
-          TEXT
+          box.append(label(flatpak_text))
           box.append(command_entry)
           box.append(copy_button)
         end
@@ -54,13 +50,23 @@ module Apostrophe
       def distro_panel
         @distro_panel ||= panel_box.tap do |box|
           box.append(title_label_for_distro)
-          box.append(label(<<~TEXT.strip))
-            Apostrophe needs TeXLive
-            in order to export PDF or LaTeX files.
-
-            Install it from your distribution repositories
-          TEXT
+          box.append(label(distro_text))
         end
+      end
+
+      def flatpak_text
+        _(
+          "Apostrophe needs the TeXLive extension\nin order to export PDF or LaTeX files.\n\n" \
+          "Install it from Apostrophe's page in Software\n" \
+          'or by running the following command in a terminal:',
+        )
+      end
+
+      def distro_text
+        _(
+          "Apostrophe needs TeXLive\nin order to export PDF or LaTeX files.\n\n" \
+          'Install it from your distribution repositories',
+        )
       end
 
       # Fresh boxes per panel: the two panels cannot share widget instances.
@@ -78,7 +84,7 @@ module Apostrophe
       def title_label = title_label_for_distro
 
       def title_label_for_distro
-        Gtk::Label.new('TexLive Required').tap do |l|
+        Gtk::Label.new(_('TexLive Required')).tap do |l|
           l.add_css_class('title-2')
           l.justify = :center
           l.margin_bottom = 16
@@ -103,7 +109,7 @@ module Apostrophe
       def copy_button
         @copy_button ||= Gtk::Button.new.tap do |button|
           button.halign = :center
-          button.label = 'Copy to clipboard'
+          button.label = _('Copy to clipboard')
           button.signal_connect('clicked') { copy }
         end
       end

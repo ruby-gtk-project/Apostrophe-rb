@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 
 module Apostrophe
   # PreviewWindow is the separate top-level window PreviewRenderer opens for
@@ -9,6 +10,8 @@ module Apostrophe
   #
   # Ported from apostrophe/preview_window.py and data/ui/PreviewWindow.ui.
   class PreviewWindow
+    Helpers.bind_gettext(self)
+
     def build
       window.tap { |win| win.content = preview_box }
     end
@@ -31,7 +34,7 @@ module Apostrophe
 
       def window
         @window ||= Adwaita::ApplicationWindow.new(Gio::Application.default).tap do |win|
-          win.title = 'Preview'
+          win.title = _('Preview')
         end
       end
 

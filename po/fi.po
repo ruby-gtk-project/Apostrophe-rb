@@ -1,0 +1,964 @@
+# Finnish translation for apostrophe.
+# Copyright (C) 2021 apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apostrophe package.
+# Jiri Groenroos <jiri.gronroos@iki.fi>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apostrophe main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-10-06 11:25+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "Merkkejä {:n}"
+msgstr[1] "Merkkejä {:n}"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "Kappaleita {:n}"
+msgstr[1] "Kappaleita {:n}"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "Lauseita {:n}"
+msgstr[1] "Lauseita {:n}"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "Sanoja {:n}"
+msgstr[1] "Sanoja {:n}"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+#, fuzzy
+msgid "%{selected} of %{total} Characters"
+msgstr "{:n}/{:n} merkistä"
+
+#: ../lib/apostrophe/stats_handler.rb:141
+#, fuzzy
+msgid "%{selected} of %{total} Paragraphs"
+msgstr "{:n}/{:n} kappaleesta"
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+#, fuzzy
+msgid "%{selected} of %{total} Sentences"
+msgstr "{:n}/{:n} lauseesta"
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "_Tietoja - Apostrophe"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "_Edistynyt vienti…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Vientiä yrittäessä tapahtui virhe:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Piilota otsakepalkki ja tilapalkit automaattisesti kirjoittaessa"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Piilota otsakepalkki automaattisesti"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Lihavoi"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Peru"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Huomioi kirjainkoko"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr "Sulje"
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Sulje asiakirja"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "_Kopioi HTML:nä"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Kopiointi ja liittäminen"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Kopioi valittu teksti leikepöydälle"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Kopioi valittu teksti leikepöydälle"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Leikkaa valittu teksti leikepöydälle"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr "Hylkää"
+
+#: ../lib/apostrophe/main_window.rb:275
+#, fuzzy
+msgid "Discard Changes and Reload"
+msgstr "_Hylkää muutokset ja lataa uudelleen"
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Virhe"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Vie"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Vie muotoon {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr "Tiedosto on muuttunut levyllä"
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Etsi"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Etsi ja _korvaa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Etsi ja korvaa"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "Apostrophen käyttämä Markdown-murre"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "_Keskittymistila"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Keskittymistila"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Kaava vaikuttaa virheelliseltä:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Täysleveys"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Koko näyttö"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Yleiset"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "HTML-valinnat"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Puolitettu korkeus"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Puolitettu leveys"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Ylätunniste"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingway-tila"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingway-tila"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Korostuksen tyyli"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Inkrementaaliset luettelomerkit"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Syötemuoto"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Kursivoi"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Tietue"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Luettelokohta"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Markdown-tiedostot"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Markdown-murteiden dokumentaatio"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Tilat"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Uusi"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Uusi tiedosto"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Seuraava osuma"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Ei viimeisimpiä asiakirjoja"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Vastaavaa alaviitettä ei löydy"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Numeroidut osiot"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Avaa"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "Avaa _opas"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Avaa .md-tiedosto"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "HTML-valinnat"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Sivun koko"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Liitä teksti leikepöydältä"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Raakatekstitiedostot"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "_Asetukset"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Esitys"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Edellinen osuma"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Tuottaa HTML-tiedoston ilman ulkoisia riippuvuuksia"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Lopeta sovellus"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Tee uudelleen edellinen komento"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+"Pienennä marginaalin leveyttä ja suurenna tekstin kokoa kun mahdollista"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Säännöllinen lauseke"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Korvaa"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Korvaa kaikki"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Tallenna"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Tallenna nimellä…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Tallenna nimellä"
+
+#: ../lib/apostrophe/main_window.rb:701
+msgid "Save changes?"
+msgstr "Tallennetaanko muutokset?"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Tallenna tiedostosi"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Ei viimeisimpiä asiakirjoja"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Valitse kaikki teksti"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Valitse kansio"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Valinta"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Itsenäinen"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Erotin"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Näytä tilastot"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Näytä yksi luettelomerkki toisensa jälkeen diaesityksessä"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Itsenäinen"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Yliviivaa"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Syntaksin korostus"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Sisällysluettelo"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Tekstin koko"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+#, fuzzy
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+"Hemingway-tila mukailee kirjoituskokemusta kirjoituskoneella, eikä se salli "
+"muokkausta tai tekstin poistoa. \n"
+"\n"
+"Vain eteenpäin siirtyminen voi tuntua turhauttavalta, mutta voi toisaalta "
+"olla mielenkiintoinen harjoitus parantaen kirjoitustaitoa tai keskittymistä "
+"tehtävään erilaisella ajattelutavalla.\n"
+"  "
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr "Tiedostoa on muutettu toisessa ohjelmassa."
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Kumoaminen ja uudelleentekeminen"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Kumoa edellinen komento"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Tallentamattomia asiakirjoja"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Käytä tummia värejä"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Käytä vaaleita värejä"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Käytä seepiavärejä"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Syntaksin korostus"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Käytä järjestelmän värejä"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Käytä ylä- ja alatunnistetta sisällyttääksesi tyyliarkkeja ja metatietoa"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Käytä suurempaa tekstiä"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Ikkunoitu"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "lihavoitu teksti"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "kursivoitu teksti"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "yliviivattu teksti"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr ""
+"“%s” sisältää tallentamattomia muutoksia. Jos et tallenna, kaikki muutokset "
+"häviävät pysyvästi."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;muokkain;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe on tyylikäs ja häiriötekijät minimoiva markdown-muokkain"
+
+#~ msgid "Color scheme"
+#~ msgstr "Väriteema"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr ""
+#~ "Sovelluksen käyttöliittymässä ja tekstialueella käytettävä väriteema."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Tarkista oikeinkirjoitus kirjoitettaessa"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Käytä oikolukua tai poista se käytöstä."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Synkronoi muokkaimen ja esikatselun vieritys"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "Pidä muokkaimen ja esikatselun vierityksen sijainnit synkronoituna."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Piilota otsakepalkki automaattisesti"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Piilota otsakepalkki ja tilapalkit kirjoituksen aikana."
+
+#~ msgid "Default statistic"
+#~ msgstr "Oletustilasto"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Mikä tilasto näytetään pääikkunassa."
+
+#~ msgid "Characters per line"
+#~ msgstr "Merkkejä per rivi"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Muokkaimessa rivikohtaisten merkkien enimmäismäärä."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Voiko käyttäjä poistaa tekstiä vai ei."
+
+#, fuzzy
+#~| msgid "Hemingway Mode"
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Hemingway-tila"
+
+#~ msgid "Preview mode"
+#~ msgstr "Esikatselutila"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Miten esikatselu näytetään."
+
+#~ msgid "Preview active"
+#~ msgstr "Esikatselu aktiivisena"
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Muokkaa Markdownia tyylillä"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Keskity kirjoittamiseen selkeällä, häiriötekijät minimoivalla markdown-"
+#~ "muokkaimella."
+
+#~ msgid "Features:"
+#~ msgstr "Ominaisuudet:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "Kirjoitusta varten suunniteltu käyttöliittymä"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Häiriötön tila"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Eri väriteemoja: tumma, vaalea ja seepia"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Kaikki mitä tekstimuokkaimelta voi odottaa, kuten oikoluku ja asiakirjan "
+#~ "tilastot"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Reaaliaikainen esikatselu"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Vie eri tiedostomuotoihin: PDF, Word/Libreoffice, LaTeX tai jopa HTML-"
+#~ "diaesitys"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Tekijänoikeus (C) 2022, Manuel G., Wolf V."
+
+#~ msgid "translator-credits"
+#~ msgstr "Jiri Grönroos"
+
+#~ msgid "_Close"
+#~ msgstr "_Sulje"
+
+#~ msgid "Menu"
+#~ msgstr "Valikko"
+
+#~ msgid "_Hemingway Mode"
+#~ msgstr "_Hemingway-tila"
+
+#~| msgid "Save As…"
+#~ msgid "_Save As..."
+#~ msgstr "_Tallenna nimellä..."
+
+#~ msgid "Restore session"
+#~ msgstr "Palauta istunto"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Palaa edelliseen istuntoon kun Apostrophe käynnistetään"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Näytön asettelu"
+
+#~ msgid "No Results Found"
+#~ msgstr "Tuloksia ei löytynyt"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Uusi"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Avaa"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Tallenna"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Esikatselu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Haku"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "Ylätunniste"
+
+#~ msgid "0 Words"
+#~ msgstr "0 sanaa"
+
+#~ msgid "Donate"
+#~ msgstr "Lahjoita"
+
+#~ msgid "Translations"
+#~ msgstr "Kielikäännökset"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Vie muotoon %s"
+
+#~ msgid "noun"
+#~ msgstr "substantiivi"
+
+#~ msgid "verb"
+#~ msgstr "verbi"
+
+#~ msgid "adjective"
+#~ msgstr "adjektiivi"
+
+#~ msgid "adverb"
+#~ msgstr "adverbi"
+
+#~ msgid "Text can't be deleted while on Hemingway mode"
+#~ msgstr "Tekstiä ei voi poistaa Hemingway-tilassa"
+
+#~ msgid "Tell me more"
+#~ msgstr "Kerro lisää"
+
+#~| msgid "{:n} Word"
+#~| msgid_plural "{:n} Words"
+#~ msgid "{:n} of {:n} Words"
+#~ msgstr "{:n}/{:n} sanasta"
+
+#~| msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d}/{:d}:{:02d}:{:02d} lukuaika"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "Lukuaika {:d}:{:02d}:{:02d}"
+
+#~ msgid "web page"
+#~ msgstr "verkkosivu"
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Apostrophen verkkosivusto"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Auta kääntämään:"
+
+#~ msgid "Damned Lies"
+#~ msgstr "Damned Lies"
+
+#~ msgid "CSS File"
+#~ msgstr "CSS-tiedosto"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Valitse CSS-tiedosto"
+
+#~ msgid "New Window"
+#~ msgstr "Uusi ikkuna"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "Tallennetaanko muutokset asiakirjaan “%s” ennen sulkemista?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Sulje tallentamatta"
+
+#~ msgid "Save now"
+#~ msgstr "Tallenna nyt"
+
+#~ msgid "An elegant, distraction-free markdown editor"
+#~ msgstr "Tyylikäs ja häiriötekijät minimoiva markdown-muokkain"
+
+#~ msgid "Wolf V., Manuel G."
+#~ msgstr "Wolf V., Manuel G."
+
+#~ msgid "Poeditor"
+#~ msgstr "Poeditor"
+
+#~ msgid "page0"
+#~ msgstr "sivu0"
+
+#~ msgid "page1"
+#~ msgstr "sivu1"
+
+#~ msgid "Sync Views"
+#~ msgstr "Synkronoi näkymät"
+
+#~ msgid "Open Recent"
+#~ msgstr "Avaa viimeisimpiä"
+
+#~ msgid "(.*)"
+#~ msgstr "(.*)"

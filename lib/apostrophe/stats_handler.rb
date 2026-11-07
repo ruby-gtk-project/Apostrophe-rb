@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 require_relative 'settings'
 require_relative 'stats_counter'
 
@@ -16,6 +17,8 @@ module Apostrophe
   # back into this class directly instead, since nothing else in the port
   # needs that action to exist at the application level.
   class StatsHandler
+    Helpers.bind_gettext(self)
+
     STATS = Settings::STATS
 
     def initialize(stats_button, text_view)
@@ -110,26 +113,46 @@ module Apostrophe
       end
 
       def character_text
-        has_selection? ? "#{@selected_characters} of #{@characters} Characters" : "#{@characters} Characters"
+        if has_selection?
+          format(_('%{selected} of %{total} Characters'), selected: @selected_characters, total: @characters)
+        else
+          format(n_('%{count} Character', '%{count} Characters', @characters), count: @characters)
+        end
       end
 
       def word_text
-        has_selection? ? "#{@selected_words} of #{@words} Words" : "#{@words} Words"
+        if has_selection?
+          format(_('%{selected} of %{total} Words'), selected: @selected_words, total: @words)
+        else
+          format(n_('%{count} Word', '%{count} Words', @words), count: @words)
+        end
       end
 
       def sentence_text
-        has_selection? ? "#{@selected_sentences} of #{@sentences} Sentences" : "#{@sentences} Sentences"
+        if has_selection?
+          format(_('%{selected} of %{total} Sentences'), selected: @selected_sentences, total: @sentences)
+        else
+          format(n_('%{count} Sentence', '%{count} Sentences', @sentences), count: @sentences)
+        end
       end
 
       def paragraph_text
-        has_selection? ? "#{@selected_paragraphs} of #{@paragraphs} Paragraphs" : "#{@paragraphs} Paragraphs"
+        if has_selection?
+          format(_('%{selected} of %{total} Paragraphs'), selected: @selected_paragraphs, total: @paragraphs)
+        else
+          format(n_('%{count} Paragraph', '%{count} Paragraphs', @paragraphs), count: @paragraphs)
+        end
       end
 
       def read_time_text
         if has_selection?
-          "#{format_time(@selected_read_time)} of #{format_time(@read_time)} Read Time"
+          format(
+            _('%{selected} of %{total} Read Time'),
+            selected: format_time(@selected_read_time),
+            total:    format_time(@read_time),
+          )
         else
-          "#{format_time(@read_time)} Read Time"
+          format(_('%{time} Read Time'), time: format_time(@read_time))
         end
       end
 

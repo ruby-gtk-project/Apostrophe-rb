@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 require_relative 'settings'
 
 module Apostrophe
@@ -19,13 +20,17 @@ module Apostrophe
   # setting — do the forcing. The result is the same round trip: a click writes
   # the setting, the setting moves the swatch and swaps the stylesheet.
   class ThemeSwitcher
+    Helpers.bind_gettext(self)
+
     # The scheme each swatch stands for, with the CSS class that paints it and
-    # the tooltip upstream gives it.
+    # the tooltip upstream gives it. `N_` only marks the tooltip for
+    # extraction (see its own docs) — `selector` runs the actual lookup
+    # through `_` when a swatch is actually built.
     SCHEMES = [
-      { name: 'auto', css_class: 'system', tooltip: 'Use System Colors' },
-      { name: 'light', css_class: 'light', tooltip: 'Use Light Colors' },
-      { name: 'sepia', css_class: 'sepia', tooltip: 'Use Sepia Colors' },
-      { name: 'dark', css_class: 'dark', tooltip: 'Use Dark Colors' },
+      { name: 'auto', css_class: 'system', tooltip: N_('Use System Colors') },
+      { name: 'light', css_class: 'light', tooltip: N_('Use Light Colors') },
+      { name: 'sepia', css_class: 'sepia', tooltip: N_('Use Sepia Colors') },
+      { name: 'dark', css_class: 'dark', tooltip: N_('Use Dark Colors') },
     ].freeze
 
     def build
@@ -92,7 +97,7 @@ module Apostrophe
     def selector(name)
       selectors[name] ||= Gtk::CheckButton.new.tap do |button|
         SCHEMES.find { |scheme| scheme.fetch(:name) == name }.then do |scheme|
-          button.tooltip_text = scheme.fetch(:tooltip)
+          button.tooltip_text = _(scheme.fetch(:tooltip))
           button.add_css_class(scheme.fetch(:css_class))
           button.halign = :center
         end

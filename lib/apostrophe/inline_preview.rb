@@ -4,6 +4,7 @@ require 'gtk4'
 require 'socket'
 require 'timeout'
 require 'uri'
+require_relative 'helpers'
 require_relative 'latex_to_png'
 require_relative 'markup_regex'
 require_relative 'settings'
@@ -25,6 +26,8 @@ module Apostrophe
   # itself (RFC 2229) is plain line-oriented text, so a socket is all
   # `telnetlib` was ever used for here.
   class InlinePreview
+    Helpers.bind_gettext(self)
+
     WIDTH = 400
     HEIGHT = 300
 
@@ -140,9 +143,9 @@ module Apostrophe
       def view_for_math(match)
         Gtk::Image.new(file: @latex_converter.generate_png(match[:text]))
       rescue LatexToPng::RenderError => e
-        Gtk::Label.new("Formula looks incorrect:\n\n“#{e.message}”")
+        Gtk::Label.new(format(_("Formula looks incorrect:\n\n“%{message}”"), message: e.message))
       rescue Errno::ENOENT
-        Gtk::Label.new('Formula preview needs latex and dvipng, which are not installed.')
+        Gtk::Label.new(_('Formula preview needs latex and dvipng, which are not installed.'))
       end
 
       def view_for_image(match)
@@ -175,7 +178,7 @@ module Apostrophe
         if found
           text = found[:text].gsub(/\n[\t ]+/, "\n")
         else
-          text = 'No matching footnote found'
+          text = _('No matching footnote found')
         end
         Gtk::Label.new(text).tap do |label|
           label.max_width_chars = @characters_per_line

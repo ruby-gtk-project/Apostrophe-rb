@@ -11,6 +11,8 @@ module Apostrophe
   # `inhibit` while already inhibiting is a no-op, which is what keeps every
   # keystroke in an unsaved document from registering another inhibitor.
   class Inhibitor
+    Helpers.bind_gettext(self)
+
     def initialize
       @cookie = 0
     end
@@ -21,7 +23,7 @@ module Apostrophe
         @cookie = Helpers.app.inhibit(
           Helpers.app.active_window,
           flags,
-          'Unsaved documents',
+          _('Unsaved documents'),
         )
       end
     end

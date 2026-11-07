@@ -20,6 +20,8 @@ module Apostrophe
   # Every action referenced by name here (`app.new_window`, `win.save`,
   # `win.open_file`, …) is installed by Application or MainWindow.
   class HeaderBar
+    Helpers.bind_gettext(self)
+
     def build
       bar.tap do |headerbar|
         headerbar.pack_start(new_button)
@@ -46,10 +48,10 @@ module Apostrophe
 
     def open_popover_object = open_popover
 
-    def open_button = @open_button ||= Gtk::MenuButton.new.tap { |button| button.label = 'Open' }
+    def open_button = @open_button ||= Gtk::MenuButton.new.tap { |button| button.label = _('Open') }
     def menu_button = @menu_button ||= Gtk::MenuButton.new
-    def focus_mode_button = @focus_mode_button ||= toggle_button('focus-windows-symbolic', 'Focus Mode')
-    def hemingway_button = @hemingway_button ||= toggle_button('edit-delete-symbolic', 'Hemingway Mode')
+    def focus_mode_button = @focus_mode_button ||= toggle_button('focus-windows-symbolic', _('Focus Mode'))
+    def hemingway_button = @hemingway_button ||= toggle_button('edit-delete-symbolic', _('Hemingway Mode'))
     def theme_switcher = @theme_switcher ||= ThemeSwitcher.new
     def preview_layout_switcher = @preview_layout_switcher ||= PreviewLayoutSwitcher.new
 
@@ -63,7 +65,7 @@ module Apostrophe
 
       def new_button
         @new_button ||= Gtk::Button.new.tap do |button|
-          button.tooltip_text = 'New'
+          button.tooltip_text = _('New')
           button.action_name = 'app.new_window'
           button.icon_name = 'document-new-symbolic'
         end
@@ -71,7 +73,7 @@ module Apostrophe
 
       def save_button
         @save_button ||= Adwaita::SplitButton.new.tap do |button|
-          button.label = 'Save'
+          button.label = _('Save')
           button.action_name = 'win.save'
           button.menu_model = export_menu_model
         end
@@ -79,7 +81,7 @@ module Apostrophe
 
       def find_button
         @find_button ||= Gtk::ToggleButton.new.tap do |button|
-          button.tooltip_text = 'Find'
+          button.tooltip_text = _('Find')
           button.action_name = 'win.find'
           button.icon_name = 'system-search-symbolic'
         end
@@ -99,8 +101,8 @@ module Apostrophe
         @menu_model ||= Gio::Menu.new.tap do |menu|
           menu.append_section(nil, theme_switcher_section)
           menu.append_section(nil, hemingway_and_focus_section)
-          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append('Find and Replace', 'win.find_replace') })
-          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append('Preferences', 'app.preferences') })
+          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append(_('Find and Replace'), 'win.find_replace') })
+          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append(_('Preferences'), 'app.preferences') })
           menu.append_section(nil, help_section)
         end
       end
@@ -115,16 +117,16 @@ module Apostrophe
 
       def hemingway_and_focus_section
         Gio::Menu.new.tap do |section|
-          section.append('Hemingway Mode', 'win.hemingway_mode')
-          section.append('Focus Mode', 'win.focus_mode')
+          section.append(_('Hemingway Mode'), 'win.hemingway_mode')
+          section.append(_('Focus Mode'), 'win.focus_mode')
         end
       end
 
       def help_section
         Gio::Menu.new.tap do |section|
           section.append_item(tutorial_item)
-          section.append('Keyboard Shortcuts', 'app.shortcuts')
-          section.append('About Apostrophe', 'app.about')
+          section.append(_('Keyboard Shortcuts'), 'app.shortcuts')
+          section.append(_('About Apostrophe'), 'app.about')
         end
       end
 
@@ -132,7 +134,7 @@ module Apostrophe
       # ships its media directly under lib/apostrophe/resources instead, so
       # the target is the plain file path Helpers.media_path resolves.
       def tutorial_item
-        Gio::MenuItem.new('Open Tutorial', nil).tap do |item|
+        Gio::MenuItem.new(_('Open Tutorial'), nil).tap do |item|
           item.set_action_and_target_value(
             'win.open_file',
             GLib::Variant.new("file://#{Helpers.media_path('apostrophe_markdown.md')}"),
@@ -144,10 +146,10 @@ module Apostrophe
       # from Headerbar.ui's `export_menu`.
       def export_menu_model
         @export_menu_model ||= Gio::Menu.new.tap do |menu|
-          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append('Save As…', 'win.save_as') })
+          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append(_('Save As…'), 'win.save_as') })
           menu.append_section(nil, quick_export_section)
-          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append('Advanced Export…', 'win.advanced_export') })
-          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append('Copy HTML', 'win.copy_html') })
+          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append(_('Advanced Export…'), 'win.advanced_export') })
+          menu.append_section(nil, Gio::Menu.new.tap { |s| s.append(_('Copy HTML'), 'win.copy_html') })
         end
       end
 

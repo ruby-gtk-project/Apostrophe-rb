@@ -1,0 +1,929 @@
+# Turkish translation for Apostrophe.
+# Copyright (C) 2022 Apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Apostrophe package.
+#
+# Çağatay Yiğit Şahin <cyigitsahin@outlook.com>
+# Bünyamin Kırmızı <bunyamin.kirmizi@outlook.com>, 2022.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2022.
+# Sabri Ünal <libreajans@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-09-19 10:06+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "{:n} Karakter"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "{:n} Paragraf"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "{:n} Tümce"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "{:n} Sözcük"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+#, fuzzy
+msgid "%{selected} of %{total} Characters"
+msgstr "{:n} / {:n} Karakter"
+
+#: ../lib/apostrophe/stats_handler.rb:141
+#, fuzzy
+msgid "%{selected} of %{total} Paragraphs"
+msgstr "{:n} / {:n} Paragraf"
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+#, fuzzy
+msgid "%{selected} of %{total} Sentences"
+msgstr "{:n} / {:n} Tümce"
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "Apostrophe _Hakkında"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "Gelişmiş _Dışa Aktarma…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Dışa aktarmaya çalışırken hata oluştu:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Yazarken başlığı ve durum çubuklarını kendiliğinden gizle"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Başlık çubuğunu kendiliğinden gizle"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Kalın"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "İptal et"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Büyük veya Küçük Harfe Duyarlı"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr "Kapat"
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Belgeyi kapat"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "HTML’yi _Kopyala"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Kopyala ve yapıştır"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Seçili metni panoya kopyala"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Seçili metni panoya kopyala"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Seçili metni panoya kes"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr "_Çıkar"
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Hata"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Dışa aktar"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Şuraya aktar: {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Bul"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Bul ve _Değiştir"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Bul ve değiştir"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "Apostrophe’un kullanacağı markdown çeşidi"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "_Odaklanma Kipi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Odak kipi"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Formül yanlış görünüyor:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Tam Genişlik"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Genel"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "HTML Seçenekleri"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Yarı Yükseklik"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Yarı Genişlik"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Başlık"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingway Kipi"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingway kipi"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Vurgu biçimi"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Artan sayılı madde işaretleri"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Girdi biçimi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Eğik"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Öge"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "Klavye _Kısayolları"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Liste ögesi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Markdown Dosyaları"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Markdown çeşidi belgeleri"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Kipler"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Yeni"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Yeni Dosya"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Sonraki Eşleşen"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Son Belge Yok"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Eşleşen dipnot bulunamadı"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Bölümleri Numaralandır"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Aç"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "_Eğitimi Aç"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Bir .md dosyası aç"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "HTML Seçenekleri"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Sayfa Boyutu"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Panodan seçilen metni yapıştır"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Düz Metin Dosyaları"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "_Tercihler"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Sunum"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Ön izleme"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Önceki Eşleşen"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Dış bağımlılıkları olmayan HTML dosyası üretir"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Uygulamadan çık"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Önceki komutu yinele"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+"Kenar boşluklarının genişliğini azaltın ve metin boyutunu "
+"olabildiğinceartırın"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Kurallı İfade"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Değiştir"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Tümünü Değiştir"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Kaydet"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Farklı kaydet"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Farklı kaydet"
+
+#: ../lib/apostrophe/main_window.rb:701
+msgid "Save changes?"
+msgstr "Değişiklikleri kaydedilsin mi?"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Dosyanızı kaydedin"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Son Belge Yok"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Tüm metni seç"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Klasör seç"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Seçim"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Bağımsız"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Ayırıcı"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "İstatistikleri Göster"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Slayt gösterisinde madde imlerini birbiri ardına gösterme"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Bağımsız"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Üstünü çiz"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Söz Dizimi Vurgulaması"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "İçindekiler"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Metin boyutu"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+#, fuzzy
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+"Hemingway kipi, daktiloda yazma deneyimine öykünür, herhangi bir metni "
+"silmenize veya düzenlemenize izin vermez.\n"
+"\n"
+"Yalnızca ilerlemek sinir bozucu olabilir; ancak yazma becerilerinizi "
+"geliştirmek, odaklanmak veya eldeki görevle başka bir anlayışla yüzleşmek "
+"için ilginç bir alıştırma olabilir."
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Geri al ve yinele"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Önceki komutu geri al"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Kaydedilmemiş belgeler"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Koyu Renkler Kullanın"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Açık Renkler Kullan"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Sepya Renkler Kullan"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Söz Dizimi Vurgulaması"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Sistem Renklerini Kullan"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Stil sayfası ve meta bilgi gibi şeyleri eklemek için üst bilgi ve alt bilgi "
+"kullan"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Daha büyük metin kullan"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Pencereli"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "kalın yazı"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "eğik metin"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "üstü çizili metin"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr ""
+"“%s” kaydedilmemiş değişiklikler içeriyor. Kaydetmezseniz, tüm "
+"değişiklikleriniz tümüyle yitecek."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr ""
+#~ "uberwriter;UberWriter;apostrophe;markdown;metin "
+#~ "düzenleyici;düzenleyici;yazı;yaz;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe, zarif, dikkat dağıtmayan bir markdown düzenleyici"
+
+#~ msgid "Color scheme"
+#~ msgstr "Renk şeması"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr "Renk şemasını, uygulama arayüzünde ve metin alanında kullan."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Yazarken yazım denetimi yap"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Yazım denetimini etkinleştirin veya devre dışı bırakın."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Düzenleyici/ön izleme kaydırmayı eşzamanla"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr "Düzenleyici ve ön izleme kaydırma konumlarını senkronize tutun."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "Pandoc kullanarak ön izleme ve dışa aktarma sırasında kullanılacak giriş "
+#~ "biçimi."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Üst bilgi çubuğunu kendiliğinden gizle"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Yazarken başlığı ve durum çubuklarını gizleyin."
+
+#~ msgid "Open file base path"
+#~ msgstr "Dosya temel yolunu aç"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Geçerli oturumun dosya yollarını aç"
+
+#~ msgid "Default statistic"
+#~ msgstr "Öntanımlı istatistik"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Ana pencerede hangi istatistiğin gösterileceği."
+
+#~ msgid "Characters per line"
+#~ msgstr "Satır başına karakter sayısı"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Düzenleyici içinde satır başına maksimum karakter sayısı."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Kullanıcının metni silip silemeyeceği."
+
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Hemingway Bildirim Sayısı"
+
+#~ msgid "Number of times the Hemingway Toast has been shown"
+#~ msgstr "Hemingway Bildirimi’nin gösterilme sayısı"
+
+#~ msgid "Preview mode"
+#~ msgstr "Ön izleme kipi"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Ön izleme nasıl görüntülenir."
+
+#~ msgid "Preview active"
+#~ msgstr "Ön izleme etkin"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr "Yeni pencere başlatılırken ön izlemenin etkin olup olmadığı."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "Metin için yeğlenen göreli boyut."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Markdown’ın tarzını düzenleyin"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Temiz, dikkat dağıtmayan bir markdown düzenleyiciyle yazınıza odaklanın."
+
+#~ msgid "Features:"
+#~ msgstr "Özellikler:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "Rahat yazmaya uygun kullanıcı arayüzü"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Dikkat dağıtmayan kip"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Karanlık, aydınlık ve sepya temalar"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Yazım denetimi veya belge istatistikleri gibi bir metin düzenleyiciden "
+#~ "beklediğiniz her şey"
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Yazdıklarınızın canlı ön izlemesi"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Her biçimde dışarıya aktarın: PDF, Word/Libreoffice, LaTeX ve hatta HTML "
+#~ "slayt gösterileri"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Telif hakkı (C) 2022, Manuel G., Wolf V."
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Çağatay Yiğit Şahin <cyigitsahin@outlook.com>\n"
+#~ "Bünyamin Kırmızı <bunyamin.kirmizi@outlook.com>\n"
+#~ "Sabri Ünal <libreajans@gmail.com>\n"
+#~ "Emin Tufan Çetin <etcetin@gmail.com>"
+
+#~ msgid "_Close"
+#~ msgstr "_Kapat"
+
+#~ msgid "Menu"
+#~ msgstr "Menü"
+
+#~ msgid "_Hemingway Mode"
+#~ msgstr "_Hemingway Kipi"
+
+#~ msgid "_Save As..."
+#~ msgstr "Farklı _Kaydet…"
+
+#~ msgid "Restore session"
+#~ msgstr "Oturumu geri yükle"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Apostrophe başlatıldığında önceki oturumunuza dönün"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Ekran Düzeni"
+
+#~ msgid "No Results Found"
+#~ msgstr "Sonuç Bulunamadı"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Yeni"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Aç"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Kaydet"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Ön izle"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Bul"
+
+#~ msgid "0 Words"
+#~ msgstr "0 Sözcük"
+
+#~ msgid "Donate"
+#~ msgstr "Bağış Yap"
+
+#~ msgid "Translations"
+#~ msgstr "Çeviriler"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "%s konumuna dışa aktar"
+
+#~ msgid "noun"
+#~ msgstr "isim"
+
+#~ msgid "verb"
+#~ msgstr "fiil"
+
+#~ msgid "adjective"
+#~ msgstr "sıfat"
+
+#~ msgid "adverb"
+#~ msgstr "zarf"
+
+#~ msgid "Text can't be deleted while on Hemingway mode"
+#~ msgstr "Hemingway kipindeyken metin silinemez"
+
+#~ msgid "Tell me more"
+#~ msgstr "Daha çoğunu söyle"
+
+#~ msgid "{:n} of {:n} Words"
+#~ msgstr "{:n} / {:n} Sözcük"
+
+#~ msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} / {:d}:{:02d}:{:02d} Okuma Süresi"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} Okuma Süresi"
+
+#~ msgid "web page"
+#~ msgstr "web sayfası"
+
+#~ msgid "{:n} of "
+#~ msgstr "{:n} / "
+
+#~ msgid "{:d}:{:02d}:{:02d} of "
+#~ msgstr "{:d}:{:02d}:{:02d} / "

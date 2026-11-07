@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require_relative 'helpers'
 require_relative 'settings'
 
 module Apostrophe
@@ -17,7 +18,7 @@ module Apostrophe
   # relative image paths in the markdown resolve while that document is open,
   # and recording that directory in the `open-file-path` setting.
   class Document
-    NEW_FILE_TITLE = 'New File'
+    Helpers.bind_gettext(self)
 
     attr_reader :gfile, :path, :title, :name
     attr_accessor :encoding
@@ -61,7 +62,7 @@ module Apostrophe
 
       def forget
         @path = ''
-        @title = NEW_FILE_TITLE
+        @title = _('New File')
         remember('/')
       end
 

@@ -30,6 +30,8 @@ module Apostrophe
   # dev shell does not have) and fullscreen handling (upstream's is entirely
   # about hiding/showing the preview's chrome, which does not exist here).
   class MainWindow
+    Helpers.bind_gettext(self)
+
     # Upstream's TextView.ui carries these as GtkShortcuts on the view; here
     # they are window actions with accelerators, which is the same binding
     # without a .ui file to parse.
@@ -138,7 +140,7 @@ module Apostrophe
       @stats_button ||= Gtk::MenuButton.new.tap do |button|
         button.add_css_class('stats-button')
         button.always_show_arrow = true
-        button.tooltip_text = 'Show Statistics'
+        button.tooltip_text = _('Show Statistics')
       end
     end
 
@@ -189,7 +191,7 @@ module Apostrophe
     # detached preview window — is fully wired and works.
     def preview_placeholder
       @preview_placeholder ||= Gtk::Label.new(
-        "Preview needs a WebKit binding this build does not have.\n\nThe layout (full-width, half-width, half-height, windowed) still works.",
+        _('Preview needs a WebKit binding this build does not have.') + "\n\n" + _('The layout (full-width, half-width, half-height, windowed) still works.'),
       ).tap do |label|
         label.wrap = true
         label.justify = :center
@@ -254,7 +256,7 @@ module Apostrophe
       end
 
       def discard_infobar_title
-        Gtk::Label.new('File Has Changed on Disk').tap do |label|
+        Gtk::Label.new(_('File Has Changed on Disk')).tap do |label|
           label.halign = :start
           label.wrap = true
           label.add_css_class('heading')
@@ -262,7 +264,7 @@ module Apostrophe
       end
 
       def discard_infobar_subtitle
-        Gtk::Label.new('The file has been changed by another program.').tap do |label|
+        Gtk::Label.new(_('The file has been changed by another program.')).tap do |label|
           label.halign = :start
           label.wrap = true
         end
@@ -270,7 +272,7 @@ module Apostrophe
 
       def discard_button
         Gtk::Button.new.tap do |button|
-          button.label = 'Discard Changes and Reload'
+          button.label = _('Discard Changes and Reload')
           button.use_underline = true
           button.signal_connect('clicked') { reload_file }
         end
@@ -442,7 +444,7 @@ module Apostrophe
           @hemingway_attempts = [0, 0, 0, 0]
           @hemingway_dialog.present(window)
         else
-          toast_overlay.add_toast(Adwaita::Toast.new('Hemingway Mode is on; text cannot be deleted'))
+          toast_overlay.add_toast(Adwaita::Toast.new(_('Hemingway Mode is on; text cannot be deleted')))
         end
       end
 
@@ -511,11 +513,11 @@ module Apostrophe
 
       def save_document_as
         chooser = Gtk::FileChooserNative.new(
-          'Save your File',
+          _('Save your File'),
           window,
           :save,
-          'Save',
-          'Cancel',
+          _('Save'),
+          _('Cancel'),
         )
         chooser.add_filter(markdown_filter)
         if document.title.end_with?('.md')
@@ -546,7 +548,7 @@ module Apostrophe
         Gtk::FileFilter.new.tap do |filter|
           filter.add_mime_type('text/x-markdown')
           filter.add_mime_type('text/plain')
-          filter.name = 'Markdown (.md)'
+          filter.name = _('Markdown (.md)')
         end
       end
 
@@ -555,11 +557,11 @@ module Apostrophe
         header_bar_assembly.open_popover_object.popdown
 
         chooser = Gtk::FileChooserNative.new(
-          'Open a .md file',
+          _('Open a .md file'),
           window,
           :open,
-          'Open',
-          'Cancel',
+          _('Open'),
+          _('Cancel'),
         )
         chooser.add_filter(markdown_open_filter)
         chooser.add_filter(plaintext_filter)
@@ -578,14 +580,14 @@ module Apostrophe
         Gtk::FileFilter.new.tap do |filter|
           filter.add_mime_type('text/markdown')
           filter.add_mime_type('text/x-markdown')
-          filter.name = 'Markdown Files'
+          filter.name = _('Markdown Files')
         end
       end
 
       def plaintext_filter
         Gtk::FileFilter.new.tap do |filter|
           filter.add_mime_type('text/plain')
-          filter.name = 'Plain Text Files'
+          filter.name = _('Plain Text Files')
         end
       end
 
@@ -696,13 +698,15 @@ module Apostrophe
       def confirm_discard(&callback)
         dialog = Adwaita::MessageDialog.new(
           window,
-          'Save changes?',
-          "“#{document.title}” contains unsaved changes. " \
-            'If you don’t save, all your changes will be permanently lost.',
+          _('Save changes?'),
+          format(
+            _('“%{title}” contains unsaved changes. If you don’t save, all your changes will be permanently lost.'),
+            title: document.title,
+          ),
         )
-        dialog.add_response('cancel', 'Cancel')
-        dialog.add_response('close', 'Discard')
-        dialog.add_response('save', 'Save')
+        dialog.add_response('cancel', _('Cancel'))
+        dialog.add_response('close', _('Discard'))
+        dialog.add_response('save', _('Save'))
         dialog.set_response_appearance('close', :destructive)
         dialog.set_response_appearance('save', :suggested)
         dialog.default_response = 'save'

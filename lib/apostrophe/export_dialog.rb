@@ -16,6 +16,8 @@ module Apostrophe
   # without a TeX toolchain simply surfaces Pandoc's own failure through the
   # same error dialog every other export failure uses.
   class ExportDialog
+    Helpers.bind_gettext(self)
+
     def initialize(window, document)
       @window = window
       @document = document
@@ -43,11 +45,11 @@ module Apostrophe
 
       def chooser
         Gtk::FileChooserNative.new(
-          'Export',
+          _('Export'),
           @window,
           :save,
-          'Export',
-          'Cancel',
+          _('Export'),
+          _('Cancel'),
         )
       end
 
@@ -78,7 +80,7 @@ module Apostrophe
           outputfile: file.path,
         )
       rescue RuntimeError => e
-        Helpers.show_error(@window, "An error happened while trying to export:\n\n#{e.message}")
+        Helpers.show_error(@window, _('An error happened while trying to export:') + "\n\n#{e.message}")
       end
   end
 end

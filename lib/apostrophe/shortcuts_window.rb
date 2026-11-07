@@ -2,6 +2,7 @@
 
 require 'adwaita'
 require 'cgi'
+require_relative 'helpers'
 
 module Apostrophe
   # ShortcutsWindow is the app.shortcuts window: every accelerator Apostrophe
@@ -16,54 +17,7 @@ module Apostrophe
   # reaches the widget by handing a Gtk::Builder a small XML document
   # generated from that data, which is the one construction path that works.
   class ShortcutsWindow
-    # [group title, [[shortcut title, accelerator], ...]], in upstream's order.
-    GROUPS = [
-      ['General', [
-        ['New', '<Primary>n'],
-        ['Open', '<Primary>o'],
-        ['Save', '<Primary>s'],
-        ['Save as', '<Shift><Primary>s'],
-        ['Close document', '<Primary>w'],
-        ['Quit application', '<Primary>q'],
-      ]
-],
-      ['Modes', [
-        ['Focus mode', '<Primary>d'],
-        ['Hemingway mode', '<Primary>t'],
-        ['Preview', '<Primary>p'],
-        ['Fullscreen', 'F11'],
-      ]
-],
-      ['Find', [
-        ['Find', '<Primary>f'],
-        ['Find and replace', '<Primary>h'],
-      ]
-],
-      ['Markdown', [
-        ['Separator', '<Primary>r'],
-        ['Header', '<Primary>1 4'],
-        ['List item', '<Primary>u'],
-        ['Italic', '<Primary>i'],
-        ['Bold', '<Primary>b'],
-        ['Strikeout', '<Shift><Primary>D'],
-      ]
-],
-      ['Copy and paste', [
-        ['Copy selected text to clipboard', '<Primary>C'],
-        ['Cut selected text to clipboard', '<Primary>X'],
-        ['Paste selected text from clipboard', '<Primary>V'],
-      ]
-],
-      ['Undo and redo', [
-        ['Undo previous command', '<Primary>Z'],
-        ['Redo previous command', '<Shift><Primary>Z'],
-      ]
-],
-      ['Selection', [
-        ['Select all text', '<Primary>A'],
-      ]
-],
-    ].freeze
+    Helpers.bind_gettext(self)
 
     def present(parent)
       window.transient_for = parent
@@ -80,6 +34,60 @@ module Apostrophe
 
       def builder = @builder ||= Gtk::Builder.new.tap { |b| b.add_from_string(xml) }
 
+      # [group title, [[shortcut title, accelerator], ...]], in upstream's
+      # order. Built as a method rather than a frozen constant, so each
+      # title goes through `_` when the window is actually built rather
+      # than when this file is first required.
+      def groups
+        [
+          [_('General'), [
+            [_('New'), '<Primary>n'],
+            [_('Open'), '<Primary>o'],
+            [_('Save'), '<Primary>s'],
+            [_('Save as'), '<Shift><Primary>s'],
+            [_('Close document'), '<Primary>w'],
+            [_('Quit application'), '<Primary>q'],
+          ]
+],
+          [_('Modes'), [
+            [_('Focus mode'), '<Primary>d'],
+            [_('Hemingway mode'), '<Primary>t'],
+            [_('Preview'), '<Primary>p'],
+            [_('Fullscreen'), 'F11'],
+          ]
+],
+          [_('Find'), [
+            [_('Find'), '<Primary>f'],
+            [_('Find and replace'), '<Primary>h'],
+          ]
+],
+          [_('Markdown'), [
+            [_('Separator'), '<Primary>r'],
+            [_('Header'), '<Primary>1 4'],
+            [_('List item'), '<Primary>u'],
+            [_('Italic'), '<Primary>i'],
+            [_('Bold'), '<Primary>b'],
+            [_('Strikeout'), '<Shift><Primary>D'],
+          ]
+],
+          [_('Copy and paste'), [
+            [_('Copy selected text to clipboard'), '<Primary>C'],
+            [_('Cut selected text to clipboard'), '<Primary>X'],
+            [_('Paste selected text from clipboard'), '<Primary>V'],
+          ]
+],
+          [_('Undo and redo'), [
+            [_('Undo previous command'), '<Primary>Z'],
+            [_('Redo previous command'), '<Shift><Primary>Z'],
+          ]
+],
+          [_('Selection'), [
+            [_('Select all text'), '<Primary>A'],
+          ]
+],
+        ]
+      end
+
       def xml
         <<~XML
           <interface>
@@ -89,7 +97,7 @@ module Apostrophe
                 <object class="GtkShortcutsSection" id="section">
                   <property name="section-name">shortcuts</property>
                   <property name="max-height">10</property>
-                  #{GROUPS.map { |title, shortcuts| group_xml(title, shortcuts) }.join}
+                  #{groups.map { |title, shortcuts| group_xml(title, shortcuts) }.join}
                 </object>
               </child>
             </object>

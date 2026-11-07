@@ -1,0 +1,869 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nepali Gnome Translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-06-15 16:19+0545\n"
+"Last-Translator: \n"
+"Language-Team: Nepali <chautari@gmail.com>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "क्यारेक्टर"
+msgstr[1] "वर्ण"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "अनुच्छेद"
+msgstr[1] "अनुच्छेदहरू"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "वाक्य"
+msgstr[1] "एन/ए"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "शब्द"
+msgstr[1] "एन/ए"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+msgid "%{selected} of %{total} Characters"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:141
+msgid "%{selected} of %{total} Paragraphs"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+msgid "%{selected} of %{total} Sentences"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "उद्धरण"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "निर्यात गर्नुहोस्…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+msgid "An error happened while trying to export:"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+#, fuzzy
+msgid "Autohide headerbar"
+msgstr "स्वत: लुकाउनुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "बाक्लो"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "_रद्द"
+
+#: ../lib/apostrophe/search_bar.rb:227
+#, fuzzy
+msgid "Case Sensitive"
+msgstr "केस संवेदनशिल"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "कागजात बन्द गर्नुहोस्"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "HTML को रूपमा प्रतिलिपि बनाउनुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "प्रतिलिपि बनाउनुहोस् र टाँस्नुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "चयन गरिएको पाठ क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "चयन गरिएको पाठ क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "क्लिपबोर्डमा चयन गरिएको पाठ काट्नुहोस्"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:275
+msgid "Discard Changes and Reload"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "त्रुटी"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "निर्यात गर्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "निर्यात गर्नुहोस्…"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "खोज्नुस्"
+
+#: ../lib/apostrophe/headerbar.rb:104
+msgid "Find and Replace"
+msgstr "फेला पार्नुहोस् र प्रतिस्थापन गर्नुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "फेला पार्नुहोस् र प्रतिस्थापन गर्नुहोस्"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "केन्द्रीयता मुद्रा"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "केन्द्रीयता मुद्रा"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "सूत्र छ ।"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+#, fuzzy
+msgid "Full-Width"
+msgstr "पूरा"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "पूरा पर्दा"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "सामान्य"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#, fuzzy
+msgid "HTML"
+msgstr "HTML को रूपमा प्रतिलिपि बनाउनुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+#, fuzzy
+msgid "HTML Options"
+msgstr "एचटीएमएल (HTML)"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+#, fuzzy
+msgid "Half-Height"
+msgstr "आधा"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+#, fuzzy
+msgid "Half-Width"
+msgstr "आधा"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "हेडर"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+#, fuzzy
+msgid "Hemingway Mode"
+msgstr "मोड स्विच: मोड %d"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "मोड स्विच: मोड %d"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+#, fuzzy
+msgid "Highlight style"
+msgstr "हाइलाइट"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+#, fuzzy
+msgid "Incremental bullets"
+msgstr "गोली चिन्ह"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+#, fuzzy
+msgid "Input format"
+msgstr "ढाँचा…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "छड्के"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "सामाग्री"
+
+#: ../lib/apostrophe/headerbar.rb:128
+msgid "Keyboard Shortcuts"
+msgstr "कुञ्जीपाटी सर्टकट"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "सुची सामाग्री"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "फाइलहरू:"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "फाइलहरू:"
+
+#: ../lib/apostrophe/main_window.rb:583
+#, fuzzy
+msgid "Markdown Files"
+msgstr "फाइलहरू:"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+#, fuzzy
+msgid "Markdown flavor documentation"
+msgstr "मिसिलिकरण"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "कुनै पनि चयन गरियेका मोडहरु संभावित %s मोडहरु संग मिलेनन्"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "नयाँ"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "नयाँ फाइल"
+
+#: ../lib/apostrophe/search_bar.rb:209
+#, fuzzy
+msgid "Next Match"
+msgstr "पछिल्लो जोडामा सार्नुहोस् (Ctrl+G)"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "हालको कागजात छैन"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+#, fuzzy
+msgid "No matching footnote found"
+msgstr "कुनै मिल्दो मद्दत पृष्ठ फेला परेन।"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+#, fuzzy
+msgid "Number Sections"
+msgstr "सङ्ख्या"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "खोल्नुहोस्:"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "पाठ्य सन्देश बताउ ।"
+
+#: ../lib/apostrophe/main_window.rb:560
+#, fuzzy
+msgid "Open a .md file"
+msgstr "एउटा फाइल खोल्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "एचटीएमएल (HTML)"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "पन्नाको आकार"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "क्लिपबोर्डबाट पाठ टाँस्नुहोस्"
+
+#: ../lib/apostrophe/main_window.rb:590
+#, fuzzy
+msgid "Plain Text Files"
+msgstr "सादा पाठ"
+
+#: ../lib/apostrophe/headerbar.rb:105
+msgid "Preferences"
+msgstr "प्राथमिकताहरू"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "प्रस्तुतिकरण"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "पूर्वावलोकन"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+#, fuzzy
+msgid "Previous Match"
+msgstr "अघिल्लो फेला पार्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "अनुप्रयोग अन्त्य गर्नुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "अघिल्लो आदेश फेरी गर्नुहोस्"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:235
+#, fuzzy
+msgid "Regular Expression"
+msgstr "नियमित अभिव्यक्तिको रूपमा जोडा मिलाउनुहोस्"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "बदलनुहोस्"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "सबै बदलनुहोस्"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "सङ्ग्रह गर्नुहोस्"
+
+#: ../lib/apostrophe/headerbar.rb:149
+msgid "Save As…"
+msgstr "...यस रुपमा बचत गर्नुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "...यस रुपमा बचत गर्नुहोस्"
+
+#: ../lib/apostrophe/main_window.rb:701
+#, fuzzy
+msgid "Save changes?"
+msgstr "...यस रुपमा बचत गर्नुहोस्"
+
+#: ../lib/apostrophe/main_window.rb:516
+#, fuzzy
+msgid "Save your File"
+msgstr "यस रूपमा फाइल बचत गर्नुहोस्"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "हालको कागजात छैन"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "सबै पाठ चयन गर्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "फोल्डर चयन गर्नुहोस्"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "चयन"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+#, fuzzy
+msgid "Self-contained"
+msgstr "आफै"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "विभाजक"
+
+#: ../lib/apostrophe/main_window.rb:143
+#, fuzzy
+msgid "Show Statistics"
+msgstr "खेल खेलिएको तथ्याङ्क देखाउनुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+#, fuzzy
+msgid "Standalone"
+msgstr "एक्लो हस्ताक्षर"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+msgid "Strikeout"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "विशेष चिन्हित वाक्य"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+#, fuzzy
+msgid "Table of Contents"
+msgstr "विषयसूची"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "फन्ट साइज बढाउनुहोस्"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr ""
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "सम्पादन योग्यका लागि यदि यसलाई पुन: सुधार गर्नुहोस्/सक्षम पारियो भने"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "अघिल्लो आदेश फर्किनुहोस्"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+#, fuzzy
+msgid "Unsaved documents"
+msgstr "कागजातहरू"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "गाढा रङप्रयोग गर्नुहोस्"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "हल्का रङ प्रयोग गर्नुहोस्"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+#, fuzzy
+msgid "Use Sepia Colors"
+msgstr "प्रणाली रङ प्रयोग गर्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "विशेष चिन्हित वाक्य"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "प्रणाली रङ प्रयोग गर्नुहोस्"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+#, fuzzy
+msgid "Use bigger text"
+msgstr "पाठ सम्पादकमा प्रयोग गर्नका लागि कुञ्जी बाइन्डिङ ।"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+#, fuzzy
+msgid "Windowed"
+msgstr "पूरा स्क्रिन छोडेर सञ्झ्याल रूपमा जानहोस"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+#, fuzzy
+msgid "bold text"
+msgstr "बाक्लो पाठले सामान्य पाठमा समान रङ प्रयोग गर्नु पर्दछ या पर्दैन"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+#, fuzzy
+msgid "italic text"
+msgstr "छड्के"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+#, fuzzy
+msgid "strikethrough text"
+msgstr "अक्षरलाई बीचमा काटनु"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr "यदि तपाईँले बचत गर्नुभएन भने, तपाईँका परिवर्तनहरू हराउने छन् ।"
+
+#, fuzzy
+#~ msgid "Apostrophe"
+#~ msgstr "उद्धरण"
+
+#, fuzzy
+#~ msgid "Color scheme"
+#~ msgstr "रङ योजना"
+
+#, fuzzy
+#~ msgid "Check spelling while typing"
+#~ msgstr "टाइप गर्दा हिज्जे जाँच गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "टाढाको लगइन सक्षम वा अक्षम पार्नुहोस्"
+
+#, fuzzy
+#~ msgid "Autohide Headerbar"
+#~ msgstr "स्वत: लुकाउनुहोस्"
+
+#, fuzzy
+#~ msgid "Open file base path"
+#~ msgstr "फाइल [मार्ग]"
+
+#, fuzzy
+#~ msgid "Default statistic"
+#~ msgstr "पुर्वनिर्धारित "
+
+#, fuzzy
+#~ msgid "Characters per line"
+#~ msgstr "पङ्ति"
+
+#, fuzzy
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "जब प्रयोगकर्ताद्वारा पाठ संशोधन गर्सकिन्छ"
+
+#, fuzzy
+#~ msgid "Preview mode"
+#~ msgstr "पूर्वावलोकन छैन"
+
+#, fuzzy
+#~ msgid "How to display the preview."
+#~ msgstr "पूर्वावलोकन छैन"
+
+#, fuzzy
+#~ msgid "Preview active"
+#~ msgstr "पुर्वदृष्य औजार सक्रिय"
+
+#, fuzzy
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "फन्ट साइज बढाउनुहोस्"
+
+#, fuzzy
+#~ msgid "Edit Markdown in style"
+#~ msgstr "शैली:"
+
+#~ msgid "Features:"
+#~ msgstr "विशेषता:"
+
+#, fuzzy
+#~ msgid "A distraction-free mode"
+#~ msgstr "शैली"
+
+#, fuzzy
+#~ msgid "Apostrophe website"
+#~ msgstr "उद्धरण"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "translator-credits Pawan Chitrakar <chautari@gmail.com>,Jyotsna Shrestha "
+#~ "<jyoshrestha@hotmail.com>, Nabin Gautam<nabingautam2001@yahoo.com>"
+
+#, fuzzy
+#~ msgid "Help to translate:"
+#~ msgstr "मद्दत अनुवाद"
+
+#, fuzzy
+#~ msgid "CSS File"
+#~ msgstr "वेबसाइटहरू आफ्नै CSS परिमार्जन गर्न अनुकूल CSS फाइल प्रयोग गर्नुहोस्।"
+
+#, fuzzy
+#~ msgid "Select CSS file"
+#~ msgstr "CSS"
+
+#, fuzzy
+#~ msgid "Save as…"
+#~ msgstr "...यस रुपमा बचत गर्नुहोस्"
+
+#~ msgid "Menu"
+#~ msgstr "मेनु"
+
+#~ msgid "New Window"
+#~ msgstr "नयाँ सञ्झ्याल"
+
+#~ msgid "Restore session"
+#~ msgstr "सत्र पूर्वावस्थामा ल्याउनुहोस्"
+
+#, fuzzy
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "पाठ सम्पादक सुरु भएको बेलामा तपाईँको अघिल्लो सत्रमा फर्कनुहोस्"
+
+#, fuzzy
+#~ msgid "Screen Layout"
+#~ msgstr "ढाँचा"
+
+#~ msgid "No Results Found"
+#~ msgstr "नतिजा भेटिएन"
+
+#, fuzzy
+#~ msgid "aA"
+#~ msgstr "पाठबाट थम्बनेल प्रतिमा (पूर्वनिर्धारित Aa)"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "नयाँ"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "खोल्नुहोस्:"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "सङ्ग्रह गर्नुहोस्"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "पूर्वावलोकन"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "खोज्नुस्"
+
+#, fuzzy, python-format
+#~ msgid "Export to %s"
+#~ msgstr "अज्ञात वा असमर्थित कागजात निर्यात ढाँचा '%s'।"
+
+#, fuzzy
+#~ msgid "verb"
+#~ msgstr "(*क्रिया) पहिचान गरिएको छैन"
+
+#, fuzzy, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "बन्द गर्नु भन्दा पहिले छवि \"%s\" मा परिवर्तनहरू बचत गर्नुहुन्छ?"
+
+#, fuzzy
+#~ msgid "Close without saving"
+#~ msgstr "बचत नगरी बन्द गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Save now"
+#~ msgstr "अहिले होईन"
+
+#, fuzzy
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "%d:%02d:%02d"
+
+#, fuzzy
+#~ msgid "web page"
+#~ msgstr "वेब पृष्ठ"

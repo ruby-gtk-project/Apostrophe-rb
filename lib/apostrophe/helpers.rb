@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'adwaita'
+require 'gettext'
 require 'open3'
 require 'shellwords'
 require_relative 'rb/version'
@@ -19,7 +20,27 @@ module Apostrophe
     # port ships its data files beside lib/, so a media path resolves there.
     MEDIA_DIRECTORY = File.expand_path('resources', __dir__)
 
+    # The gettext text domain every translatable class binds to, and the
+    # directory `rake po:compile` writes its .mo files under (see
+    # po/README and the Rakefile's `po` namespace). Upstream's domain is
+    # the project's D-Bus-style app id; this port uses its own gem name,
+    # since the message catalogue is this port's own, not upstream's.
+    GETTEXT_DOMAIN = 'apostrophe-rb'
+    LOCALE_DIRECTORY = File.expand_path('../../data/locale', __dir__)
+
+    include GetText
+    bindtextdomain(GETTEXT_DOMAIN, path: LOCALE_DIRECTORY)
+
     module_function
+
+    # Makes `_`, `n_` and friends available as instance methods on `klass`,
+    # looking up `GETTEXT_DOMAIN`'s catalogue under `LOCALE_DIRECTORY`. Every
+    # class with user-visible text calls this once in its own body, right
+    # under its `require_relative 'helpers'`.
+    def bind_gettext(klass)
+      klass.include(GetText)
+      klass.bindtextdomain(GETTEXT_DOMAIN, path: LOCALE_DIRECTORY)
+    end
 
     # Upstream's `App()` — Gio.Application.get_default.
     def app = Gio::Application.default
@@ -46,8 +67,8 @@ module Apostrophe
     end
 
     def show_error(parent, message)
-      Adwaita::MessageDialog.new(parent, 'Error', message).tap do |dialog|
-        dialog.add_response('close', 'Close')
+      Adwaita::MessageDialog.new(parent, _('Error'), message).tap do |dialog|
+        dialog.add_response('close', _('Close'))
         dialog.close_response = 'close'
         dialog.present
       end

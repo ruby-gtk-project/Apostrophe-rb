@@ -20,6 +20,8 @@ module Apostrophe
   # and data/ui/Export.ui. The format list is ExportFormat::ALL (ported from
   # data/media/formats.json), rather than reading that JSON back at runtime.
   class AdvancedExportDialog
+    Helpers.bind_gettext(self)
+
     PAGE_SIZES = %w[A4 Letter].freeze
     SYNTAX_STYLES = %w[pygments kate monochrome espresso zenburn haddock tango].freeze
 
@@ -92,7 +94,7 @@ module Apostrophe
 
       def cancel_button
         @cancel_button ||= Gtk::Button.new.tap do |button|
-          button.label = 'Cancel'
+          button.label = _('Cancel')
           button.add_css_class('popup')
           button.signal_connect('clicked') { window.close }
         end
@@ -100,7 +102,7 @@ module Apostrophe
 
       def export_button
         @export_button ||= Gtk::Button.new.tap do |button|
-          button.label = 'Export'
+          button.label = _('Export')
           button.add_css_class('popup')
           button.add_css_class('suggested-action')
           button.signal_connect('clicked') { on_export }
@@ -180,7 +182,7 @@ module Apostrophe
 
       def general_expander
         @general_expander ||= Adwaita::ExpanderRow.new.tap do |row|
-          row.title = 'Options'
+          row.title = _('Options')
           row.activatable = false
           row.add_row(standalone_row)
           row.add_row(toc_row)
@@ -190,8 +192,8 @@ module Apostrophe
 
       def standalone_row
         @standalone_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Standalone'
-          row.subtitle = 'Use a header and footer to include things like stylesheets and meta information'
+          row.title = _('Standalone')
+          row.subtitle = _('Use a header and footer to include things like stylesheets and meta information')
           row.activatable_widget = sw_standalone
           row.add_suffix(sw_standalone)
         end
@@ -207,7 +209,7 @@ module Apostrophe
 
       def toc_row
         @toc_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Table of Contents'
+          row.title = _('Table of Contents')
           row.activatable_widget = sw_toc
           row.add_suffix(sw_toc)
         end
@@ -217,7 +219,7 @@ module Apostrophe
 
       def numbers_row
         @numbers_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Number Sections'
+          row.title = _('Number Sections')
           row.activatable_widget = sw_numbers
           row.add_suffix(sw_numbers)
         end
@@ -227,7 +229,7 @@ module Apostrophe
 
       def page_size_group
         @page_size_group ||= Adwaita::PreferencesGroup.new.tap do |g|
-          g.title = 'Page Size'
+          g.title = _('Page Size')
           g.margin_top = 18
           g.add(page_size_row)
         end
@@ -235,7 +237,7 @@ module Apostrophe
 
       def page_size_row
         @page_size_row ||= Adwaita::ComboRow.new.tap do |row|
-          row.title = 'Page Size'
+          row.title = _('Page Size')
           row.activatable = false
           row.model = Gtk::StringList.new(PAGE_SIZES)
         end
@@ -243,7 +245,7 @@ module Apostrophe
 
       def html_options_group
         @html_options_group ||= Adwaita::PreferencesGroup.new.tap do |g|
-          g.title = 'HTML Options'
+          g.title = _('HTML Options')
           g.margin_top = 18
           g.add(self_contained_row)
         end
@@ -251,8 +253,8 @@ module Apostrophe
 
       def self_contained_row
         @self_contained_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Self-contained'
-          row.subtitle = 'Produces an HTML file with no external dependencies'
+          row.title = _('Self-contained')
+          row.subtitle = _('Produces an HTML file with no external dependencies')
           row.activatable_widget = sw_self_contained
           row.add_suffix(sw_self_contained)
         end
@@ -262,7 +264,7 @@ module Apostrophe
 
       def syntax_options_group
         @syntax_options_group ||= Adwaita::PreferencesGroup.new.tap do |g|
-          g.title = 'Syntax Highlighting'
+          g.title = _('Syntax Highlighting')
           g.margin_top = 18
           g.add(syntax_highlighting_expander)
         end
@@ -270,7 +272,7 @@ module Apostrophe
 
       def syntax_highlighting_expander
         @syntax_highlighting_expander ||= Adwaita::ExpanderRow.new.tap do |row|
-          row.title = 'Use Syntax Highlighting'
+          row.title = _('Use Syntax Highlighting')
           row.enable_expansion = false
           row.show_enable_switch = true
           row.add_row(syntax_style_row)
@@ -279,7 +281,7 @@ module Apostrophe
 
       def syntax_style_row
         @syntax_style_row ||= Adwaita::ComboRow.new.tap do |row|
-          row.title = 'Highlight style'
+          row.title = _('Highlight style')
           row.activatable = false
           row.model = Gtk::StringList.new(SYNTAX_STYLES)
         end
@@ -287,7 +289,7 @@ module Apostrophe
 
       def presentation_options_group
         @presentation_options_group ||= Adwaita::PreferencesGroup.new.tap do |g|
-          g.title = 'Presentation'
+          g.title = _('Presentation')
           g.margin_top = 18
           g.add(incremental_bullets_row)
         end
@@ -295,8 +297,8 @@ module Apostrophe
 
       def incremental_bullets_row
         @incremental_bullets_row ||= Adwaita::ActionRow.new.tap do |row|
-          row.title = 'Incremental bullets'
-          row.subtitle = 'Show one bullet point after another in a slideshow'
+          row.title = _('Incremental bullets')
+          row.subtitle = _('Show one bullet point after another in a slideshow')
           row.activatable_widget = sw_incremental_bullets
           row.add_suffix(sw_incremental_bullets)
         end
@@ -330,7 +332,7 @@ module Apostrophe
         end
       end
 
-      def update_title = window.title = "Export to #{selected_format.name}"
+      def update_title = window.title = format(_('Export to %{name}'), name: selected_format.name)
 
       def update_go_back
         go_previous_revealer.reveal_child = leaflet.folded? && leaflet.visible_child == options_page
@@ -403,19 +405,19 @@ module Apostrophe
 
         if exports_multiple_files?
           chooser = Gtk::FileChooserNative.new(
-            'Export',
+            _('Export'),
             window,
             :select_folder,
-            'Select folder',
-            'Cancel',
+            _('Select folder'),
+            _('Cancel'),
           )
         else
           chooser = Gtk::FileChooserNative.new(
-            'Export',
+            _('Export'),
             window,
             :save,
-            "Export to #{format.name}",
-            'Cancel',
+            format(_('Export to %{name}'), name: format.name),
+            _('Cancel'),
           )
           chooser.current_name = "#{@document.name}.#{format.ext}"
         end
@@ -452,7 +454,7 @@ module Apostrophe
           outputfile: outputfile,
         )
       rescue RuntimeError => e
-        Helpers.show_error(window, "An error happened while trying to export:\n\n#{e.message}")
+        Helpers.show_error(window, _('An error happened while trying to export:') + "\n\n#{e.message}")
       end
 
       # Unzips the bundled reveal.js into the export folder. Shelled out to

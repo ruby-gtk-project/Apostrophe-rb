@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'gtk4'
+require_relative 'helpers'
 
 module Apostrophe
   # PreviewLayoutSwitcherItem is one row of the preview layout popover: an
@@ -15,6 +16,8 @@ module Apostrophe
   # needlessly heavy for one boolean, so `selected=` below does directly
   # what upstream's `on_selected` handler does.
   class PreviewLayoutSwitcherItem < Gtk::ListBoxRow
+    Helpers.bind_gettext(self)
+
     # `layout` is one entry of PreviewLayout::ALL: a hash with :value, :text
     # and :icon.
     attr_reader :layout
@@ -25,7 +28,7 @@ module Apostrophe
       @selected = false
       self.child = row
       icon.icon_name = layout.fetch(:icon)
-      title.label = layout.fetch(:text)
+      title.label = _(layout.fetch(:text))
     end
 
     def selected? = @selected

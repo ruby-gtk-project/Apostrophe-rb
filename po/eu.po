@@ -1,0 +1,972 @@
+# Basque translation for apostrophe.
+# Copyright (C) 2019 apostrophe's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apostrophe package.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apostrophe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"PO-Revision-Date: 2022-10-15 17:00+0100\n"
+"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../lib/apostrophe/stats_handler.rb:119
+#, fuzzy
+msgid "%{count} Character"
+msgid_plural "%{count} Characters"
+msgstr[0] "Karaktere {:n}"
+msgstr[1] "{:n} karektere"
+
+#: ../lib/apostrophe/stats_handler.rb:143
+#, fuzzy
+msgid "%{count} Paragraph"
+msgid_plural "%{count} Paragraphs"
+msgstr[0] "Paragrafo {:n}"
+msgstr[1] "{:n} paragrafo"
+
+#: ../lib/apostrophe/stats_handler.rb:135
+#, fuzzy
+msgid "%{count} Sentence"
+msgid_plural "%{count} Sentences"
+msgstr[0] "Esaldi {:n}"
+msgstr[1] "{:n} esaldi"
+
+#: ../lib/apostrophe/stats_handler.rb:127
+#, fuzzy
+msgid "%{count} Word"
+msgid_plural "%{count} Words"
+msgstr[0] "Hitz {:n}"
+msgstr[1] "{:n} hitz"
+
+#: ../lib/apostrophe/stats_handler.rb:117
+#, fuzzy
+msgid "%{selected} of %{total} Characters"
+msgstr "{:n} / {:n} karaktere"
+
+#: ../lib/apostrophe/stats_handler.rb:141
+#, fuzzy
+msgid "%{selected} of %{total} Paragraphs"
+msgstr "{:n} / {:n} paragrafo"
+
+#: ../lib/apostrophe/stats_handler.rb:150
+msgid "%{selected} of %{total} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:133
+#, fuzzy
+msgid "%{selected} of %{total} Sentences"
+msgstr "{:n} / {:n} esaldi"
+
+#: ../lib/apostrophe/stats_handler.rb:125
+msgid "%{selected} of %{total} Words"
+msgstr ""
+
+#: ../lib/apostrophe/stats_handler.rb:155
+msgid "%{time} Read Time"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:129
+#, fuzzy
+msgid "About Apostrophe"
+msgstr "Apostrophe aplikazioari _buruz"
+
+#: ../lib/apostrophe/headerbar.rb:151
+#, fuzzy
+msgid "Advanced Export…"
+msgstr "_Esportazio aurreratua…"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:457
+#: ../lib/apostrophe/export_dialog.rb:83
+#, fuzzy
+msgid "An error happened while trying to export:"
+msgstr ""
+"Errorea gertatu da esportazioan:\n"
+"\n"
+"{err_msg}"
+
+#: ../lib/apostrophe/texlive_warning.rb:66
+msgid ""
+"Apostrophe needs TeXLive\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from your distribution repositories"
+msgstr ""
+
+#: ../lib/apostrophe/texlive_warning.rb:58
+msgid ""
+"Apostrophe needs the TeXLive extension\n"
+"in order to export PDF or LaTeX files.\n"
+"\n"
+"Install it from Apostrophe's page in Software\n"
+"or by running the following command in a terminal:"
+msgstr ""
+
+#: ../lib/apostrophe/preferences_dialog.rb:68
+msgid "Autohide header and statusbars while typing"
+msgstr "Idaztean, ezkutatu automatikoki goiburu-barra eta egoera-barra"
+
+#: ../lib/apostrophe/preferences_dialog.rb:67
+msgid "Autohide headerbar"
+msgstr "Ezkutatu automatikoki goiburu-barra"
+
+#: ../lib/apostrophe/shortcuts_window.rb:69
+#, fuzzy
+msgid "Bold"
+msgstr "Lodia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:97
+#: ../lib/apostrophe/advanced_export_dialog.rb:412
+#: ../lib/apostrophe/advanced_export_dialog.rb:420
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
+#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+msgid "Cancel"
+msgstr "Utzi"
+
+#: ../lib/apostrophe/search_bar.rb:227
+msgid "Case Sensitive"
+msgstr "Maiuskulak/Minuskulak"
+
+#: ../lib/apostrophe/helpers.rb:71 ../lib/apostrophe/hemingway_dialog.rb:30
+msgid "Close"
+msgstr "Itxi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:48
+#, fuzzy
+msgid "Close document"
+msgstr "Itxi dokumentua"
+
+#: ../lib/apostrophe/export_format.rb:56
+msgid "ConTeXt"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:152
+#, fuzzy
+msgid "Copy HTML"
+msgstr "_Kopiatu HTMLa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:73
+#, fuzzy
+msgid "Copy and paste"
+msgstr "Kopiatu eta itsatsi"
+
+#: ../lib/apostrophe/shortcuts_window.rb:74
+#, fuzzy
+msgid "Copy selected text to clipboard"
+msgstr "Kopiatu hautatutako testua arbelean"
+
+#: ../lib/apostrophe/texlive_warning.rb:112
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Kopiatu hautatutako testua arbelean"
+
+#: ../lib/apostrophe/shortcuts_window.rb:75
+#, fuzzy
+msgid "Cut selected text to clipboard"
+msgstr "Ebaki hautatutako testua arbelera"
+
+#: ../lib/apostrophe/main_window.rb:708
+msgid "Discard"
+msgstr "Baztertu"
+
+#: ../lib/apostrophe/main_window.rb:275
+#, fuzzy
+msgid "Discard Changes and Reload"
+msgstr "_Baztertu aldaketak eta birkargatu"
+
+#: ../lib/apostrophe/export_format.rb:48
+msgid "EPUB v3"
+msgstr ""
+
+#: ../lib/apostrophe/helpers.rb:70
+msgid "Error"
+msgstr "Errorea"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:105
+#: ../lib/apostrophe/advanced_export_dialog.rb:408
+#: ../lib/apostrophe/advanced_export_dialog.rb:416
+#: ../lib/apostrophe/export_dialog.rb:48 ../lib/apostrophe/export_dialog.rb:51
+msgid "Export"
+msgstr "Esportatu"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:335
+#: ../lib/apostrophe/advanced_export_dialog.rb:419
+#, fuzzy
+msgid "Export to %{name}"
+msgstr "Esportatu hone: {}"
+
+#: ../lib/apostrophe/main_window.rb:259
+msgid "File Has Changed on Disk"
+msgstr "Fitxategia diskoan aldatu da"
+
+#: ../lib/apostrophe/headerbar.rb:84 ../lib/apostrophe/shortcuts_window.rb:59
+#: ../lib/apostrophe/shortcuts_window.rb:60
+msgid "Find"
+msgstr "Aurkitu"
+
+#: ../lib/apostrophe/headerbar.rb:104
+#, fuzzy
+msgid "Find and Replace"
+msgstr "Bilatu eta _ordeztu"
+
+#: ../lib/apostrophe/shortcuts_window.rb:61
+#, fuzzy
+msgid "Find and replace"
+msgstr "Bilatu eta ordeztu"
+
+#: ../lib/apostrophe/preferences_dialog.rb:90
+msgid "Flavor of markdown Apostrophe will use"
+msgstr "Apostrophek erabiliko duen markdown aldaera"
+
+#: ../lib/apostrophe/headerbar.rb:53 ../lib/apostrophe/headerbar.rb:121
+#, fuzzy
+msgid "Focus Mode"
+msgstr "_Fokuratze modua"
+
+#: ../lib/apostrophe/shortcuts_window.rb:53
+#, fuzzy
+msgid "Focus mode"
+msgstr "Fokuratze-modua"
+
+#: ../lib/apostrophe/inline_preview.rb:146
+#, fuzzy
+msgid ""
+"Formula looks incorrect:\n"
+"\n"
+"“%{message}”"
+msgstr "Formula okerra dela dirudi:"
+
+#: ../lib/apostrophe/inline_preview.rb:148
+msgid "Formula preview needs latex and dvipng, which are not installed."
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:27
+msgid "Full-Width"
+msgstr "Zabalera osoa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:56
+#, fuzzy
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:43
+#, fuzzy
+msgid "General"
+msgstr "Orokorra"
+
+#: ../lib/apostrophe/export_format.rb:61
+msgid "Groff Man"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+msgid "HTML"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:248
+msgid "HTML Options"
+msgstr "HTML aukerak"
+
+#: ../lib/apostrophe/export_format.rb:52
+msgid "HTML5 Slideshow (DZSlides)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:49
+msgid "HTML5 Slideshow (reveal.js)"
+msgstr ""
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:29
+msgid "Half-Height"
+msgstr "Altuera erdia"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:28
+msgid "Half-Width"
+msgstr "Zabalera erdia"
+
+#: ../lib/apostrophe/format_inserter.rb:68
+#: ../lib/apostrophe/shortcuts_window.rb:66
+msgid "Header"
+msgstr "Goiburua"
+
+#: ../lib/apostrophe/headerbar.rb:54 ../lib/apostrophe/headerbar.rb:120
+#: ../lib/apostrophe/hemingway_dialog.rb:29
+msgid "Hemingway Mode"
+msgstr "Hemingway modua"
+
+#: ../lib/apostrophe/main_window.rb:447
+msgid "Hemingway Mode is on; text cannot be deleted"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:54
+#, fuzzy
+msgid "Hemingway mode"
+msgstr "Hemingway modua"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:284
+msgid "Highlight style"
+msgstr "Nabarmentze-estiloa"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:300
+msgid "Incremental bullets"
+msgstr "Bulet inkrementalak"
+
+#: ../lib/apostrophe/preferences_dialog.rb:89
+msgid "Input format"
+msgstr "Sarrerako formatua"
+
+#: ../lib/apostrophe/shortcuts_window.rb:68
+#, fuzzy
+msgid "Italic"
+msgstr "Etzana"
+
+#: ../lib/apostrophe/format_inserter.rb:180
+msgid "Item"
+msgstr "Elementua"
+
+#: ../lib/apostrophe/headerbar.rb:128
+#, fuzzy
+msgid "Keyboard Shortcuts"
+msgstr "Las_ter-teklak"
+
+#: ../lib/apostrophe/export_format.rb:53
+msgid "LaTeX (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:50
+msgid "LaTeX Beamer Slideshow (pdf)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:51
+msgid "LaTeX Beamer Slideshow (tex)"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:46
+msgid "LibreOffice Text Document"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:67
+#, fuzzy
+msgid "List item"
+msgstr "Zerrenda-elementua"
+
+#: ../lib/apostrophe/shortcuts_window.rb:64
+#, fuzzy
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:551
+#, fuzzy
+msgid "Markdown (.md)"
+msgstr "Markdown"
+
+#: ../lib/apostrophe/main_window.rb:583
+msgid "Markdown Files"
+msgstr "Markdown fitxategiak"
+
+#: ../lib/apostrophe/preferences_dialog.rb:100
+msgid "Markdown flavor documentation"
+msgstr "Markdown aldaeraren dokumentazioa"
+
+#: ../lib/apostrophe/export_format.rb:55
+msgid "MediaWiki Markup"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:47
+msgid "Microsoft Word (docx)"
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:52
+#, fuzzy
+msgid "Modes"
+msgstr "Moduak"
+
+#: ../lib/apostrophe/headerbar.rb:68 ../lib/apostrophe/shortcuts_window.rb:44
+msgid "New"
+msgstr "Berria"
+
+#: ../lib/apostrophe/document.rb:65
+msgid "New File"
+msgstr "Fitxategi berria"
+
+#: ../lib/apostrophe/search_bar.rb:209
+msgid "Next Match"
+msgstr "Hurrengo parekatzea"
+
+#: ../lib/apostrophe/open_popover.rb:86
+msgid "No Recent Documents"
+msgstr "Ez dago azken aldiko dokumenturik"
+
+#: ../lib/apostrophe/inline_preview.rb:181
+msgid "No matching footnote found"
+msgstr "Ez da aurkitu bat datorren oin-oharrik"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:222
+msgid "Number Sections"
+msgstr "Zenbakitu atalak"
+
+#: ../lib/apostrophe/export_format.rb:83
+msgid "ODT"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/shortcuts_window.rb:45
+msgid "Open"
+msgstr "Ireki"
+
+#: ../lib/apostrophe/headerbar.rb:137
+#, fuzzy
+msgid "Open Tutorial"
+msgstr "Ireki t_utoriala"
+
+#: ../lib/apostrophe/main_window.rb:560
+msgid "Open a .md file"
+msgstr "Ireki .md fitxategia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:185
+#, fuzzy
+msgid "Options"
+msgstr "HTML aukerak"
+
+#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+msgid "PDF"
+msgstr ""
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:232
+#: ../lib/apostrophe/advanced_export_dialog.rb:240
+msgid "Page Size"
+msgstr "Orrialde-tamaina"
+
+#: ../lib/apostrophe/shortcuts_window.rb:76
+#, fuzzy
+msgid "Paste selected text from clipboard"
+msgstr "Itsatsi hautatutako testua arbeletik"
+
+#: ../lib/apostrophe/main_window.rb:590
+msgid "Plain Text Files"
+msgstr "Testu soileko fitxategiak"
+
+#: ../lib/apostrophe/headerbar.rb:105
+#, fuzzy
+msgid "Preferences"
+msgstr "_Hobespenak"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:292
+msgid "Presentation"
+msgstr "Aurkezpena"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:92
+#: ../lib/apostrophe/preview_window.rb:37
+#: ../lib/apostrophe/shortcuts_window.rb:55
+msgid "Preview"
+msgstr "Aurrebista"
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "Preview needs a WebKit binding this build does not have."
+msgstr ""
+
+#: ../lib/apostrophe/search_bar.rb:202
+msgid "Previous Match"
+msgstr "Aurreko parekatzea"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:257
+msgid "Produces an HTML file with no external dependencies"
+msgstr "Kanpoko mendekotasunik ez duen HTML fitxategia sortzen du"
+
+#: ../lib/apostrophe/shortcuts_window.rb:49
+#, fuzzy
+msgid "Quit application"
+msgstr "Irten aplikaziotik"
+
+#: ../lib/apostrophe/shortcuts_window.rb:81
+#, fuzzy
+msgid "Redo previous command"
+msgstr "Berregin aurreko komandoa"
+
+#: ../lib/apostrophe/preferences_dialog.rb:79
+msgid "Reduce the margins width and increase the text size when possible"
+msgstr "Murriztu marjinen zabalerak eta handitu testu-tamaina, posible bada"
+
+#: ../lib/apostrophe/search_bar.rb:235
+msgid "Regular Expression"
+msgstr "Adierazpen erregularra"
+
+#: ../lib/apostrophe/search_bar.rb:242 ../lib/apostrophe/search_bar.rb:287
+msgid "Replace"
+msgstr "Ordeztu"
+
+#: ../lib/apostrophe/search_bar.rb:293
+msgid "Replace All"
+msgstr "Ordeztu denak"
+
+#: ../lib/apostrophe/export_format.rb:60
+msgid "Rich Text Format"
+msgstr ""
+
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
+#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/shortcuts_window.rb:46
+msgid "Save"
+msgstr "Gorde"
+
+#: ../lib/apostrophe/headerbar.rb:149
+#, fuzzy
+msgid "Save As…"
+msgstr "Gorde honela…"
+
+#: ../lib/apostrophe/shortcuts_window.rb:47
+#, fuzzy
+msgid "Save as"
+msgstr "Gorde honela"
+
+#: ../lib/apostrophe/main_window.rb:701
+msgid "Save changes?"
+msgstr "Gorde aldaketak?"
+
+#: ../lib/apostrophe/main_window.rb:516
+msgid "Save your File"
+msgstr "Gorde zure fitxategia"
+
+#: ../lib/apostrophe/open_popover.rb:71
+#, fuzzy
+msgid "Search Documents"
+msgstr "Ez dago azken aldiko dokumenturik"
+
+#: ../lib/apostrophe/shortcuts_window.rb:85
+#, fuzzy
+msgid "Select all text"
+msgstr "Hautatu testu guztia"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:411
+msgid "Select folder"
+msgstr "Hautatu karpeta"
+
+#: ../lib/apostrophe/shortcuts_window.rb:84
+#, fuzzy
+msgid "Selection"
+msgstr "Hautapena"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:256
+msgid "Self-contained"
+msgstr "Isolatua"
+
+#: ../lib/apostrophe/shortcuts_window.rb:65
+#, fuzzy
+msgid "Separator"
+msgstr "Bereizlea"
+
+#: ../lib/apostrophe/main_window.rb:143
+msgid "Show Statistics"
+msgstr "Erakutsi estatistikak"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:301
+msgid "Show one bullet point after another in a slideshow"
+msgstr "Erakutsi buleta bat bestearen atzetik diapositiba-aurkezpenetan"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:195
+msgid "Standalone"
+msgstr "Autonomoa"
+
+#: ../lib/apostrophe/shortcuts_window.rb:70
+#, fuzzy
+msgid "Strikeout"
+msgstr "Marratua"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:267
+msgid "Syntax Highlighting"
+msgstr "Sintaxiaren nabarmentzea"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:212
+msgid "Table of Contents"
+msgstr "Edukien aurkibidea"
+
+#: ../lib/apostrophe/texlive_warning.rb:87
+msgid "TexLive Required"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:59
+msgid "Texinfo"
+msgstr ""
+
+#: ../lib/apostrophe/export_format.rb:57
+#, fuzzy
+msgid "Textile"
+msgstr "Testu-tamaina"
+
+#: ../lib/apostrophe/hemingway_dialog.rb:22
+#, fuzzy
+msgid ""
+"The Hemingway Mode mimics the experience of writing on a typewriter, not "
+"allowing you to delete any text or doing any kind of editing.\n"
+"\n"
+"Only being able to move forward may be frustrating, but can be an "
+"interesting exercise for improving your writing skills, gaining focus or "
+"facing the task on hand with a different mindset."
+msgstr ""
+"Hemingway moduak idazmakina batean idazteko esperientzia imitatzen du: ez du "
+"uzten testurik ezabatzen edo inolako ediziorik egiten. \n"
+"\n"
+"Aurrera egitea beste aukerarik ez edukitzea frustagarria izan daiteke, baina "
+"ariketa interesgarria izan daiteke idazteko gaitasunak hobetzeko, fokuratzen "
+"ikasteko edo lanari beste ikuspegi batetik ekiteko.\n"
+"  "
+
+#: ../lib/apostrophe/main_window.rb:267
+msgid "The file has been changed by another program."
+msgstr "Fitxategia beste programa batek aldatu du."
+
+#: ../lib/apostrophe/main_window.rb:194
+msgid "The layout (full-width, half-width, half-height, windowed) still works."
+msgstr ""
+
+#: ../lib/apostrophe/shortcuts_window.rb:79
+#, fuzzy
+msgid "Undo and redo"
+msgstr "Desegin eta berregin"
+
+#: ../lib/apostrophe/shortcuts_window.rb:80
+#, fuzzy
+msgid "Undo previous command"
+msgstr "Desegin aurreko komandoa"
+
+#: ../lib/apostrophe/inhibitor.rb:26
+msgid "Unsaved documents"
+msgstr "Gorde gabeko dokumentuak"
+
+#: ../lib/apostrophe/theme_switcher.rb:33
+msgid "Use Dark Colors"
+msgstr "Erabili kolore ilunak"
+
+#: ../lib/apostrophe/theme_switcher.rb:31
+msgid "Use Light Colors"
+msgstr "Erabili kolore argiak"
+
+#: ../lib/apostrophe/theme_switcher.rb:32
+msgid "Use Sepia Colors"
+msgstr "Erabili sepia koloreak"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:275
+#, fuzzy
+msgid "Use Syntax Highlighting"
+msgstr "Sintaxiaren nabarmentzea"
+
+#: ../lib/apostrophe/theme_switcher.rb:30
+msgid "Use System Colors"
+msgstr "Erabili sistemaren koloreak"
+
+#: ../lib/apostrophe/advanced_export_dialog.rb:196
+msgid ""
+"Use a header and footer to include things like stylesheets and meta "
+"information"
+msgstr ""
+"Erabili goiburua eta  orri-oina estilo-orriak eta meta-informazioa bezalako "
+"gauzak gehitzeko"
+
+#: ../lib/apostrophe/preferences_dialog.rb:78
+msgid "Use bigger text"
+msgstr "Erabili testu handiagoa"
+
+#: ../lib/apostrophe/preview_layout_switcher.rb:30
+msgid "Windowed"
+msgstr "Leihoduna"
+
+#: ../lib/apostrophe/format_inserter.rb:29
+msgid "bold text"
+msgstr "testu lodia"
+
+#: ../lib/apostrophe/format_inserter.rb:25
+msgid "italic text"
+msgstr "testu etzana"
+
+#: ../lib/apostrophe/export_format.rb:58
+msgid "reStructuredText"
+msgstr ""
+
+#: ../lib/apostrophe/format_inserter.rb:33
+msgid "strikethrough text"
+msgstr "testu marratua"
+
+#: ../lib/apostrophe/main_window.rb:703
+#, fuzzy
+msgid ""
+"“%{title}” contains unsaved changes. If you don’t save, all your changes "
+"will be permanently lost."
+msgstr ""
+"“%s” dokumentuak gorde gabeko aldaketak ditu. Gordetzen ez baduzu, aldaketa "
+"guztiak betiko galduko dira."
+
+#~ msgid "Apostrophe"
+#~ msgstr "Apostrophe"
+
+#~ msgid "uberwriter;UberWriter;apostrophe;markdown;editor;text;write;"
+#~ msgstr "uberwriter;UberWriter;apostrophe;markdown;editorea;testua;idatzi;"
+
+#~ msgid "Apostrophe, an elegant, distraction-free markdown editor"
+#~ msgstr "Apostrophe, markdown editore dotore eta distrakziorik gabea"
+
+#~ msgid "Color scheme"
+#~ msgstr "Kolore-eskema"
+
+#~ msgid "Use the color scheme in the application's UI and in the text area."
+#~ msgstr "Erabili kolore-eskema aplikazioaren interfazean eta testu-arean."
+
+#~ msgid "Check spelling while typing"
+#~ msgstr "Egiaztatu ortografia idaztean"
+
+#~ msgid "Enable or disable spellchecking."
+#~ msgstr "Gaitu edo desgaitu ortografiaren egiaztatzea."
+
+#~ msgid "Synchronize editor/preview scrolling"
+#~ msgstr "Sinkronizatu editorearen/aurrebistaren korritzea"
+
+#~ msgid "Keep the editor and preview scroll positions in sync."
+#~ msgstr ""
+#~ "Mantendu editorearen eta aurrebistaren korritze-posizioa sinkronizatuta."
+
+#~ msgid "Input format to use when previewing and exporting using Pandoc."
+#~ msgstr ""
+#~ "Pandoc erabiliz aurrebista sortzean eta esportatzean erabiliko den "
+#~ "sarrerako formatua."
+
+#~ msgid "Autohide Headerbar"
+#~ msgstr "Ezkutatu automatikoki goiburu-barra"
+
+#~ msgid "Hide the header and status bars when typing."
+#~ msgstr "Ezkutatu goiburu- eta egoera-barrak idaztean."
+
+#~ msgid "Open file base path"
+#~ msgstr "Ireki fitxategiaren oinarrizko bide-izena"
+
+#~ msgid "Open file paths of the current session"
+#~ msgstr "Ireki uneko saioaren fitxategien bide-izenak"
+
+#~ msgid "Default statistic"
+#~ msgstr "Estatistika lehenetsia"
+
+#~ msgid "Which statistic is shown on the main window."
+#~ msgstr "Zein estatistika erakutsiko den leiho nagusian."
+
+#~ msgid "Characters per line"
+#~ msgstr "Karaktereak lerroko"
+
+#~ msgid "Maximum number of characters per line within the editor."
+#~ msgstr "Lerroko gehieneko karaktere kopurua editorean."
+
+#~ msgid "Whether the user can delete text or not."
+#~ msgstr "Erabiltzaileak testua ezabatu dezakeen ala ez."
+
+#~ msgid "Hemingway Toast Count"
+#~ msgstr "Hemingway topa egiteen zenbaketa"
+
+#~ msgid "Number of times the Hemingway Toast has been shown"
+#~ msgstr "Zenbat aldiz erakutsi den Hemingway topa egitea"
+
+#~ msgid "Preview mode"
+#~ msgstr "Aurrebista-modua"
+
+#~ msgid "How to display the preview."
+#~ msgstr "Nola bistaratu aurrebista."
+
+#~ msgid "Preview active"
+#~ msgstr "Aurrebista aktiboa"
+
+#~ msgid "Whether showing of preview is active when launching a new window."
+#~ msgstr ""
+#~ "Leiho berria abiarazten denean aurrebista erakustea aktibo dagoen ala ez."
+
+#~ msgid "Preferred relative size for the text."
+#~ msgstr "Testuaren tamaina erlatibo hobetsia."
+
+#~ msgid "Edit Markdown in style"
+#~ msgstr "Editatu markdown formatuko testua estiloarekin"
+
+#~ msgid ""
+#~ "Focus on your writing with a clean, distraction-free markdown editor."
+#~ msgstr ""
+#~ "Eutsi arretari idazten ari zarenean, distrakziorik gabeko markdown "
+#~ "editore garbi batekin."
+
+#~ msgid "Features:"
+#~ msgstr "Eginbideak:"
+
+#~ msgid "An UI tailored to comfortable writing"
+#~ msgstr "Eroso idazteko helburua duen interfazea"
+
+#~ msgid "A distraction-free mode"
+#~ msgstr "Distrakziorik gabeko modua"
+
+#~ msgid "Dark, light and sepia themes"
+#~ msgstr "Gai iluna, argia eta sepia"
+
+#~ msgid ""
+#~ "Everything you expect from a text editor, such as spellchecking or "
+#~ "document statistics"
+#~ msgstr ""
+#~ "Testu-editore batean espero den guztia, ortografiaren egiaztatzea eta "
+#~ "dokumentu-estatistikak barne."
+
+#~ msgid "Live preview of what you write"
+#~ msgstr "Idazten ari zarenaren aurrebista dinamikoa"
+
+#~ msgid ""
+#~ "Export to all kind of formats: PDF, Word/Libreoffice, LaTeX, or even HTML "
+#~ "slideshows"
+#~ msgstr ""
+#~ "Esportatu edozein formatu motatara: PDF, Word/Libreoffice, LaTeX, edo "
+#~ "baita HTML diapositiba-aurkezpenak ere"
+
+#~ msgid "Manuel G., Wolf V."
+#~ msgstr "Manuel G., Wolf V."
+
+#~ msgid "Copyright (C) 2022, Manuel G., Wolf V."
+#~ msgstr "Copyright (C) 2022, Manuel G., Wolf V."
+
+#~ msgid "translator-credits"
+#~ msgstr "translator-credits"
+
+#~ msgid "_Close"
+#~ msgstr "It_xi"
+
+#~ msgid "Menu"
+#~ msgstr "Menua"
+
+#~ msgid "_Hemingway Mode"
+#~ msgstr "He_mingway modua"
+
+#~ msgid "_Save As..."
+#~ msgstr "_Gorde honela..."
+
+#~ msgid "Restore session"
+#~ msgstr "Leheneratu saioa"
+
+#~ msgid "Return to your previous session when Apostrophe is started"
+#~ msgstr "Itzuli aurreko saiora Apostrophe abiarazten denean"
+
+#~ msgid "Screen Layout"
+#~ msgstr "Pantailaren diseinua"
+
+#~ msgid "No Results Found"
+#~ msgstr "Ez da emaitzarik aurkitu"
+
+#~ msgid "aA"
+#~ msgstr "aA"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Berria"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Ireki"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Gorde"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Aurrebista"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Find"
+#~ msgstr "Bilatu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "Goiburua"
+
+#~ msgid "0 Words"
+#~ msgstr "0 hitz"
+
+#~ msgid "Donate"
+#~ msgstr "Lagundu diruz"
+
+#~ msgid "Translations"
+#~ msgstr "Itzulpenak"
+
+#, python-format
+#~ msgid "Export to %s"
+#~ msgstr "Esportatu hona: %s"
+
+#~ msgid "noun"
+#~ msgstr "izena"
+
+#~ msgid "verb"
+#~ msgstr "aditza"
+
+#~ msgid "adjective"
+#~ msgstr "adjektiboa"
+
+#~ msgid "adverb"
+#~ msgstr "adberbioa"
+
+#~ msgid "Text can't be deleted while on Hemingway mode"
+#~ msgstr "Testua ezin da aldatu Hemingway moduan"
+
+#~ msgid "Tell me more"
+#~ msgstr "Zergatik?"
+
+#~ msgid "{:n} of {:n} Words"
+#~ msgstr "{:n} / {:n} hitz"
+
+#~ msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} irakurtzeko denbora"
+
+#~ msgid "{:d}:{:02d}:{:02d} Read Time"
+#~ msgstr "{:d}:{:02d}:{:02d} irakurtzeko denbora"
+
+#~ msgid "web page"
+#~ msgstr "web-orria"
+
+#~ msgid "Apostrophe website"
+#~ msgstr "Apostrophe aplikazioaren webgunea"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Help to translate:"
+#~ msgstr "Lagundu itzultzen:"
+
+#~ msgid "Damned Lies"
+#~ msgstr "Gezur madarikatuak"
+
+#~ msgid "CSS File"
+#~ msgstr "CSS fitxategia"
+
+#~ msgid "Select CSS file"
+#~ msgstr "Hautatu CSS fitxategia"
+
+#~ msgid "New Window"
+#~ msgstr "Leiho berria"
+
+#, python-format
+#~ msgid "Save changes to document “%s” before closing?"
+#~ msgstr "“%s” dokumentuaren aldaketak gorde itxi aurretik?"
+
+#~ msgid "Close without saving"
+#~ msgstr "Itxi gorde gabe"
+
+#~ msgid "Save now"
+#~ msgstr "Gorde orain"
+
+#~ msgid "An elegant, distraction-free markdown editor"
+#~ msgstr "Markdown editore dotore eta distrakziorik gabea"
+
+#~ msgid "Wolf V., Manuel G."
+#~ msgstr "Wolf V., Manuel G."
+
+#~ msgid "Poeditor"
+#~ msgstr "Poeditor"
+
+#~ msgid "Sync Views"
+#~ msgstr "Sinkronizatu bistak"
+
+#~ msgid "Open Recent"
+#~ msgstr "Ireki azken aldikoa"
+
+#~ msgid "(.*)"
+#~ msgstr "(.*)"
