@@ -232,4 +232,96 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
   d.step('the statistics handler exposes a way to stop its worker threads') do
     d.check('stats_handler responds to stop') { app.stats_handler.respond_to?(:stop) }
   end
+
+  # --- main_window.rb / headerbar.rb: the file lifecycle and the menus -----
+
+  d.step('the window installs every file-lifecycle action main_window.rb adds') do
+    %w[new open open_file save save_as export copy_html close].each do |name|
+      d.check("win.#{name} is installed") { !app.window.lookup_action(name).nil? }
+    end
+    d.check('app.new_window is installed') { !app.app.lookup_action('new_window').nil? }
+    d.check('app.quit is installed') { !app.app.lookup_action('quit').nil? }
+  end
+
+  d.step('the save split-button and the open button are real, wired widgets') do
+    d.check('the save button carries win.save') { app.main_window.send(:header_bar_assembly).send(:save_button).action_name == 'win.save' }
+    d.check('the open button holds the recents popover') { !app.main_window.send(:header_bar_assembly).open_popover_object.nil? }
+  end
+
+  d.step("the main menu and the save split-button's export menu carry every item" \
+         ' component-parity.md counted') do
+    menu = app.menu_button.menu_model
+    export_menu = app.main_window.send(:header_bar_assembly).send(:export_menu_model)
+    count_items = lambda do |gmenu|
+      (0...gmenu.n_items).sum do |section_index|
+        gmenu.get_item_link(section_index, 'section').then { |section| section ? section.n_items : 1 }
+      end
+    end
+    d.check('the main menu has 8 items across its sections') { count_items.call(menu) == 8 }
+    d.check('the export menu has 6 items across its sections') { count_items.call(export_menu) == 6 }
+  end
+
+  d.step('opening a real file loads it and records it as the current document') do
+    # Every earlier step left the buffer "changed" from the editor's own
+    # perspective; clearing that flag directly is the same thing a real user
+    # answering "Discard" on the unsaved-changes prompt would leave behind,
+    # without this headless run having to drive that dialog.
+    app.main_window.instance_variable_set(:@did_change, false)
+
+    @tmp_markdown = File.join(Dir.mktmpdir('apostrophe-drive-file'), 'drive-note.md')
+    File.write(@tmp_markdown, 'hello from disk')
+    app.window.lookup_action('open_file').activate(GLib::Variant.new("file://#{@tmp_markdown}"))
+  end
+
+  d.step('the load completed on the main loop and updated the document and the title') do
+    pump(800)
+    d.check('the buffer holds the file contents') { app.text_buffer.text == 'hello from disk' }
+    d.check('the document now points at that file') { app.document.gfile&.path == @tmp_markdown }
+    d.check('the window title lost its unsaved-changes dot') { app.window.title == File.basename(@tmp_markdown) }
+  end
+
+  d.step('editing the loaded file marks it changed and win.save writes it back out') do
+    app.text_buffer.text = 'hello from disk, edited'
+    d.check('the title gained the unsaved-changes dot') { app.window.title.start_with?('•') }
+    app.window.lookup_action('save').activate(nil)
+  end
+
+  d.step('the save completed on the main loop and the file on disk matches the buffer') do
+    pump(800)
+    d.check('the file on disk now holds the edit') { File.read(@tmp_markdown) == 'hello from disk, edited' }
+    d.check('the title dropped the unsaved-changes dot again') { app.window.title == File.basename(@tmp_markdown) }
+  end
+
+  d.step('win.copy_html round-trips the buffer through Pandoc onto the clipboard') do
+    app.text_buffer.text = '**bold**'
+    app.window.lookup_action('copy_html').activate(nil)
+  end
+
+  d.step('the clipboard holds the converted HTML, where this dev shell has Pandoc') do
+    if Apostrophe::Helpers.exist_executable?('pandoc')
+      app.window.clipboard.read_text_async(nil) do |clipboard, result|
+        @clipboard_html = clipboard.read_text_finish(result)
+      end
+      pump(600)
+      d.check('the clipboard holds a <strong> tag for the bold run') { @clipboard_html.to_s.include?('<strong>') }
+    else
+      d.check('win.copy_html ran without crashing the window (Pandoc is not on PATH here)') { app.window.visible? }
+    end
+  end
+
+  d.step('app.new_window opens a second, independent window') do
+    app.app.lookup_action('new_window').activate(nil)
+    pump(300)
+    d.check('there are now two windows') { app.windows.length == 2 }
+    d.check('the new window starts on a fresh, untitled document') do
+      app.windows.last.document.title == 'New File'
+    end
+    d.shot('10-second-window', app.windows.last.window)
+  end
+
+  d.step('closing the second window drops it from the application again') do
+    app.windows.last.window.close
+    pump(200)
+    d.check('one window is left') { app.windows.length == 1 }
+  end
 end

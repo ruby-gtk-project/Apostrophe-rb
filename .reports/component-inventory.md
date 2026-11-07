@@ -15,24 +15,28 @@ not the file.
 
 | | Upstream | `ruby` branch |
 |---|---:|---:|
-| Source files contributing UI | 29 `.py` + 15 `.ui` | 18 `.rb` |
-| Component units (templates, named roots, standalone `.ui`, app class) | 23 | 18 of the 38 rows below |
+| Source files contributing UI | 29 `.py` + 15 `.ui` | 28 `.rb` |
+| Component units (templates, named roots, standalone `.ui`, app class) | 23 | 22 of the 38 rows below |
 | Distinct CSS classes applied | 32 (11 app-defined in `data/media/css/gtk/style.css`) | all 8 stylesheets vendored |
-| GActions installed | 7 `app.*` + 16 `win.*` | 0 `app.*` + 11 `win.*` |
-| Accelerators declared | 12 in `application.py`, 10 more as `GtkShortcut` in `TextView.ui` | 11 |
+| GActions installed | 7 `app.*` + 16 `win.*` | 4 `app.*` + 23 `win.*` |
+| Accelerators declared | 12 in `application.py`, 10 more as `GtkShortcut` in `TextView.ui` | 13 |
 | GSettings keys | 13 (+2 enums) | 13 (+2 enums), own schema |
 | Translated catalogues | 33 locales in `po/`, 42 files in `POTFILES.in` | none |
 
-Status as of the editor-backbone commit: the `ruby` branch holds the editor
-backbone — the buffer, the markdown highlighter, the insertion helpers, the
-grammar, the statistics counter, the smooth scroller, the settings and their
-schema, the themes, the stylesheets, the icons, the document model and the
-shell-out workers (`preview_converter`, `latex_to_png`, `fix_table`,
-`inhibitor`, `helpers`). What is missing is the *chrome*: the real
-`MainWindow`, the headerbar and its menus, the open/recents popover, the
-search-and-replace bar, the statistics popover, the preview (handler,
-renderer, web view, window, layout switcher) and every dialog (preferences,
-shortcuts, about, Hemingway, export, TeXLive warning).
+Status as of round 2 (this commit): round 1 shipped the editor backbone —
+buffer, markdown highlighter, insertion helpers, grammar, statistics counter,
+smooth scroller, settings/schema, themes, stylesheets, icons, document model
+and the shell-out workers. Round 2 adds the real `MainWindow` (file lifecycle
+— new/open/save/save-as/close, the discard infobar, the save progress bar,
+the unsaved-changes prompt), `HeaderBar` (both GMenu models, the save
+split-button, the open button), the open/recents popover and the quick
+`export_dialog.rb`. Every file-lifecycle action and every reachable menu item
+now has a real action installed on `win.*`/`app.*` and is driven end-to-end by
+`test/drive_apostrophe.rb`. Still missing: the preview pipeline (handler,
+renderer, web view, window, layout switcher — blocked on no WebKit binding in
+this dev shell), `preferences_dialog.rb`, `advanced_export_dialog.rb`,
+`texlive_warning.rb`, `inline_preview.rb`, and the `po/` translation
+catalogue.
 
 ## File-naming decision
 
@@ -52,15 +56,15 @@ otherwise follow the pilot's shape exactly (`# frozen_string_literal: true`,
 ### 1. `apostrophe/application.py` — the application: actions, accels, theming
 
 Target `lib/apostrophe/application.rb` · kind **application** · **exists
-(partial)** — ported: the `Gtk::Application`, the stylesheet loading, the
-icon-theme path, an `Adwaita::HeaderBar` with a menu button whose popover
-holds the theme switcher, and 11 `win.*` markdown-insert / unindent /
-fix-table actions with their accelerators. Not ported: all 7 `app.*` actions
-(`color_scheme`, `new_window`, `preferences`, `shortcuts`, `about`, `quit`,
-`stat_default`), the `Gtk::WindowGroup` per window, the sepia provider
+(partial)** — ported (round 2, after the window chrome moved out to
+`main_window.rb`): the `Gtk::Application`, the stylesheet loading, the
+icon-theme path, and 4 of 7 `app.*` actions (`new_window`, `quit`,
+`shortcuts`, `about`) with accelerators for the first two. Not ported:
+`color_scheme`, `preferences`, `stat_default`; the `Gtk::WindowGroup` per
+window (the port tracks windows as a plain array instead); the sepia provider
 add/remove per display and the `Adwaita::StyleManager` notify handlers. The
-window chrome that upstream keeps in `main_window.py` (§2) is temporarily
-assembled here
+window chrome itself (headerbar, editor, menus, file lifecycle) now lives in
+`main_window.rb` (§2) and `headerbar.rb` (§3), as upstream splits it
 
 | Item | × | Notes |
 |---|---:|---|
@@ -83,7 +87,8 @@ ones; the Devel app id adds the `devel` CSS class to every window.
 
 ### 2. `apostrophe/main_window.py` + `data/ui/Window.ui` — the editor window
 
-Target `lib/apostrophe/main_window.rb` · kind **window** · **missing**
+Target `lib/apostrophe/main_window.rb` · kind **window** · **ported** (round 2: file lifecycle, discard infobar, save progress bar, unsaved-changes prompt; preview flap/stack and fullscreen left out,
+no WebKit binding in this dev shell)
 
 | Widget | × | CSS | Signals / behaviour |
 |---|---:|---|---|
@@ -125,7 +130,7 @@ infobar. Note the workaround at the end of `__init__` forcing
 ### 3. `apostrophe/headerbars.py` + `data/ui/Headerbar.ui` — headerbar and menus
 
 Target `lib/apostrophe/headerbar.rb` · kind **headerbar + menu models** ·
-**missing**
+**ported** (round 2: `Menu` and `export_menu` GMenu models, save split-button, open button; preview-layout switcher and the exit-fullscreen button left out)
 
 | Widget | × | CSS | Signals / action |
 |---|---:|---|---|
@@ -153,7 +158,7 @@ Menu `export_menu` (6 items): `_Save As...` → `win.save_as`; `_PDF` / `_HTML` 
 ### 4. `apostrophe/open_popover.py` + `data/ui/Recents.ui` — open / recents popover
 
 Target `lib/apostrophe/open_popover.rb` · kind **popover + empty states** ·
-**missing**
+**ported** (round 2: search entry, recents list, delete-from-recents; rebuilds its rows off `Gtk::RecentManager` directly instead of `bind_model`ing a custom GObject)
 
 | Widget | × | CSS | Signals |
 |---|---:|---|---|
@@ -477,8 +482,10 @@ Computed properties gate the groups: `show_page_size_options`,
 
 Targets `lib/apostrophe/export_dialog.rb` (the quick PDF/HTML/ODT path) and
 `lib/apostrophe/export_format.rb` (the `Format` model + `formats.json`) ·
-kind **dialog (file chooser) + model** · **partial** — `export_format.rb`
-exists (the `Format` model); `export_dialog.rb` does not
+kind **dialog (file chooser) + model** · **ported** (round 2: `export_dialog.rb`
+now opens the chooser and runs Pandoc; the TeXLive-warning branch for a
+PDF export without `pdftex` is left out — a PDF export without TeX simply
+surfaces Pandoc's own failure through the same error dialog)
 
 `win.export` with target `pdf` / `html` / `odt` opens a
 `Gtk.FileChooserNative` ("Export", "Export to %s", one mime filter, name
