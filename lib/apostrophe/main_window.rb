@@ -2,13 +2,17 @@
 
 require 'gtk4'
 require 'adwaita'
+require_relative 'advanced_export_dialog'
 require_relative 'document'
 require_relative 'export_dialog'
 require_relative 'fix_table'
 require_relative 'format_inserter'
 require_relative 'headerbar'
 require_relative 'helpers'
+require_relative 'inline_preview'
 require_relative 'markup_handler'
+require_relative 'preview_layout_switcher'
+require_relative 'preview_renderer'
 require_relative 'search_bar'
 require_relative 'settings'
 require_relative 'stats_handler'
@@ -66,14 +70,21 @@ module Apostrophe
         box.append(header_bar)
         box.append(discard_infobar)
         box.append(save_progressbar)
-        box.append(editor_overlay)
+        box.append(flap)
       end
+
+      flap.tap { |f| f.content = editor_overlay }
 
       editor_overlay.tap do |overlay|
         overlay.child = editor_scrolled_window
         overlay.add_overlay(search_bar.build)
         overlay.add_overlay(stats_revealer)
       end
+
+      preview_layout_switcher.on_layout_changed = ->(value) { preview_renderer.preview_layout = value }
+      preview_renderer.preview_layout = preview_layout_switcher.preview_layout
+      preview_renderer.load_content(preview_placeholder)
+      preview_toggle_button.signal_connect('notify::active') { on_preview_toggled }
 
       editor_scrolled_window.tap do |scrolled|
         scrolled.child = text_view
@@ -94,6 +105,7 @@ module Apostrophe
       stats_handler
       install_actions
       markup_handler
+      inline_preview
       style.on_change { markup_handler.on_style_updated }
 
       update_title
@@ -149,6 +161,43 @@ module Apostrophe
 
     def editor_overlay = @editor_overlay ||= Gtk::Overlay.new
 
+    # The preview's flap: PreviewRenderer folds the editor over for the
+    # full-width layout, splits it for half-width/half-height, or empties
+    # this out entirely for the windowed layout.
+    def flap = @flap ||= Adwaita::Flap.new
+
+    def preview_stack = @preview_stack ||= Gtk::Stack.new
+
+    def preview_layout_switcher = header_bar_assembly.preview_layout_switcher
+    def preview_toggle_button = preview_layout_switcher.toggle_button_object
+
+    def preview_renderer
+      @preview_renderer ||= PreviewRenderer.new(
+        window:             window,
+        text_view:          text_view,
+        flap:               flap,
+        preview_stack:      preview_stack,
+        on_windowed_closed: -> { preview_toggle_button.active = false },
+      )
+    end
+
+    # The preview's content. Upstream renders the document's own markdown to
+    # HTML in a WebKit WebView; this dev shell has no WebKit binding for GTK4
+    # (see preview_handler.rb and preview_web_view.rb for why those two stay
+    # unported), so this placeholder stands in for it. Everything around it
+    # — the layout switcher, the flap and its resize animations, the
+    # detached preview window — is fully wired and works.
+    def preview_placeholder
+      @preview_placeholder ||= Gtk::Label.new(
+        "Preview needs a WebKit binding this build does not have.\n\nThe layout (full-width, half-width, half-height, windowed) still works.",
+      ).tap do |label|
+        label.wrap = true
+        label.justify = :center
+        label.margin_start = 24
+        label.margin_end = 24
+      end
+    end
+
     def editor_scrolled_window
       @editor_scrolled_window ||= Gtk::ScrolledWindow.new.tap do |scrolled|
         scrolled.hscrollbar_policy = :never
@@ -164,6 +213,7 @@ module Apostrophe
     def search_bar = @search_bar ||= SearchBar.new(text_view)
 
     def markup_handler = @markup_handler ||= MarkupHandler.new(text_view)
+    def inline_preview = @inline_preview ||= InlinePreview.new(text_view)
     def format_inserter = @format_inserter ||= FormatInserter.new
     def fix_table = @fix_table ||= FixTable.new(text_buffer)
     def scroller = @scroller ||= TextViewScroller.new(text_view, editor_scrolled_window)
@@ -267,6 +317,7 @@ module Apostrophe
         install_window_action('find_replace') { search_bar.replace_mode_enabled = true }
         install_property_action('focus_mode', focus_mode_button, 'active')
         install_property_action('hemingway_mode', hemingway_button, 'active')
+        install_property_action('preview', preview_toggle_button, 'active')
         focus_mode_button.signal_connect('toggled') { on_focus_mode_toggled }
         hemingway_button.signal_connect('toggled') { on_hemingway_toggled }
 
@@ -276,6 +327,7 @@ module Apostrophe
         install_window_action('save') { save_document }
         install_window_action('save_as') { save_document_as }
         install_window_action_with_string('export') { |format_key| open_export(format_key) }
+        install_window_action('advanced_export') { open_advanced_export }
         install_window_action('copy_html') { copy_html_to_clipboard }
         install_window_action('close') { do_close_request }
       end
@@ -614,6 +666,20 @@ module Apostrophe
 
       def open_export(format_key)
         ExportDialog.new(window, document).export(format_key, text_view.text)
+      end
+
+      def open_advanced_export
+        AdvancedExportDialog.new(window, document, text_view.text).present
+      end
+
+      # Upstream's toggle_preview: a preview grabs focus away from the
+      # editor when it is shown, and the renderer does the rest.
+      def on_preview_toggled
+        if preview_toggle_button.active?
+          preview_renderer.show
+        else
+          preview_renderer.hide
+        end
       end
 
       # Upstream's check_change: offers to save unsaved changes before running

@@ -8,6 +8,7 @@ require_relative 'helpers'
 require_relative 'hemingway_dialog'
 require_relative 'inhibitor'
 require_relative 'main_window'
+require_relative 'preferences_dialog'
 require_relative 'settings'
 require_relative 'shortcuts_window'
 require_relative 'style'
@@ -42,6 +43,7 @@ module Apostrophe
     def shortcuts_window = @shortcuts_window ||= ShortcutsWindow.new
     def about_dialog = @about_dialog ||= AboutDialog.new
     def hemingway_dialog = @hemingway_dialog ||= HemingwayDialog.new
+    def preferences_dialog = @preferences_dialog ||= PreferencesDialog.new
 
     def windows = @windows ||= []
 
@@ -88,6 +90,7 @@ module Apostrophe
         install_app_action('quit') { quit }
         install_app_action('shortcuts') { shortcuts_window.present(main_window.window) }
         install_app_action('about') { about_dialog.present(main_window.window) }
+        install_app_action('preferences') { preferences_dialog.present(main_window.window) }
         app.set_accels_for_action('app.new_window', ['<Control>n'])
         app.set_accels_for_action('app.quit', ['<Control>q'])
       end

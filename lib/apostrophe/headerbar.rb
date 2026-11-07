@@ -3,25 +3,22 @@
 require 'adwaita'
 require_relative 'helpers'
 require_relative 'open_popover'
+require_relative 'preview_layout_switcher'
 require_relative 'theme_switcher'
 
 module Apostrophe
   # HeaderBar assembles the window's title bar: the new-document and open
   # buttons at the start, the save split-button (whose attached menu holds
-  # the export actions) and, at the end, the focus-mode and Hemingway
-  # toggles, the main menu and the find toggle.
+  # the export actions) and, at the end, the preview-layout switcher, the
+  # focus-mode and Hemingway toggles, the main menu and the find toggle.
   #
   # Ported from apostrophe/headerbars.py (BaseHeaderbar) and
-  # data/ui/Headerbar.ui. The preview-layout switcher and the
-  # exit-fullscreen button upstream packs here are left out: both belong to
-  # the preview pipeline, which this round cannot build (the dev shell has
-  # no WebKit binding).
+  # data/ui/Headerbar.ui. The exit-fullscreen button upstream packs here is
+  # left out: it is entirely about hiding/showing the preview's chrome in
+  # fullscreen, which is not something this port's MainWindow does yet.
   #
   # Every action referenced by name here (`app.new_window`, `win.save`,
-  # `win.open_file`, …) is installed by Application or MainWindow; a
-  # GtkMenuButton/GtkButton with an action name that does not exist yet is
-  # simply insensitive, which is how upstream's own `app.preferences` item
-  # behaves on the port today.
+  # `win.open_file`, …) is installed by Application or MainWindow.
   class HeaderBar
     def build
       bar.tap do |headerbar|
@@ -30,6 +27,7 @@ module Apostrophe
         headerbar.pack_start(save_button)
 
         headerbar.pack_end(menu_button)
+        headerbar.pack_end(preview_layout_switcher.build)
         headerbar.pack_end(find_button)
         headerbar.pack_end(focus_mode_button)
         headerbar.pack_end(hemingway_button)
@@ -53,6 +51,7 @@ module Apostrophe
     def focus_mode_button = @focus_mode_button ||= toggle_button('focus-windows-symbolic', 'Focus Mode')
     def hemingway_button = @hemingway_button ||= toggle_button('edit-delete-symbolic', 'Hemingway Mode')
     def theme_switcher = @theme_switcher ||= ThemeSwitcher.new
+    def preview_layout_switcher = @preview_layout_switcher ||= PreviewLayoutSwitcher.new
 
     private
 
