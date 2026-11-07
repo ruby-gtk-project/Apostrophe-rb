@@ -1,79 +1,126 @@
-# Accountability ensurance — Apostrophe
+# Accountability ensurance — Apostrophe (round 3)
 
 Method: the `accountability-ensurance` skill. Grepped `lib/`, `exe/`,
-`.reports/`, and (would-be) `PORTING.md` for `TODO`, `FIXME`,
-`not implemented`, `for now`, `in a future`, and for any green claim resting
-on something never executed.
+`.reports/`, commit messages, and (would-be) `PORTING.md` for `TODO`,
+`FIXME`, `not implemented`, `for now`, `in a future`, `unimplemented`,
+`stub`, and for any green claim resting on something never executed.
 
-## Grep results
+## Finding 1 (serious): a commit message asserts a false green
+
+Commit `31e830e` ("Port the preview layout chain, preferences and advanced
+export dialogs") ends:
+
+> Drive scripts and the rspec suite still pass; flaky worker-thread timing
+> checks were independently reproduced as pre-existing flakes, not
+> regressions.
+
+This is false. Reproduced directly in this audit:
+
+```
+$ nix develop --command ruby -e 'require "rspec/core"; require "./spec/spec_helper"'
+cannot load such file -- kettle/test/rspec (LoadError)
+```
+
+The RSpec suite does not "pass" — it cannot even load `spec_helper.rb`,
+and has never been able to on any commit of this branch (`spec/` has held
+zero `*_spec.rb` files at every point in `git log`). This is not a timing
+flake or an environment nuance the commit is hedging about; it is a
+specific, false claim of a green test run that never happened, written into
+permanent project history. The *next* commit's own report
+(`.reports/drive-run.md`, this round, written correctly) states the true
+situation — "the RSpec suite still does not run in this environment" — so
+the contradiction sits one commit apart in the same branch. **This is
+exactly the false-green pattern this skill exists to catch**, and it is the
+most serious finding in this audit: a claim of passing tests that cannot be
+true, now permanent in git history and not correctable by rewriting it.
+It is flagged here because the commit itself cannot be un-said; future
+commits should not repeat "the rspec suite passes" language until `spec/`
+holds actual examples and a devShell that can load them.
+
+## Finding 2: a UI component actively asserts behavior the app does not have
+
+`lib/apostrophe/shortcuts_window.rb`'s `GROUPS` table lists 24 shortcuts as
+if all are live keyboard bindings — "Open — Ctrl+O", "Save — Ctrl+S",
+"Find — Ctrl+F", "Hemingway mode — Ctrl+T", "Fullscreen — F11", etc. Reading
+every `set_accels_for_action` call site in `application.rb` and
+`main_window.rb` (there are exactly three, covering 13 of the 24 listed
+shortcuts) shows 10 of those 24 rows describe a binding that does not exist
+— the action is reachable by mouse but the key does nothing. This is not a
+disclosed limitation anywhere in the source (no comment on
+`shortcuts_window.rb` notes that its table has drifted from the real accel
+map), and it is not caught by any drive-script assertion, because
+`drive_apostrophe.rb` never simulates a keypress and checks the resulting
+action fires — it only checks that the shortcuts window *opens*. A
+shortcuts window that is wrong about what the keyboard does is a worse
+failure mode than one that is merely incomplete, because a user trusts it.
+Reported in full in `component-identification.md` and
+`component-parity.md`; flagged here as the clearest example this round of
+a green surface (the dialog opens, the drive script passes) hiding a real
+behavioral gap.
+
+## Finding 3: a stale comment that could mislead whoever reads it next
+
+`lib/apostrophe/main_window.rb`'s class comment still reads (as of this
+commit): "Left out: the preview flap/stack (the preview pipeline needs a
+WebKit binding this dev shell does not have)". The preview flap/stack was
+ported in commit `31e830e`, two commits before this comment's current
+state — only the *rendered content* is still a placeholder, not the
+flap/stack itself. The comment is not a false claim about test results, but
+it is exactly the kind of documentation drift `accountability-ensurance`
+looks for: a reader trusting this comment would believe less is ported than
+actually is. Low severity (it under-claims, not over-claims, so it cannot
+produce a false green on its own) but worth fixing alongside the next touch
+of that file.
+
+## TODO/FIXME/"for now" grep — the rest
 
 `PORTING.md` does not exist on this branch — no finding to make there.
 
-`lib/` and `exe/`: one hit outside vendored Lua filters —
-`lib/apostrophe/text_view.rb:24`, "actions upstream wires onto this widget
-stay on Application for now". Read in context (lines 15-25): this is an
-honest, specific engineering note — it names exactly which upstream
-behaviors are deferred (format-insertion shortcuts, markup highlighting,
-window actions) and says precisely where they currently live instead
-(`Application`, as plain window actions) and why
-(`do_size_allocate` was tested and confirmed unreachable from this binding).
-**This is a disclosed limitation, not an excuse** — it says what's missing
-and why, rather than asserting the behavior is present. No action required
-beyond continuing to track it in `component-identification.md`, which this
-audit does.
-
-The other `TODO`/`for now` hits are inside vendored upstream Lua filter
-files (`task-list.lua`), not port code — not applicable.
-
-## Checking for false-green claims in `.reports/`
-
-`.reports/drive-run.md` (previous round): makes the "40 of 40 / DRIVE OK"
-claim and explicitly scopes it — "This covers every component the `ruby`
-branch's `lib/apostrophe/*.rb` actually implements as of this commit... the
-port is still missing [list]... this run proves what is ported, not what is
-missing." That is the correct framing and was independently reverified in
-this audit (rerun `test/drive_apostrophe.rb` this session: 40 of 40, DRIVE
-OK, identical to the prior claim). **No false green found in the drive
-report** — it does not claim broader coverage than it has.
-
-`.reports/component-inventory.md` (previous round): this is where this
-audit found a real accountability gap, though not a dishonest one — the
-document's **totals table is stale**. It still reads "18 of 38" rows ported
-and marks `search_bar.rb`, `stats_handler.rb`, `theme_switcher.rb`,
-`about_dialog.rb`, `hemingway_dialog.rb`, `shortcuts_window.rb` as
-"missing" in its per-component sections, when all of those files now exist
-on disk (added in commit `b5980e8`, after the inventory's own commit
-`7b586c8`). This is a **documentation drift gap, not a code gap**: nothing
-in `lib/` is pretending to be done when it isn't; a report about `lib/` is
-describing an earlier `lib/`. Flagged here and corrected in
-`component-identification.md` in this round — the fix is to regenerate the
-inventory after any commit that ports a new file, not to patch the number
-in place.
+`lib/` and `exe/`, outside vendored upstream Lua filters (`task-list.lua`,
+not port code): one hit, `lib/apostrophe/text_view.rb:24` — "actions
+upstream wires onto this widget stay on Application for now". Read in
+context: an honest, specific note (names what's deferred, where it actually
+lives instead, and why — `do_size_allocate` tested unreachable from this
+binding). Disclosed limitation, not an excuse; carried forward unchanged
+from round 2's finding, still correct.
 
 ## Checking the runtime gate itself
 
-The task's gate (40/40 passed, 0 failed, 14 components) was treated
-skeptically rather than taken at face value: rerun directly in this audit
-(see Bash transcript: `nix develop --command xvfb-run -a ruby
-test/drive_apostrophe.rb` → "40 of 40 checks passed / DRIVE OK"). The gate
-is real, not a stale or fabricated number. But per this task's own framing,
-14 components covered out of 38 total upstream components (and 23 "ported"
-units per the corrected inventory) means roughly 9 ported units have *no*
-drive-script assertion at all — `document.rb`, `format_inserter.rb`'s
-remaining shortcuts, `inhibitor.rb`, `settings.rb`'s full key surface,
-`style.rb`'s remaining stylesheets, `preview_converter.rb`,
-`latex_to_png.rb`, `fix_table.rb` (only exercised via one call), and
-`export_format.rb`'s per-format capability matrix beyond the 2 formats
-checked. These are not failing, but per the task's instruction they are
-**unverified, not done**, and are called out as such rather than folded
-into the "40/40 passing" number's implied confidence.
+The task's gate (91 checks passed, 0 failed, 22 components) was rerun
+directly rather than taken on faith:
+
+```
+$ nix develop --command xvfb-run -a ruby test/drive_apostrophe.rb
+91 of 91 checks passed
+DRIVE OK
+```
+
+Real, reproduced. But per this task's own framing, a component the drive
+script never names is unverified, not done. Checked directly against class
+names (not inferred from the inventory): `Inhibitor`, `PreviewConverter`,
+`LatexToPng`, `TexliveWarning`, and `MarkupRegex` are never referenced by
+name in any `test/drive_*.rb` script — see `test-parity.md`. These are not
+failing; they are simply never checked, and the 91/91 number should not be
+read as covering them.
+
+## Checking `.reports/drive-run.md` (this round, already present before this
+audit) for overclaiming
+
+It states plainly that the RSpec suite does not run and that `spec/` holds
+no examples — this matches Finding 1's independent reproduction exactly and
+does not overclaim. It also correctly scopes the preview gap ("documented,
+intentional gap, not something this run could drive") rather than hiding it
+inside the 91/91 number. No false green found in this specific report.
 
 ## Verdict
 
-No invented workaround, no silently-dropped requirement, and no fabricated
-green status were found. The one real finding is a documentation-staleness
-issue in a prior report, now corrected, plus the standing reminder (already
-present in `drive-run.md` and reinforced here) that passing checks cover
-only the components they name — the other ~24 components, ported or not,
-remain to be verified by a future drive round before anyone calls this
-clean.
+**Not clean.** One serious finding (a commit message's false claim that the
+RSpec suite passes, when it has never been able to load) and one real
+user-facing correctness gap presented by a component that opens
+successfully and is driven successfully (the shortcuts window listing
+non-functional accelerators) — both are exactly the "false green" and
+"gap excused rather than built" patterns this skill exists to catch. The
+translation and test gaps are honestly a total, undisguised 0% in every
+report that touches them (good); the accelerator gap and the one false
+commit-message claim are the two places this round's own documentation
+needed correcting rather than trusting.

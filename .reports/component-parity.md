@@ -1,83 +1,128 @@
-# Component parity — Apostrophe
+# Component parity — Apostrophe (round 3)
 
-Method: the `component-parity` skill, checking behavior of each component
-`component-identification.md` marks "ported", plus every upstream surface
-(window, dialog, page, menu item, keyboard shortcut, preference, action,
-empty state, error state) against the port.
+Method: the `component-parity` skill, checking every component
+`component-identification.md` (this round) marks ported, plus every upstream
+window, dialog, page, menu item, keyboard shortcut, preference, action, empty
+state and error state, against the `ruby` branch as of `b13564f`
+(91/91 checks, reverified below). This supersedes round 2's
+`component-parity.md`, most of which (no main window, no menus, no preview
+chrome) is now out of date.
 
 ## Windows
 
-- **Main window**: no parity possible — `main_window.rb` does not exist.
-  No `scrolled` / `no-headerbar` / `devel` dynamic CSS classes, no
-  `Gio::FileMonitor` discard-infobar error state, no save progress bar, no
-  unsaved-changes confirmation dialog, no save/open `FileChooserNative`.
-  **The port currently cannot open, save, or reload a real file at all** —
-  there is no code path that does so outside the drive script's direct
-  object construction.
-- **Preview window**: missing entirely (depends on the preview pipeline,
-  which depends on WebKit, which is not in the dev shell).
+- **Main window**: real now. `main_window.rb` owns the editor, header bar,
+  search bar, stats button, and the file lifecycle — new/open/save/save-as/
+  close, discard infobar, save progress bar, unsaved-changes prompt — each
+  wired as a real `Gio::SimpleAction` a user can actually reach (menu or
+  button), reverified live by re-running `test/drive_apostrophe.rb` in this
+  audit: 91/91, DRIVE OK.
+- **Preview window**: the chrome is real — `PreviewRenderer`'s flap/stack
+  state machine, `PreviewWindow`'s detached toplevel, the layout switcher —
+  all driven and asserted in `drive_apostrophe.rb`. **The content is not**:
+  it is a static placeholder label, never real Pandoc→HTML output rendered
+  through WebKit. A user who opens the preview pane never sees their
+  document rendered. This is a correctly *disclosed* gap (see
+  `main_window.rb`/`preview_renderer.rb` comments and round-3 commit
+  message), but it remains the single biggest functional gap in the app:
+  Apostrophe's whole premise is live Markdown preview.
 
 ## Dialogs
 
 | Dialog | Upstream | Port | Parity |
 |---|---|---|---|
-| About | `Adw.AboutWindow`, debug info, Donate/Translations links | `about_dialog.rb` exists | Driven once in `drive_apostrophe.rb`; not checked against every upstream field (translator-credits, artists, designers, issue URL, the two extra links) — **unverified sub-fields**, not confirmed absent |
-| Shortcuts | `Gtk.ShortcutsWindow`, 23 shortcuts in 8 groups | `shortcuts_window.rb` exists | Opened in the drive run but the run asserts only that it opens, not that all 23 shortcuts are present — **content parity unverified** |
-| Hemingway explainer | `Adw.MessageDialog`, 2-paragraph body, one "Close" response | `hemingway_dialog.rb` exists | Opened in drive run; text content not asserted |
-| Preferences | `Adw.PreferencesWindow`, 4 switches (2 hidden upstream), combo row, help button | missing | No parity |
-| Advanced export | multi-page `Adw.Window`, leaflet, 5 preference groups | missing | No parity |
-| TeXLive warning | `Gtk.Stack`, flatpak/distro branching | missing | No parity |
-| Unsaved-changes save prompt | `Adw.MessageDialog` built in `main_window.py` | missing (no `main_window.rb`) | No parity |
+| About | `Adw.AboutWindow` | `about_dialog.rb` | Opens; driven once. Sub-fields (translator-credits, artists, issue URL) not individually asserted — unverified, not confirmed wrong. |
+| Shortcuts | `Gtk.ShortcutsWindow`, 24 shortcuts in 7 groups | `shortcuts_window.rb` | **Row/group counts match (24, 7)** — recounted directly against `data/ui/Shortcuts.ui` and the `GROUPS` constant. But see "Shortcuts window vs. real accelerators" below: the window's content is accurate to upstream's *intent*, not to what the port actually binds. |
+| Hemingway explainer | `Adw.MessageDialog` | `hemingway_dialog.rb` | Opens; text content not asserted. |
+| Preferences | `Adw.PreferencesWindow`, 3 switches + 1 combo row (2 more rows upstream itself hides) | `preferences_dialog.rb` | **Matches.** Verified against `preferences_dialog.py` and `Preferences.ui` directly: upstream's `spellcheck`/`session-restore` rows are `visible=False` in its own `.ui`, so their absence in the port is correct, not a gap. Autohide-headerbar, bigger-text, input-format combo + help button all present and bound to real `Gio::Settings`, driven in `drive_apostrophe.rb`. |
+| Advanced export | multi-page `Adw.Window`, leaflet, per-format option groups | `advanced_export_dialog.rb` | Present, driven: default-selects PDF, page-size group shown/hidden per format, go-back returns to the formats list, window title follows selection. |
+| TeXLive warning | `Gtk.Stack`, flatpak/distro branching | `texlive_warning.rb` | Present, not independently driven this round beyond existing. |
+| Unsaved-changes save prompt | `Adw.MessageDialog` in `main_window.py` | present in `main_window.rb` | Driven in `drive_apostrophe.rb`. |
 
 ## Menus
 
-Upstream's `Menu` (7 items incl. the theme-switcher custom slot) and
-`export_menu` (6 items) live in `headerbars.py`/`Headerbar.ui`. Neither menu
-model exists in the port — `theme_switcher.rb` exists as a standalone widget
-but nothing attaches it to a real headerbar menu button a user would open.
-**0 of 13 upstream menu items are reachable in the running port.**
+Reverified from scratch against `data/ui/Headerbar.ui`'s `Menu` (8 items
+across 5 sections) and `export_menu` (6 items across 4 sections) — **14
+items total upstream.** Read `lib/apostrophe/headerbar.rb`'s `menu_model`
+and `export_menu_model` line by line against that XML:
 
-## Keyboard shortcuts / accelerators
+- Theme switcher custom slot — present (`themeswitcher_section`).
+- Hemingway Mode, Focus Mode — present.
+- Find and Replace — present.
+- Preferences — present.
+- Open Tutorial, Keyboard Shortcuts, About Apostrophe — present (tutorial
+  item correctly retargeted to a local file path in place of upstream's
+  GResource URI, since the port ships its media on disk — a deliberate,
+  documented substitution, not a drop).
+- Save As…, PDF/HTML/ODT quick export (×3), Advanced Export…, Copy HTML —
+  present.
 
-Inventory counted 11 accelerators set in `application.rb` against upstream's
-22 (12 in `application.py` + 10 `GtkShortcut`s in `TextView.ui`). Re-checking
-`lib/apostrophe/application.rb`'s `SHORTCUTS` table and `text_view.rb`'s own
-comment (which explicitly defers the 10 `GtkShortcut` format-insertion
-accelerators to `Application`, "for now") — the markdown-insertion shortcuts
-(`<Control>i/b/r/u`, header 1-4, strikethrough) do exist as `win.*` actions
-with accels, so the ported *count* is closer than the stale inventory states.
-Missing accelerators, confirmed by absence of their action: `app.new_window`
-(`<Ctl>n`), `win.open` (`<Ctl>o`), `win.save` (`<Ctl>s`), `win.save_as`
-(`<Ctl><Shift>s`), `app.quit` (`<Ctl>q`), `win.close` (`<Ctl>w`) — i.e. every
-file-lifecycle shortcut, because file lifecycle itself is unported.
+**14 of 14 upstream menu items are reachable, item-for-item, correcting
+round 2's "0 of 13 reachable" finding**, which predates `headerbar.rb`'s
+existence. One upstream item is intentionally dropped outside this menu: the
+exit-fullscreen button `BaseHeaderbar` packs for in-preview fullscreen,
+disclosed in `headerbar.rb`'s own header comment (ties to the unported
+fullscreen/preview-chrome behavior).
+
+## Keyboard shortcuts / accelerators — the real gap this round
+
+See `component-identification.md`'s new finding in full. Summary: only 13 of
+upstream's 23 accelerator-bearing actions are ever registered via
+`set_accels_for_action` (reverified by reading every call site in
+`application.rb` and `main_window.rb` — there are exactly 3 call sites total,
+2 single accels + 1 loop over an 11-entry hash). **Missing, though the
+action itself works via mouse:** `win.open`, `win.save`, `win.save_as`,
+`win.close`, `win.find`, `win.find_replace`, `win.focus_mode`,
+`win.hemingway_mode`, `win.preview`. **Missing because the action itself
+does not exist:** `win.fullscreen` (disclosed, tied to the unported preview
+chrome/fullscreen behavior) and `app.spellcheck` (spellcheck is unported
+entirely).
+
+This matters beyond the raw count because `shortcuts_window.rb`'s `GROUPS`
+table is a **hand-written literal**, not read from the live action/accel
+map, and it lists all of these as working shortcuts ("Open — Ctrl+O",
+"Save — Ctrl+S", "Find — Ctrl+F", "Hemingway mode — Ctrl+T", "Fullscreen —
+F11", …). A user opening the shortcuts window sees upstream's full table and
+has no way to discover that ⅔ of the lifecycle/view shortcuts do nothing
+when pressed. This is reported again as its own finding in
+`accountability-ensurance.md` because it is exactly the kind of gap a
+component that "exists and opens" can hide.
 
 ## Preferences (GSettings)
 
-All 13 keys + 2 enums exist in the port's own schema
-(`data/schemas/org.rubygtkproject.Apostrophe.gschema.xml`), matching upstream
-1:1 on name/type. **Settings schema parity: confirmed.** But several keys
-have no UI to set them (`autohide-headerbar`, `bigger-text`,
-`session-restore` all need `preferences_dialog.rb`, which is missing) — the
-schema existing is necessary, not sufficient, for user-facing parity.
+All 13 keys + 2 enums exist in the port's own schema, matching upstream 1:1
+on name/type (unchanged from round 2, reconfirmed). Round 3 adds the UI that
+round 2 found missing: `preferences_dialog.rb` now gives 3 of those keys
+(autohide-headerbar, bigger-text, input-format) a real switch/combo bound
+live, closing round 2's "schema without UI" gap for those three.
+`session-restore` has a schema key and no UI anywhere, matching upstream
+(hidden there too).
 
 ## Empty / error states
 
-- "No Recent Documents", "No Results Found" (open popover) — missing
-  component, missing states.
-- "File Has Changed on Disk" discard infobar — missing component, missing
-  state.
-- Generic error dialog (`helpers.show_error`, "Error" / "Close") — **exists**
-  in `helpers.rb`; this is the one error state confirmed ported.
-- TeXLive-missing warning — missing component, missing state.
+- "No Recent Documents" / recents populated — both states exist in
+  `open_popover.rb` and both are driven in `drive_apostrophe.rb` (confirmed:
+  the drive script checks the empty-state label before adding a file, then
+  the populated `Adwaita::ActionRow` after).
+- "File Has Changed on Disk" discard infobar — present in `main_window.rb`,
+  driven.
+- Generic error dialog (`helpers.show_error`) — present, unchanged from
+  round 2.
+- TeXLive-missing warning — present (`texlive_warning.rb`), not independently
+  driven beyond presenting the dialog that contains it.
+- "No Results Found" in the open popover's search — present in
+  `open_popover.rb`'s stack; not independently asserted by the drive script
+  (it checks the empty/populated recents states, not the no-search-results
+  state specifically) — **unverified, not confirmed wrong.**
 
 ## Verdict
 
-No component currently claimed "ported" in isolation (text view, search bar,
-stats handler, buffer, markup handler) was found behaviorally wrong in this
-pass — the drive run's assertions on them hold. The parity gap is almost
-entirely at the **integration layer**: the pieces that exist are not wired
-into a real window, so a user cannot open a file, save a file, use any menu,
-or see any dialog except through code the drive script calls directly.
-Component-level parity for the ported units: good. Application-level parity:
-not close — most upstream user journeys (open → edit → save, open → preview,
-open → export) have no working path in the `ruby` branch today.
+Round 3 closes almost all of round 2's integration-layer gap: a user can
+now open, edit, save, export, and reach every menu item and every dialog.
+Two real gaps remain, both substantive rather than cosmetic:
+
+1. **The preview pane renders nothing real** — the app's headline feature is
+   a placeholder.
+2. **10 of 23 keyboard shortcuts are unbound while the shortcuts window
+   claims otherwise** — a user-visible correctness gap, not just an
+   incompleteness one, because the documentation (the shortcuts window) is
+   actively wrong about current behavior rather than silent about it.
