@@ -285,6 +285,16 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
   d.step('editing the loaded file marks it changed and win.save writes it back out') do
     app.text_buffer.text = 'hello from disk, edited'
     d.check('the title gained the unsaved-changes dot') { app.window.title.start_with?('•') }
+    # inhibitor.rb: the first dirtying edit calls @inhibitor.inhibit(:logout)
+    # (confirmed by reading main_window.rb's on_text_changed). Asserting
+    # app.inhibitor.inhibiting? here would check the real session's answer,
+    # not the port's call site — and under this headless Xvfb session, with
+    # no systemd-logind or xdg-desktop-portal to grant it, Gtk::Application
+    # #inhibit genuinely returns cookie 0 (confirmed directly: a bare
+    # app.inhibit(window, :logout, 'reason') call against this same display
+    # returns 0 here, independent of anything Inhibitor does). That gap is
+    # exercised in isolation two steps below instead, with a fake app object
+    # standing in for the session.
     app.window.lookup_action('save').activate(nil)
   end
 
@@ -292,6 +302,50 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
     pump(800)
     d.check('the file on disk now holds the edit') { File.read(@tmp_markdown) == 'hello from disk, edited' }
     d.check('the title dropped the unsaved-changes dot again') { app.window.title == File.basename(@tmp_markdown) }
+  end
+
+  # --- inhibitor.rb: cookie tracking, isolated from the real session -------
+  # Gtk::Application#inhibit needs systemd-logind/xdg-desktop-portal to grant
+  # anything, which this headless Xvfb session has neither of (verified
+  # above). Inhibitor's own logic — do not re-inhibit while already
+  # inhibiting, zero the cookie on uninhibit, report inhibiting? correctly —
+  # is still fully testable with a fake stand-in for Helpers.app.
+
+  d.step("inhibitor.rb's cookie bookkeeping is correct even though a headless session grants nothing") do
+    fake_window = Object.new
+    fake_app = Object.new
+    inhibit_calls = []
+    uninhibit_calls = []
+    fake_app.define_singleton_method(:active_window) { fake_window }
+    fake_app.define_singleton_method(:inhibit) do |window, flags, reason|
+      inhibit_calls << [window, flags, reason]
+      42
+    end
+    fake_app.define_singleton_method(:uninhibit) { |cookie| uninhibit_calls << cookie }
+
+    real_helpers_app = Apostrophe::Helpers.method(:app)
+    Apostrophe::Helpers.define_singleton_method(:app) { fake_app }
+
+    isolated_inhibitor = Apostrophe::Inhibitor.new
+    d.check('a fresh inhibitor is not inhibiting') { !isolated_inhibitor.inhibiting? }
+
+    isolated_inhibitor.inhibit(:logout)
+    d.check('inhibiting the session asked the (fake) app, with the logout flag') do
+      inhibit_calls == [[fake_window, :logout, 'Unsaved documents']]
+    end
+    d.check('it is now inhibiting') { isolated_inhibitor.inhibiting? }
+
+    isolated_inhibitor.inhibit(:logout)
+    d.check('inhibiting a second time while already inhibiting is a no-op') { inhibit_calls.length == 1 }
+
+    isolated_inhibitor.uninhibit
+    d.check('uninhibiting passed the cookie the fake app handed back') { uninhibit_calls == [42] }
+    d.check('it is no longer inhibiting') { !isolated_inhibitor.inhibiting? }
+
+    isolated_inhibitor.uninhibit
+    d.check('uninhibiting while not inhibiting is a no-op') { uninhibit_calls.length == 1 }
+
+    Apostrophe::Helpers.define_singleton_method(:app, real_helpers_app)
   end
 
   d.step('win.copy_html round-trips the buffer through Pandoc onto the clipboard') do
@@ -446,6 +500,21 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
     d.check('every shipped format got a row') do
       @advanced_export.send(:formats_list).observe_children.n_items == Apostrophe::ExportFormat::ALL.length
     end
+    # texlive_warning.rb: PDF needs a TeX toolchain, and pdftex is not on
+    # PATH in this dev shell, so the empty state takes over from the options
+    # pane and the export button goes insensitive — real wiring, not a
+    # direct call into TexliveWarning.
+    d.check('pdftex is genuinely absent here, so this exercises the real gap') do
+      !Apostrophe::Helpers.exist_executable?('pdftex')
+    end
+    d.check('the options stack swapped to the texlive warning') do
+      @advanced_export.send(:options_page).visible_child_name == 'texlive_warning'
+    end
+    d.check('the export button went insensitive') { !@advanced_export.send(:export_button).sensitive? }
+    d.check('the warning shows its distro panel outside a flatpak') do
+      warning_stack = @advanced_export.send(:texlive_warning).send(:stack)
+      warning_stack.visible_child_name == 'distro'
+    end
     d.shot('17-advanced-export-formats')
   end
 
@@ -479,6 +548,77 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
     pump(200)
     d.check('PDF shows the page-size group again') { @advanced_export.send(:page_size_group).visible? }
     d.check('and hides the HTML options group') { !@advanced_export.send(:html_options_group).visible? }
+    d.check('the texlive warning takes over the options stack again') do
+      @advanced_export.send(:options_page).visible_child_name == 'texlive_warning'
+    end
     @advanced_export.send(:window).close
+  end
+
+  # --- markup_regex.rb: the markdown grammar as pure checks ----------------
+  # No widget needed — these run straight against the compiled Regexp
+  # constants, which the editor, the stats counter and the buffer's list
+  # handler all share.
+
+  d.step('markup_regex.rb matches bold, italic, links and code spans') do
+    d.check('bold matches **word**') { Apostrophe::MarkupRegex::BOLD.match?('**word**') }
+    d.check('italic (asterisk) matches *word*') { Apostrophe::MarkupRegex::ITALIC_ASTERISK.match?('*word*') }
+    d.check('italic (underscore) matches _word_') { Apostrophe::MarkupRegex::ITALIC_UNDERSCORE.match?('_word_') }
+    d.check('bold+italic matches ***word***') { Apostrophe::MarkupRegex::BOLD_ITALIC.match?('***word***') }
+    d.check('strikethrough matches ~~word~~') { Apostrophe::MarkupRegex::STRIKETHROUGH.match?('~~word~~') }
+    d.check('code matches `word`') { Apostrophe::MarkupRegex::CODE.match?('`word`') }
+    d.check('a link captures text and url') do
+      match = Apostrophe::MarkupRegex::LINK.match('[text](http://example.com)')
+      match && match[:text] == 'text' && match[:url] == 'http://example.com'
+    end
+    d.check('an image matches ![alt](src)') { Apostrophe::MarkupRegex::IMAGE.match?('![alt](src.png)') }
+    d.check('a header captures its level and text') do
+      match = Apostrophe::MarkupRegex::HEADER.match('## a header')
+      match && match[:level] == '##' && match[:text] == 'a header'
+    end
+    d.check('a fenced code block matches across lines') do
+      Apostrophe::MarkupRegex::CODE_BLOCK.match?("```\ncode\n```")
+    end
+    d.check('a bullet list item matches and names its symbol') do
+      match = Apostrophe::MarkupRegex::LIST.match('- one')
+      match && match[:symbol] == '-'
+    end
+    d.check('an ordered list item matches and names its number') do
+      match = Apostrophe::MarkupRegex::ORDERED_LIST.match('1. one')
+      match && match[:number] == '1'
+    end
+    d.check('a block quote captures its text') do
+      match = Apostrophe::MarkupRegex::BLOCK_QUOTE.match('> quoted')
+      match && match[:text] == 'quoted'
+    end
+    d.check('inline math matches $x^2$') { Apostrophe::MarkupRegex::MATH.match?('$x^2$') }
+    d.check('a horizontal rule matches on its own paragraph') do
+      Apostrophe::MarkupRegex::HORIZONTAL_RULE.match?("\n\n---\n\n")
+    end
+    d.check('a footnote definition captures its id and text') do
+      match = Apostrophe::MarkupRegex::FOOTNOTE.match("\n[^1]: the note\n")
+      match && match[:id] == '1' && match[:text] == 'the note'
+    end
+  end
+
+  # --- preview_converter.rb: the Pandoc argument list, without Pandoc -------
+  # Pandoc itself is not on PATH in this dev shell (confirmed above for
+  # pdftex's sibling check), so only the pure argument-building side of this
+  # class — not an actual conversion — can run here.
+
+  d.step('preview_converter.rb builds its Pandoc arguments off the current theme') do
+    args = Apostrophe::PreviewConverter.args
+    d.check('it asks for a standalone document') { args.include?('--standalone') }
+    d.check('it asks for MathJax') { args.include?('--mathjax') }
+    d.check('it points at the current theme\'s web stylesheet') do
+      args.any? { |arg| arg == "--css=#{Apostrophe::Theme.current.web_css}" }
+    end
+    d.check('it loads both Lua filters this port ships') do
+      args.count { |arg| arg.start_with?('--lua-filter=') } == 2
+    end
+    unless Apostrophe::Helpers.exist_executable?('pandoc')
+      puts '    note: pandoc is not on PATH in this dev shell — PreviewConverter#convert' \
+           ' itself (the worker-thread Pandoc call) is not exercised here, only its' \
+           ' argument list.'
+    end
   end
 end

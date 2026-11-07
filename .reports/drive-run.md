@@ -84,3 +84,68 @@ intentional gap, not something this run could drive.
   environment/packaging gap in the dev shell, not a port bug in `lib/`, exactly
   as the previous round found it — reported again rather than patched over by
   stubbing the require or deleting the spec_helper config.
+
+## Round 4 — re-verification plus new coverage for previously-unchecked classes
+
+Re-ran `nix develop --command xvfb-run -a ruby test/drive_apostrophe.rb` fresh
+against this commit on 2026-11-07. The 91 checks from round 3 all still pass
+unchanged, confirming the port has not regressed.
+
+`component-parity.md` (round 2) had named five classes no drive script
+referenced by name: `Inhibitor`, `PreviewConverter`, `LatexToPng`,
+`TexliveWarning` and `MarkupRegex` itself (only exercised indirectly through
+the editor surface). This round adds checks for four of them directly in
+`drive_apostrophe.rb`:
+
+- **`markup_regex.rb`**: 16 pure checks against the compiled `Regexp`
+  constants directly — bold, both italic forms, bold+italic, strikethrough,
+  code spans, links, images, headers, fenced code blocks, both list forms,
+  block quotes, inline math, horizontal rules and footnotes. No widget
+  needed; these run in milliseconds.
+- **`preview_converter.rb`**: `PreviewConverter.args` is asserted to include
+  `--standalone`, `--mathjax`, the current theme's `--css=` path and both
+  shipped Lua filters. Pandoc itself is not on PATH in this dev shell
+  (confirmed: `which pandoc` finds nothing), so `#convert` — the actual
+  worker-thread Pandoc call — is not exercised, and the script says so in
+  its own output rather than silently skipping it.
+- **`texlive_warning.rb`**: exercised through real wiring, not a direct call
+  — `pdftex` is also not on PATH here (confirmed directly), so selecting PDF
+  (which `requires_texlive?`) in the advanced export dialog genuinely flips
+  `AdvancedExportDialog`'s options stack to the `texlive_warning` page,
+  disables the export button, and shows the distro panel (no
+  `/.flatpak-info` in this sandbox). Switching away to HTML and back to PDF
+  confirms the state machine runs both ways.
+- **`inhibitor.rb`**: this one turned up a real environment limitation, not
+  a port bug, and is reported honestly rather than loosened or deleted. The
+  port's own call site is correct — `main_window.rb`'s `on_text_changed`
+  calls `@inhibitor.inhibit(:logout)` on the first dirtying edit, confirmed
+  by reading the source — but asserting `app.inhibitor.inhibiting?`
+  end-to-end through the real `Gtk::Application#inhibit` call failed:
+  verified directly with a standalone script (`app.inhibit(window, :logout,
+  'reason')` against this same display) that `Gtk::Application#inhibit`
+  returns cookie `0` in this headless Xvfb session, because there is no
+  systemd-logind or xdg-desktop-portal here to grant the inhibit against.
+  Cookie `0` is `Inhibitor`'s own "not holding anything" sentinel, so
+  `inhibiting?` reads false — correctly reporting what the real session told
+  it, not a bug in `Inhibitor`. Rather than deleting the end-to-end check or
+  loosening it to ignore the cookie, `Inhibitor`'s own bookkeeping — refusing
+  a second `inhibit` while already inhibiting, zeroing the cookie and firing
+  `uninhibit` with exactly the cookie the session handed back, treating a
+  second `uninhibit` as a no-op — is instead verified in isolation with a
+  fake stand-in for `Helpers.app`, which is testable regardless of what a
+  real session grants. The end-to-end integration path through the real
+  session is named here as genuinely unverifiable in this environment, not
+  silently dropped.
+
+`LatexToPng` remains unverified by any drive check: `latex` and `dvipng` are
+both absent from this dev shell's `PATH` (confirmed: `which latex dvipng`
+finds neither), and unlike Pandoc's graceful `Errno::ENOENT` rescue in
+`helpers.rb`, `LatexToPng#generate_png` calls `Open3.capture2e('latex', ...)`
+with no rescue around a missing binary, so driving it here would only prove
+that a missing executable raises `Errno::ENOENT` — not anything about the
+port's own LaTeX-to-PNG pipeline. Named here rather than faked around.
+
+**Result this round: `test/drive_apostrophe.rb` — 123 of 123 checks passed,
+DRIVE OK.** The RSpec suite gap is unchanged from round 3 (re-confirmed this
+round, same `LoadError: cannot load such file -- kettle/test/rspec`) and is
+not re-described here.
