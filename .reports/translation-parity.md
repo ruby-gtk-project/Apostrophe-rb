@@ -1,60 +1,100 @@
-# Translation parity — Apostrophe (round 3)
+# Translation parity — Apostrophe (round 4)
 
-Method: the `translation-parity` skill, reverified independently against
-`origin/main` rather than carried over from round 2's report (the
-conclusion is unchanged, but every number below was recounted directly in
-this audit).
+Method: the `translation-parity` skill. Round 3 found a total 0% gap; this
+round's commit `4823bfe` ("Add gettext translation catalogue") changed that
+materially, so every number below was recounted fresh against both
+`origin/main` and the current `ruby` branch rather than carried over.
 
-## Upstream catalogue
-
-```
-git show origin/main:po/LINGUAS   → 33 locales
-git ls-tree -r --name-only origin/main | grep '^po/'  → po/POTFILES.in lists 42 source files
-git show origin/main:po/de.po     → 177 msgid lines (176 real strings + the header)
-git show origin/main:po/en_GB.po  → 153 active msgid lines + 8 obsolete (#~) entries
-```
-
-The exact count differs slightly between locale files because they were
-regenerated at different points against a moving `POTFILES.in` (no checked-in
-`.pot` exists — it is Meson-generated) — `de.po` is the more complete/recent
-catalogue of the two sampled. The precise number is not the point; both
-samples are in the 150-180 range and **both are totally absent from the
-port**, which is the finding.
-
-## Port status
+## Upstream catalogue (unchanged facts, reconfirmed)
 
 ```
-find . -iname '*.po' -o -iname '*.pot'  →  nothing (checked this session, excluding .git)
-grep -rn 'gettext\|GLib\._(\|_("\|N_(' lib/ exe/  →  no matches anywhere
+git show origin/main:po/LINGUAS            → 33 locales
+git ls-tree -r --name-only origin/main | grep '^po/' → POTFILES.in lists 42 entries
+git show origin/main:po/de.po               → 177 msgid lines
 ```
 
-The `ruby` branch has:
-- no `po/` directory,
-- no `LINGUAS`, no `POTFILES.in`, no `.pot`, no `.po` files,
-- no translation function call anywhere in `lib/` or `exe/` — every
-  user-facing string identified across `component-identification.md` and
-  `component-parity.md` (menu item labels, dialog titles and bodies, button
-  tooltips, the shortcuts-window table, empty-state text, error messages) is
-  a hardcoded English string literal in Ruby source.
+Upstream's 42 `POTFILES.in` entries split as 17 `data/*` files (`.ui`
+templates, the `.desktop.in.in`, `.gschema.xml`, and `.metainfo.xml.in.in`)
+plus 25 `.py` modules.
 
-## Is extraction tooling at least present for later?
+## Port catalogue — now real, reverified end-to-end
 
-The dev shell carries `rxgettext` (confirmed: `flake.nix`'s devShell
-comments reference it as what a future `rake pot` task would drive), but
-this is inert — there is a tool on `PATH` and zero strings in the codebase
-marked for it to find. A `rake pot` task does not exist in this fork's
-`Rakefile` either (checked: no `pot`/`gettext`/`i18n` task is defined).
-Having the extractor available is not translation infrastructure if nothing
-in the source is wrapped in a translation call for it to extract.
+```
+$ find . -iname '*.po' -o -iname '*.pot'   (excl. .git)
+po/apostrophe-rb.pot, po/ca.po … po/zh_TW.po  (33 locale files)
+$ wc -l < <(grep -c '^msgid "' po/apostrophe-rb.pot)
+143
+$ diff <upstream LINGUAS, sorted> <port LINGUAS, sorted>
+(empty — identical 33-locale set)
+```
+
+`rakelib/po.rake` provides `po:pot`/`po:update`/`po:compile`; `.mo` files
+are compiled under `data/locale/<lang>/LC_MESSAGES/`. Gettext resolution
+verified directly this session, not just read in source:
+
+```
+$ LANG=fr_FR.UTF-8 ruby -e 'require "gettext"; include GetText
+  bindtextdomain("apostrophe-rb", path: "data/locale"); puts _("Error")'
+Erreur
+```
+
+This is real, working i18n — a genuine change from 0%.
+
+## Gaps found this round — the catalogue is real but not complete
+
+**1. `text_view.rb` is outside `po/POTFILES.in`, and the one string
+upstream translates at that call site is a bare literal.** Upstream's
+`apostrophe/text_view.py` (lines 177, 179) wraps `_("web page")` — the
+placeholder text inserted when a URL is dropped onto the editor
+(`[web page](url)`). The port's `lib/apostrophe/text_view.rb:112` has the
+identical call site:
+
+```ruby
+@text_buffer.insert_at_cursor("[web page](#{content})")
+```
+
+`"web page"` is never passed through `_()`, and `text_view.rb` does not
+appear in `po/POTFILES.in`'s 21-file list at all. A user on any non-English
+locale who drags a link into the editor gets hardcoded English text
+inserted into their document — the one place this round's own `po.rake`
+pipeline could not have caught it, since it only extracts from files
+already listed.
+
+**2. Three upstream translatable files have no port-side equivalent to
+even carry a gap.** Upstream's `POTFILES.in` includes
+`data/org.gnome.gitlab.somas.Apostrophe.desktop.in.in` (app name, generic
+name, keywords), `.metainfo.xml.in.in` (the one-line summary, the
+multi-paragraph feature description shown in GNOME Software/Flathub — ~9
+separate `<p>`/`<li>` strings sampled directly from upstream's XML), and
+`.gschema.xml` (5 `<summary>` strings shown in `dconf-editor`). None of
+these three files exist anywhere in this port — confirmed: `find data
+-iname '*metainfo*' -o -iname '*desktop*' -o -iname '*gschema*'` returns
+nothing. This is a packaging gap first, but it is also why the 177→143
+msgid shortfall is almost entirely accounted for by files that were never
+in scope for `rake po:pot` to extract from, rather than by strings
+dropped from files that exist.
+
+Together, these two gaps plausibly account for the entire 34-msgid
+shortfall between upstream's 177 and the port's 143 (the metainfo/
+desktop/gschema strings number in the mid-teens to ~20 by direct count of
+upstream's XML; `text_view.rb`'s one string is one more). The precise
+accounting is secondary to the finding: **the catalogue is not yet a
+complete superset of every upstream msgid**, and nothing in the commit
+message or `.reports/` claimed it was — `4823bfe`'s own message says
+"preview_handler.rb and preview_web_view.rb remain unported" but does not
+mention the `text_view.rb`/metainfo gap, which this audit found
+independently.
 
 ## Verdict
 
-**0% translation parity. Total gap, not partial.** No msgid, no locale, no
-extraction call, and no infrastructure to generate one exists anywhere on
-the `ruby` branch. Every prior round's report and this round's reach the
-same number for the same reason — this has not regressed or improved across
-three porting rounds, because no commit on this branch has touched
-internationalization at all. This is the cleanest possible example of "a
-component no check exercises is unverified, not done": the drive script
-never touches a locale, and nothing in `.reports/` or any commit message
-claims otherwise.
+**Translation parity moved from a total 0% gap (round 3) to a real,
+working, but incomplete implementation.** 33/33 locales carried over
+correctly, a real `.pot`/`.po`/`.mo` pipeline exists and resolves strings
+correctly at runtime under a non-English locale, and 20 `lib/*.rb` files
+are correctly wrapped. Against that: one upstream-translated string was
+ported as a bare Ruby literal at the exact call site upstream translates
+it (`text_view.rb`, "web page"), and three upstream files carrying
+app-identity and settings-schema strings have no port-side file to even
+attempt translating. Calling this "complete" or "parity achieved" would
+be a false-green claim; calling it "a real foundation with two named,
+concrete gaps" is accurate.

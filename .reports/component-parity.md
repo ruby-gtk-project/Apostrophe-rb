@@ -1,128 +1,115 @@
-# Component parity — Apostrophe (round 3)
+# Component parity — Apostrophe (round 4)
 
-Method: the `component-parity` skill, checking every component
-`component-identification.md` (this round) marks ported, plus every upstream
-window, dialog, page, menu item, keyboard shortcut, preference, action, empty
-state and error state, against the `ruby` branch as of `b13564f`
-(91/91 checks, reverified below). This supersedes round 2's
-`component-parity.md`, most of which (no main window, no menus, no preview
-chrome) is now out of date.
+Method: the `component-parity` skill, checking every upstream window,
+dialog, page, menu item, keyboard shortcut, preference, action, empty state
+and error state against the `ruby` branch at `b3e1f7f` (latest commit),
+with the runtime gate (`test/drive_apostrophe.rb`) rerun fresh in this
+audit rather than trusted from the commit message.
+
+```
+$ nix develop --command xvfb-run -a ruby test/drive_apostrophe.rb
+123 of 123 checks passed
+DRIVE OK
+```
+
+Reproduced, matches the task's stated gate exactly.
 
 ## Windows
 
-- **Main window**: real now. `main_window.rb` owns the editor, header bar,
-  search bar, stats button, and the file lifecycle — new/open/save/save-as/
-  close, discard infobar, save progress bar, unsaved-changes prompt — each
-  wired as a real `Gio::SimpleAction` a user can actually reach (menu or
-  button), reverified live by re-running `test/drive_apostrophe.rb` in this
-  audit: 91/91, DRIVE OK.
-- **Preview window**: the chrome is real — `PreviewRenderer`'s flap/stack
-  state machine, `PreviewWindow`'s detached toplevel, the layout switcher —
-  all driven and asserted in `drive_apostrophe.rb`. **The content is not**:
-  it is a static placeholder label, never real Pandoc→HTML output rendered
-  through WebKit. A user who opens the preview pane never sees their
-  document rendered. This is a correctly *disclosed* gap (see
-  `main_window.rb`/`preview_renderer.rb` comments and round-3 commit
-  message), but it remains the single biggest functional gap in the app:
-  Apostrophe's whole premise is live Markdown preview.
+- **Main window**: real. File lifecycle (new/open/save/save-as/close,
+  discard infobar, save progress bar, unsaved-changes prompt) all wired as
+  real `Gio::SimpleAction`s, driven in `drive_apostrophe.rb`. Unchanged
+  from round 3.
+- **Preview window**: chrome is real and now more thoroughly driven
+  (`PreviewRenderer`'s flap/stack state machine, `PreviewWindow`'s detached
+  toplevel, the layout switcher). **The content is still not real**: a
+  static placeholder label, never Pandoc→HTML rendered through WebKit — no
+  Ruby WebKitGTK4 binding exists in this dev shell. This is Apostrophe's
+  core marketed feature and remains non-functional in the port, disclosed
+  honestly in `main_window.rb`/`preview_renderer.rb` comments and in every
+  round's report.
 
 ## Dialogs
 
 | Dialog | Upstream | Port | Parity |
 |---|---|---|---|
-| About | `Adw.AboutWindow` | `about_dialog.rb` | Opens; driven once. Sub-fields (translator-credits, artists, issue URL) not individually asserted — unverified, not confirmed wrong. |
-| Shortcuts | `Gtk.ShortcutsWindow`, 24 shortcuts in 7 groups | `shortcuts_window.rb` | **Row/group counts match (24, 7)** — recounted directly against `data/ui/Shortcuts.ui` and the `GROUPS` constant. But see "Shortcuts window vs. real accelerators" below: the window's content is accurate to upstream's *intent*, not to what the port actually binds. |
+| About | `Adw.AboutWindow` | `about_dialog.rb` | Opens; driven once. Sub-fields not individually asserted. |
+| Shortcuts | `Gtk.ShortcutsWindow`, 24 shortcuts / 7 groups | `shortcuts_window.rb` | Row/group counts match (24, 7). But see accelerator section below — the window's content describes bindings that do not all exist. |
 | Hemingway explainer | `Adw.MessageDialog` | `hemingway_dialog.rb` | Opens; text content not asserted. |
-| Preferences | `Adw.PreferencesWindow`, 3 switches + 1 combo row (2 more rows upstream itself hides) | `preferences_dialog.rb` | **Matches.** Verified against `preferences_dialog.py` and `Preferences.ui` directly: upstream's `spellcheck`/`session-restore` rows are `visible=False` in its own `.ui`, so their absence in the port is correct, not a gap. Autohide-headerbar, bigger-text, input-format combo + help button all present and bound to real `Gio::Settings`, driven in `drive_apostrophe.rb`. |
-| Advanced export | multi-page `Adw.Window`, leaflet, per-format option groups | `advanced_export_dialog.rb` | Present, driven: default-selects PDF, page-size group shown/hidden per format, go-back returns to the formats list, window title follows selection. |
-| TeXLive warning | `Gtk.Stack`, flatpak/distro branching | `texlive_warning.rb` | Present, not independently driven this round beyond existing. |
-| Unsaved-changes save prompt | `Adw.MessageDialog` in `main_window.py` | present in `main_window.rb` | Driven in `drive_apostrophe.rb`. |
+| Preferences | `Adw.PreferencesWindow` | `preferences_dialog.rb` | Matches upstream exactly, including upstream's own hidden rows (`spellcheck`/`session-restore`, `visible=False` in upstream's `.ui`). Driven. |
+| Advanced export | multi-page `Adw.Window`, leaflet | `advanced_export_dialog.rb` + `texlive_warning.rb` | Present, now driven through **both** branches: PDF default-select, page-size group show/hide per format, go-back, **and** the TeX Live warning page — selecting PDF with no `pdftex` on `PATH` genuinely flips to the warning page and disables Export; switching to HTML and back confirms both directions. New this round vs. round 3, where TeXLive warning was "present, not independently driven." |
+| Unsaved-changes prompt | `Adw.MessageDialog` | present | Driven. |
 
 ## Menus
 
-Reverified from scratch against `data/ui/Headerbar.ui`'s `Menu` (8 items
-across 5 sections) and `export_menu` (6 items across 4 sections) — **14
-items total upstream.** Read `lib/apostrophe/headerbar.rb`'s `menu_model`
-and `export_menu_model` line by line against that XML:
+14 of 14 upstream `Headerbar.ui` menu items reachable item-for-item.
+Unchanged from round 3, reverified by re-reading `headerbar.rb`'s
+`menu_model`/`export_menu_model` against the upstream XML.
 
-- Theme switcher custom slot — present (`themeswitcher_section`).
-- Hemingway Mode, Focus Mode — present.
-- Find and Replace — present.
-- Preferences — present.
-- Open Tutorial, Keyboard Shortcuts, About Apostrophe — present (tutorial
-  item correctly retargeted to a local file path in place of upstream's
-  GResource URI, since the port ships its media on disk — a deliberate,
-  documented substitution, not a drop).
-- Save As…, PDF/HTML/ODT quick export (×3), Advanced Export…, Copy HTML —
-  present.
+## Keyboard shortcuts / accelerators — still the largest live gap, unchanged
 
-**14 of 14 upstream menu items are reachable, item-for-item, correcting
-round 2's "0 of 13 reachable" finding**, which predates `headerbar.rb`'s
-existence. One upstream item is intentionally dropped outside this menu: the
-exit-fullscreen button `BaseHeaderbar` packs for in-preview fullscreen,
-disclosed in `headerbar.rb`'s own header comment (ties to the unported
-fullscreen/preview-chrome behavior).
+Only **13 of 23** upstream accelerator-bearing actions are registered via
+`set_accels_for_action`, reverified by reading all three call sites
+(`application.rb:94-95`, `main_window.rb:343`'s loop over an 11-entry
+`SHORTCUTS` hash — 2 + 11 = 13). No commit since round 3 touched this.
 
-## Keyboard shortcuts / accelerators — the real gap this round
+**Missing, though the action itself works via mouse:** `win.open`,
+`win.save`, `win.save_as`, `win.close`, `win.find`, `win.find_replace`,
+`win.focus_mode`, `win.hemingway_mode`, `win.preview` (9 real keys that do
+nothing when typed). **Missing because the action doesn't exist:**
+`win.fullscreen`, `app.spellcheck` (2, tied to unported features).
 
-See `component-identification.md`'s new finding in full. Summary: only 13 of
-upstream's 23 accelerator-bearing actions are ever registered via
-`set_accels_for_action` (reverified by reading every call site in
-`application.rb` and `main_window.rb` — there are exactly 3 call sites total,
-2 single accels + 1 loop over an 11-entry hash). **Missing, though the
-action itself works via mouse:** `win.open`, `win.save`, `win.save_as`,
-`win.close`, `win.find`, `win.find_replace`, `win.focus_mode`,
-`win.hemingway_mode`, `win.preview`. **Missing because the action itself
-does not exist:** `win.fullscreen` (disclosed, tied to the unported preview
-chrome/fullscreen behavior) and `app.spellcheck` (spellcheck is unported
-entirely).
+`shortcuts_window.rb`'s hardcoded `GROUPS` table still lists all of these as
+if live — a user opening Keyboard Shortcuts and pressing Ctrl+O or Ctrl+F
+gets nothing, with no indication in the UI that the shortcut doesn't work.
 
-This matters beyond the raw count because `shortcuts_window.rb`'s `GROUPS`
-table is a **hand-written literal**, not read from the live action/accel
-map, and it lists all of these as working shortcuts ("Open — Ctrl+O",
-"Save — Ctrl+S", "Find — Ctrl+F", "Hemingway mode — Ctrl+T", "Fullscreen —
-F11", …). A user opening the shortcuts window sees upstream's full table and
-has no way to discover that ⅔ of the lifecycle/view shortcuts do nothing
-when pressed. This is reported again as its own finding in
-`accountability-ensurance.md` because it is exactly the kind of gap a
-component that "exists and opens" can hide.
+## Classes with no dedicated drive-script coverage — narrowed this round
 
-## Preferences (GSettings)
+Round 3 named five: `Inhibitor`, `PreviewConverter`, `LatexToPng`,
+`TexliveWarning`, `MarkupRegex`. This round's `b3e1f7f` added direct
+coverage for four of them:
 
-All 13 keys + 2 enums exist in the port's own schema, matching upstream 1:1
-on name/type (unchanged from round 2, reconfirmed). Round 3 adds the UI that
-round 2 found missing: `preferences_dialog.rb` now gives 3 of those keys
-(autohide-headerbar, bigger-text, input-format) a real switch/combo bound
-live, closing round 2's "schema without UI" gap for those three.
-`session-restore` has a schema key and no UI anywhere, matching upstream
-(hidden there too).
+- `markup_regex.rb` — 16 checks against the compiled `Regexp` constants
+  directly (bold, italic ×2, bold+italic, strikethrough, code, links,
+  images, headers, fenced code, lists ×2, block quotes, math, hr,
+  footnotes). Real, not indirect.
+- `preview_converter.rb` — `PreviewConverter.args` asserted directly
+  (standalone, mathjax, theme CSS path, both Lua filters). `#convert`
+  itself (the worker-thread Pandoc call) is **not** exercised — `pandoc` is
+  absent from `PATH` in this dev shell (reconfirmed: `which pandoc` finds
+  nothing). Named as unexercised, not faked.
+- `texlive_warning.rb` — now driven through the real advanced-export
+  leaflet, both directions (see Dialogs table above).
+- `inhibitor.rb` — `Gtk::Application#inhibit` returns cookie `0` under this
+  headless Xvfb session (no logind/portal), so the end-to-end path cannot
+  be verified here; `Inhibitor`'s own cookie bookkeeping (no double-inhibit,
+  correct uninhibit, idempotent re-uninhibit) is instead verified in
+  isolation against a fake `Helpers.app`. The real-session path is named as
+  genuinely unverifiable in this environment, not silently dropped.
 
-## Empty / error states
+**`LatexToPng` remains the one class with zero coverage, direct or
+indirect**, of any kind: `latex` and `dvipng` are both absent from `PATH`
+(reconfirmed), and `LatexToPng#generate_png` has no rescue around the
+missing-binary case, so driving it would only prove `Errno::ENOENT` — not
+the port's own pipeline logic. Per this task's framing, this is an
+unverified component, not a done one.
 
-- "No Recent Documents" / recents populated — both states exist in
-  `open_popover.rb` and both are driven in `drive_apostrophe.rb` (confirmed:
-  the drive script checks the empty-state label before adding a file, then
-  the populated `Adwaita::ActionRow` after).
-- "File Has Changed on Disk" discard infobar — present in `main_window.rb`,
-  driven.
-- Generic error dialog (`helpers.show_error`) — present, unchanged from
-  round 2.
-- TeXLive-missing warning — present (`texlive_warning.rb`), not independently
-  driven beyond presenting the dialog that contains it.
-- "No Results Found" in the open popover's search — present in
-  `open_popover.rb`'s stack; not independently asserted by the drive script
-  (it checks the empty/populated recents states, not the no-search-results
-  state specifically) — **unverified, not confirmed wrong.**
+## Translation — new surface since round 3, see `translation-parity.md`
+
+The headerbar menu, preferences dialog, shortcuts window, and export
+dialogs all now route their visible strings through `_()`/`n_()` and
+resolve correctly under a non-English `LANG` (spot-verified: `_("Error")`
+→ `"Erreur"` under `fr_FR.UTF-8`). But `text_view.rb`'s drag-and-drop link
+insertion (`"web page"`) is not wrapped and the file is outside
+`po/POTFILES.in` — one concrete component-level parity miss, detailed in
+`component-identification.md` and `translation-parity.md`.
 
 ## Verdict
 
-Round 3 closes almost all of round 2's integration-layer gap: a user can
-now open, edit, save, export, and reach every menu item and every dialog.
-Two real gaps remain, both substantive rather than cosmetic:
-
-1. **The preview pane renders nothing real** — the app's headline feature is
-   a placeholder.
-2. **10 of 23 keyboard shortcuts are unbound while the shortcuts window
-   claims otherwise** — a user-visible correctness gap, not just an
-   incompleteness one, because the documentation (the shortcuts window) is
-   actively wrong about current behavior rather than silent about it.
+No regressions found. Real, verified gains since round 3: TeXLive warning
+page is now driven both directions, markup_regex/preview_converter/
+inhibitor all have direct or honestly-scoped coverage, and a real (if
+incomplete) translation layer now exists. Unchanged and still open: the
+preview pane renders no real content, 10 of 23 accelerators are unbound
+while the shortcuts window claims otherwise, and `LatexToPng` has no
+coverage of any kind.
