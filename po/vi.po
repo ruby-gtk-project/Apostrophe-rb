@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apostrophe main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"POT-Creation-Date: 2026-11-08 01:24+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
@@ -112,8 +112,8 @@ msgstr "Chữ in đậm"
 #: ../lib/apostrophe/advanced_export_dialog.rb:97
 #: ../lib/apostrophe/advanced_export_dialog.rb:412
 #: ../lib/apostrophe/advanced_export_dialog.rb:420
-#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
-#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:522
+#: ../lib/apostrophe/main_window.rb:566 ../lib/apostrophe/main_window.rb:709
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Close document"
 msgstr "Đóng tài liệu"
 
-#: ../lib/apostrophe/export_format.rb:56
+#: ../lib/apostrophe/export_format.rb:57
 msgid "ConTeXt"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr "Chép chữ đã chọn vào clipboard"
 msgid "Cut selected text to clipboard"
 msgstr "Cắt chữ đã chọn vào clipboard"
 
-#: ../lib/apostrophe/main_window.rb:708
+#: ../lib/apostrophe/main_window.rb:710
 msgid "Discard"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Discard Changes and Reload"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:48
+#: ../lib/apostrophe/export_format.rb:49
 msgid "EPUB v3"
 msgstr ""
 
@@ -244,11 +244,11 @@ msgstr "Toàn màn hình"
 msgid "General"
 msgstr "Chung"
 
-#: ../lib/apostrophe/export_format.rb:61
+#: ../lib/apostrophe/export_format.rb:62
 msgid "Groff Man"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#: ../lib/apostrophe/export_format.rb:55 ../lib/apostrophe/export_format.rb:76
 #, fuzzy
 msgid "HTML"
 msgstr "Chép HTML"
@@ -257,11 +257,11 @@ msgstr "Chép HTML"
 msgid "HTML Options"
 msgstr "Tùy chọn HTML"
 
-#: ../lib/apostrophe/export_format.rb:52
+#: ../lib/apostrophe/export_format.rb:53
 msgid "HTML5 Slideshow (DZSlides)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:49
+#: ../lib/apostrophe/export_format.rb:50
 msgid "HTML5 Slideshow (reveal.js)"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr "Đầu trang"
 msgid "Hemingway Mode"
 msgstr "Chế độ Hemingway"
 
-#: ../lib/apostrophe/main_window.rb:447
+#: ../lib/apostrophe/main_window.rb:449
 msgid "Hemingway Mode is on; text cannot be deleted"
 msgstr ""
 
@@ -317,19 +317,19 @@ msgstr "Mục"
 msgid "Keyboard Shortcuts"
 msgstr "Phím tắt"
 
-#: ../lib/apostrophe/export_format.rb:53
+#: ../lib/apostrophe/export_format.rb:54
 msgid "LaTeX (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:50
+#: ../lib/apostrophe/export_format.rb:51
 msgid "LaTeX Beamer Slideshow (pdf)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:51
+#: ../lib/apostrophe/export_format.rb:52
 msgid "LaTeX Beamer Slideshow (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:46
+#: ../lib/apostrophe/export_format.rb:47
 msgid "LibreOffice Text Document"
 msgstr ""
 
@@ -343,12 +343,12 @@ msgstr "Liệt kê mục"
 msgid "Markdown"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:551
+#: ../lib/apostrophe/main_window.rb:553
 #, fuzzy
 msgid "Markdown (.md)"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:583
+#: ../lib/apostrophe/main_window.rb:585
 msgid "Markdown Files"
 msgstr "Các tập tin Markdown"
 
@@ -356,11 +356,11 @@ msgstr "Các tập tin Markdown"
 msgid "Markdown flavor documentation"
 msgstr "Tài liệu biến thể Markdown"
 
-#: ../lib/apostrophe/export_format.rb:55
+#: ../lib/apostrophe/export_format.rb:56
 msgid "MediaWiki Markup"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:47
+#: ../lib/apostrophe/export_format.rb:48
 msgid "Microsoft Word (docx)"
 msgstr ""
 
@@ -393,11 +393,11 @@ msgstr "Không có chú thích phù hợp được tìm thấy"
 msgid "Number Sections"
 msgstr "Phần số"
 
-#: ../lib/apostrophe/export_format.rb:83
+#: ../lib/apostrophe/export_format.rb:82
 msgid "ODT"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:565
 #: ../lib/apostrophe/shortcuts_window.rb:45
 msgid "Open"
 msgstr "Mở"
@@ -406,7 +406,7 @@ msgstr "Mở"
 msgid "Open Tutorial"
 msgstr "Mở hướng dẫn"
 
-#: ../lib/apostrophe/main_window.rb:560
+#: ../lib/apostrophe/main_window.rb:562
 msgid "Open a .md file"
 msgstr "Mở một tập tin .md"
 
@@ -415,7 +415,7 @@ msgstr "Mở một tập tin .md"
 msgid "Options"
 msgstr "Tùy chọn HTML"
 
-#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+#: ../lib/apostrophe/export_format.rb:46 ../lib/apostrophe/export_format.rb:70
 msgid "PDF"
 msgstr ""
 
@@ -429,7 +429,7 @@ msgstr "Cỡ trang"
 msgid "Paste selected text from clipboard"
 msgstr "Dán chữ đã chọn từ clipboard"
 
-#: ../lib/apostrophe/main_window.rb:590
+#: ../lib/apostrophe/main_window.rb:592
 msgid "Plain Text Files"
 msgstr "Tập tin Văn bản Thuần"
 
@@ -485,12 +485,12 @@ msgstr "Thay thế"
 msgid "Replace All"
 msgstr "Thay thế tất cả"
 
-#: ../lib/apostrophe/export_format.rb:60
+#: ../lib/apostrophe/export_format.rb:61
 msgid "Rich Text Format"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
-#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:521
+#: ../lib/apostrophe/main_window.rb:711
 #: ../lib/apostrophe/shortcuts_window.rb:46
 msgid "Save"
 msgstr "Lưu"
@@ -504,12 +504,12 @@ msgstr "Lưu thành…"
 msgid "Save as"
 msgstr "Lưu thành"
 
-#: ../lib/apostrophe/main_window.rb:701
+#: ../lib/apostrophe/main_window.rb:703
 #, fuzzy
 msgid "Save changes?"
 msgstr "Lưu thành"
 
-#: ../lib/apostrophe/main_window.rb:516
+#: ../lib/apostrophe/main_window.rb:518
 msgid "Save your File"
 msgstr "Lưu tệp"
 
@@ -570,11 +570,11 @@ msgstr "Danh sách nội dung"
 msgid "TexLive Required"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:59
+#: ../lib/apostrophe/export_format.rb:60
 msgid "Texinfo"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:57
+#: ../lib/apostrophe/export_format.rb:58
 #, fuzzy
 msgid "Textile"
 msgstr "Kích cỡ chữ"
@@ -655,7 +655,7 @@ msgstr "chữ đậm"
 msgid "italic text"
 msgstr "chữ ghiêng"
 
-#: ../lib/apostrophe/export_format.rb:58
+#: ../lib/apostrophe/export_format.rb:59
 msgid "reStructuredText"
 msgstr ""
 
@@ -663,7 +663,11 @@ msgstr ""
 msgid "strikethrough text"
 msgstr "chữ bị gạch xóa"
 
-#: ../lib/apostrophe/main_window.rb:703
+#: ../lib/apostrophe/text_view.rb:114
+msgid "web page"
+msgstr "trang thông tin điện tử"
+
+#: ../lib/apostrophe/main_window.rb:705
 #, fuzzy
 msgid ""
 "“%{title}” contains unsaved changes. If you don’t save, all your changes "
@@ -888,9 +892,6 @@ msgstr "Nếu bạn không lưu tài liệu, các thay đổi của bạn sẽ h
 
 #~ msgid "{:d}:{:02d}:{:02d} Read Time"
 #~ msgstr "{:d}:{:02d}:{:02d} Thời gian đọc"
-
-#~ msgid "web page"
-#~ msgstr "trang thông tin điện tử"
 
 #~ msgid "Open Recent"
 #~ msgstr "Mới mở gần đây"

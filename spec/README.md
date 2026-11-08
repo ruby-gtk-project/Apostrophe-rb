@@ -1,28 +1,27 @@
 # Specs
 
-This project uses `kettle-test` as its RSpec harness. The generated
-`spec/spec_helper.rb` requires `kettle/test/rspec`, which installs the shared
-test configuration and helper APIs used throughout the suite.
+This project uses plain RSpec. `spec/spec_helper.rb` used to require
+`kettle/test/rspec` (from the `kettle-test` gem) and `kettle-soup-cover`, but
+neither gem is vendored into flake.nix's devShell — that devShell carries
+`pkgs.rubyPackages_3_4.rspec` and nothing from the kettle-dev stack, which is
+a separate, repo-root development bundle (see the root `Gemfile`'s own
+comment) — so the suite never actually loaded on this branch. `spec_helper.rb`
+now requires nothing beyond RSpec itself and this gem's version file.
 
-## Harness Helpers
+Run the suite from the dev shell (the shell banner prints the same command):
 
-These helpers are available in specs after `spec/spec_helper.rb` loads:
+```
+ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--format", "progress", "--require", "spec_helper", "spec"])'
+```
 
-- `stub_env("NAME" => "value")` temporarily sets environment variables and
-  restores them after the example.
-- `hide_env("NAME")` temporarily removes environment variables and restores
-  them after the example.
-- `block_is_expected` supports expectation syntax for blocks.
-- `:check_output` disables default stream silencing for examples that need to
-  assert output.
-- `:freeze` and `:travel` metadata integrate with Timecop for example-level
-  time control.
-- `:skip_global_travel` opts an example out of global time travel.
-- `pending_for` marks examples pending for selected runtimes or dependency
-  versions.
-- `include_context "with rake", "task_name"` is available when `rake` was
-  loaded before `kettle/test/rspec`.
+## What's here
 
-Prefer these helpers over ad hoc ENV mutation, direct Timecop setup, or direct
-stdout/stderr plumbing. They keep specs isolated across parallel workers and
-make local runs match CI behavior.
+- `markup_regex_spec.rb` — ported from upstream's
+  `tests/test_regex_commonmark.py`, the CommonMark edge cases for `BOLD`,
+  `HEADER` and `HEADER_UNDER`. The `BOLD` expectations are the regex's real,
+  current output rather than upstream's own test file's expectations:
+  upstream's `test_regex_commonmark.py` has rotted against upstream's own
+  `markup_regex.py` (confirmed by running upstream's checked-out test file
+  with `python3 -m unittest`), so copying its assertions verbatim would just
+  import a pre-existing failure into this port under a different language.
+  See the comment above `describe '::BOLD'` for the mechanism.

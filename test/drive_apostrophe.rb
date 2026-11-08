@@ -621,4 +621,33 @@ GtkDriver.drive(Apostrophe::Application.new, shots: SHOTS, timeout: 60) do |d, a
            ' argument list.'
     end
   end
+
+  # --- latex_to_png.rb: error handling and document assembly, without latex/
+  # dvipng — neither binary is on PATH in this dev shell, so this exercises
+  # the real `generate_png` call end to end and checks it raises the
+  # documented RenderError instead of letting Errno::ENOENT escape, plus the
+  # pure TeX-document assembly that needs neither binary. This is partial
+  # coverage only: it never confirms a real formula renders to a PNG.
+
+  d.step('latex_to_png.rb reports a clear error when latex/dvipng are missing') do
+    converter = Apostrophe::LatexToPng.new
+    if Apostrophe::Helpers.exist_executable?('latex')
+      puts '    note: latex is on PATH in this dev shell — the missing-binary' \
+           ' rescue below is not exercised; only the document assembly is.'
+    else
+      error = begin
+        converter.generate_png('x^2')
+        nil
+      rescue Apostrophe::LatexToPng::RenderError => e
+        e
+      end
+      d.check('missing latex raises LatexToPng::RenderError, not Errno::ENOENT') { error.is_a?(Apostrophe::LatexToPng::RenderError) }
+      d.check('the error names the missing binary') { error && error.message.include?('latex') }
+    end
+    converter.discard_previous
+    d.check('the TeX header wraps amsmath/amsthm/amssymb/bm') do
+      %w[amsmath amsthm amssymb bm].all? { |pkg| Apostrophe::LatexToPng::TEX_HEADER.include?("usepackage{#{pkg}}") }
+    end
+    d.check('the TeX footer closes the document') { Apostrophe::LatexToPng::TEX_FOOTER == '\end{document}' }
+  end
 end

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apostrophe main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"POT-Creation-Date: 2026-11-08 01:24+0000\n"
 "PO-Revision-Date: 2022-06-28 15:44+0430\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -116,8 +116,8 @@ msgstr "کلفت کردن"
 #: ../lib/apostrophe/advanced_export_dialog.rb:97
 #: ../lib/apostrophe/advanced_export_dialog.rb:412
 #: ../lib/apostrophe/advanced_export_dialog.rb:420
-#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
-#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:522
+#: ../lib/apostrophe/main_window.rb:566 ../lib/apostrophe/main_window.rb:709
 msgid "Cancel"
 msgstr "لغو"
 
@@ -134,7 +134,7 @@ msgstr ""
 msgid "Close document"
 msgstr "بستن سند"
 
-#: ../lib/apostrophe/export_format.rb:56
+#: ../lib/apostrophe/export_format.rb:57
 msgid "ConTeXt"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr "رونوشت متن گزیده به تخته‌گیره"
 msgid "Cut selected text to clipboard"
 msgstr "برش متن گزیده به تخته‌گیره"
 
-#: ../lib/apostrophe/main_window.rb:708
+#: ../lib/apostrophe/main_window.rb:710
 msgid "Discard"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Discard Changes and Reload"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:48
+#: ../lib/apostrophe/export_format.rb:49
 msgid "EPUB v3"
 msgstr ""
 
@@ -248,11 +248,11 @@ msgstr "تمام‌صفحه"
 msgid "General"
 msgstr "عمومی"
 
-#: ../lib/apostrophe/export_format.rb:61
+#: ../lib/apostrophe/export_format.rb:62
 msgid "Groff Man"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#: ../lib/apostrophe/export_format.rb:55 ../lib/apostrophe/export_format.rb:76
 #, fuzzy
 msgid "HTML"
 msgstr "رونوشت HTML"
@@ -261,11 +261,11 @@ msgstr "رونوشت HTML"
 msgid "HTML Options"
 msgstr "گزینه‌های HTML"
 
-#: ../lib/apostrophe/export_format.rb:52
+#: ../lib/apostrophe/export_format.rb:53
 msgid "HTML5 Slideshow (DZSlides)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:49
+#: ../lib/apostrophe/export_format.rb:50
 msgid "HTML5 Slideshow (reveal.js)"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr "سرایند"
 msgid "Hemingway Mode"
 msgstr "حالت همینگ‌وی"
 
-#: ../lib/apostrophe/main_window.rb:447
+#: ../lib/apostrophe/main_window.rb:449
 msgid "Hemingway Mode is on; text cannot be deleted"
 msgstr ""
 
@@ -321,19 +321,19 @@ msgstr "مورد"
 msgid "Keyboard Shortcuts"
 msgstr "میان‌برهای صفحه‌کلید"
 
-#: ../lib/apostrophe/export_format.rb:53
+#: ../lib/apostrophe/export_format.rb:54
 msgid "LaTeX (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:50
+#: ../lib/apostrophe/export_format.rb:51
 msgid "LaTeX Beamer Slideshow (pdf)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:51
+#: ../lib/apostrophe/export_format.rb:52
 msgid "LaTeX Beamer Slideshow (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:46
+#: ../lib/apostrophe/export_format.rb:47
 msgid "LibreOffice Text Document"
 msgstr ""
 
@@ -347,12 +347,12 @@ msgstr "فهرست کردن مورد"
 msgid "Markdown"
 msgstr "مارک‌دون"
 
-#: ../lib/apostrophe/main_window.rb:551
+#: ../lib/apostrophe/main_window.rb:553
 #, fuzzy
 msgid "Markdown (.md)"
 msgstr "مارک‌دون"
 
-#: ../lib/apostrophe/main_window.rb:583
+#: ../lib/apostrophe/main_window.rb:585
 msgid "Markdown Files"
 msgstr "پرونده‌های مارک‌دون"
 
@@ -360,11 +360,11 @@ msgstr "پرونده‌های مارک‌دون"
 msgid "Markdown flavor documentation"
 msgstr "مستندات طعم مارک‌دون"
 
-#: ../lib/apostrophe/export_format.rb:55
+#: ../lib/apostrophe/export_format.rb:56
 msgid "MediaWiki Markup"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:47
+#: ../lib/apostrophe/export_format.rb:48
 msgid "Microsoft Word (docx)"
 msgstr ""
 
@@ -397,11 +397,11 @@ msgstr "هیچ پاورقی متناسبی یافت نشد"
 msgid "Number Sections"
 msgstr "تعداد بخش‌ها"
 
-#: ../lib/apostrophe/export_format.rb:83
+#: ../lib/apostrophe/export_format.rb:82
 msgid "ODT"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:565
 #: ../lib/apostrophe/shortcuts_window.rb:45
 msgid "Open"
 msgstr "گشودن"
@@ -410,7 +410,7 @@ msgstr "گشودن"
 msgid "Open Tutorial"
 msgstr "گشودن خودآموز"
 
-#: ../lib/apostrophe/main_window.rb:560
+#: ../lib/apostrophe/main_window.rb:562
 msgid "Open a .md file"
 msgstr "گشودن یک پروندهٔ ‎.md"
 
@@ -419,7 +419,7 @@ msgstr "گشودن یک پروندهٔ ‎.md"
 msgid "Options"
 msgstr "گزینه‌های HTML"
 
-#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+#: ../lib/apostrophe/export_format.rb:46 ../lib/apostrophe/export_format.rb:70
 msgid "PDF"
 msgstr ""
 
@@ -433,7 +433,7 @@ msgstr "اندارهٔ صفحه"
 msgid "Paste selected text from clipboard"
 msgstr "جای‌گذاری متن گزیده از تخته‌گیره"
 
-#: ../lib/apostrophe/main_window.rb:590
+#: ../lib/apostrophe/main_window.rb:592
 msgid "Plain Text Files"
 msgstr "پرونده‌های متنی ساده"
 
@@ -489,12 +489,12 @@ msgstr "جایگزینی"
 msgid "Replace All"
 msgstr "جایگزینی همه"
 
-#: ../lib/apostrophe/export_format.rb:60
+#: ../lib/apostrophe/export_format.rb:61
 msgid "Rich Text Format"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
-#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:521
+#: ../lib/apostrophe/main_window.rb:711
 #: ../lib/apostrophe/shortcuts_window.rb:46
 msgid "Save"
 msgstr "ذخیره"
@@ -508,12 +508,12 @@ msgstr "ذخیره به عنوان…"
 msgid "Save as"
 msgstr "ذخیره به عنوان"
 
-#: ../lib/apostrophe/main_window.rb:701
+#: ../lib/apostrophe/main_window.rb:703
 #, fuzzy
 msgid "Save changes?"
 msgstr "ذخیره به عنوان"
 
-#: ../lib/apostrophe/main_window.rb:516
+#: ../lib/apostrophe/main_window.rb:518
 msgid "Save your File"
 msgstr "ذخیرهٔ پرونده‌تان"
 
@@ -574,11 +574,11 @@ msgstr "جدول محتویات"
 msgid "TexLive Required"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:59
+#: ../lib/apostrophe/export_format.rb:60
 msgid "Texinfo"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:57
+#: ../lib/apostrophe/export_format.rb:58
 #, fuzzy
 msgid "Textile"
 msgstr "اندازهٔ متن"
@@ -659,7 +659,7 @@ msgstr "متن کلفت"
 msgid "italic text"
 msgstr "متن مورب"
 
-#: ../lib/apostrophe/export_format.rb:58
+#: ../lib/apostrophe/export_format.rb:59
 msgid "reStructuredText"
 msgstr ""
 
@@ -667,7 +667,11 @@ msgstr ""
 msgid "strikethrough text"
 msgstr "متن باطل شده"
 
-#: ../lib/apostrophe/main_window.rb:703
+#: ../lib/apostrophe/text_view.rb:114
+msgid "web page"
+msgstr "صفحهٔ وب"
+
+#: ../lib/apostrophe/main_window.rb:705
 #, fuzzy
 msgid ""
 "“%{title}” contains unsaved changes. If you don’t save, all your changes "
@@ -886,6 +890,3 @@ msgstr "اگر ذخیره نکنید، تمامی تغییرات‌تان برا
 
 #~ msgid "{:d}:{:02d}:{:02d} Read Time"
 #~ msgstr "{:d}:{:02d}:{:02d} زمان خواندن"
-
-#~ msgid "web page"
-#~ msgstr "صفحهٔ وب"

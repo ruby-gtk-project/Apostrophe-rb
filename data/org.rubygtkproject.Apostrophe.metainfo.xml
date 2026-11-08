@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.rubygtkproject.Apostrophe</id>
+  <launchable type="desktop-id">org.rubygtkproject.Apostrophe.desktop</launchable>
+  <name>Apostrophe</name>
+  <summary>Edit Markdown in style</summary>
+  <description>
+    <p>Focus on your writing with a clean, distraction-free markdown editor.</p>
+    <p>Features:</p>
+    <ul>
+      <li>An UI tailored to comfortable writing</li>
+      <li>A distraction-free mode</li>
+      <li>Dark, light and sepia themes</li>
+      <li>Everything you expect from a text editor, such as document statistics</li>
+      <li>Live preview of what you write</li>
+      <li>Export to all kinds of formats: PDF, Word/LibreOffice, LaTeX, or even HTML slideshows</li>
+    </ul>
+  </description>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <url type="homepage">https://github.com/ruby-gtk-project/Apostrophe-rb</url>
+  <content_rating type="oars-1.1"/>
+  <developer_name>ruby-gtk-project</developer_name>
+  <url type="bugtracker">https://github.com/ruby-gtk-project/Apostrophe-rb/issues</url>
+  <translation type="gettext">apostrophe-rb</translation>
+</component>

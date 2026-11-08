@@ -25,4 +25,5 @@ lib/apostrophe/search_bar.rb
 lib/apostrophe/shortcuts_window.rb
 lib/apostrophe/stats_handler.rb
 lib/apostrophe/texlive_warning.rb
+lib/apostrophe/text_view.rb
 lib/apostrophe/theme_switcher.rb

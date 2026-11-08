@@ -24,6 +24,8 @@ module Apostrophe
   # actions upstream wires onto this widget stay on Application for now,
   # which already reaches them through plain window actions.
   class TextView < Gtk::TextView
+    Helpers.bind_gettext(self)
+
     attr_accessor :scroller, :focus_mode
     attr_reader :text_buffer
 
@@ -109,7 +111,7 @@ module Apostrophe
           @text_buffer.insert_at_cursor(link)
           true
         elsif content.start_with?('http://', 'https://')
-          @text_buffer.insert_at_cursor("[web page](#{content})")
+          @text_buffer.insert_at_cursor("[#{_('web page')}](#{content})")
           true
         else
           false

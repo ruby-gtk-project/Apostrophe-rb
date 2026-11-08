@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apostrophe main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"POT-Creation-Date: 2026-11-08 01:24+0000\n"
 "PO-Revision-Date: 2022-10-23 20:12+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <>\n"
@@ -135,8 +135,8 @@ msgstr "מודגש"
 #: ../lib/apostrophe/advanced_export_dialog.rb:97
 #: ../lib/apostrophe/advanced_export_dialog.rb:412
 #: ../lib/apostrophe/advanced_export_dialog.rb:420
-#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
-#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:522
+#: ../lib/apostrophe/main_window.rb:566 ../lib/apostrophe/main_window.rb:709
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -153,7 +153,7 @@ msgstr "סגירה"
 msgid "Close document"
 msgstr "סגירת מסמך"
 
-#: ../lib/apostrophe/export_format.rb:56
+#: ../lib/apostrophe/export_format.rb:57
 msgid "ConTeXt"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgstr "העתקת הטקסט הנבחר ללוח הגזירים"
 msgid "Cut selected text to clipboard"
 msgstr "גזירת הטקסט הנבחר ללוח הגזירים"
 
-#: ../lib/apostrophe/main_window.rb:708
+#: ../lib/apostrophe/main_window.rb:710
 msgid "Discard"
 msgstr "השלכה"
 
@@ -191,7 +191,7 @@ msgstr "השלכה"
 msgid "Discard Changes and Reload"
 msgstr "_ביטול שינויים וטעינה מחדש"
 
-#: ../lib/apostrophe/export_format.rb:48
+#: ../lib/apostrophe/export_format.rb:49
 msgid "EPUB v3"
 msgstr ""
 
@@ -271,11 +271,11 @@ msgstr "מסך מלא"
 msgid "General"
 msgstr "כללי"
 
-#: ../lib/apostrophe/export_format.rb:61
+#: ../lib/apostrophe/export_format.rb:62
 msgid "Groff Man"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#: ../lib/apostrophe/export_format.rb:55 ../lib/apostrophe/export_format.rb:76
 msgid "HTML"
 msgstr ""
 
@@ -283,11 +283,11 @@ msgstr ""
 msgid "HTML Options"
 msgstr "אפשרויות HTML"
 
-#: ../lib/apostrophe/export_format.rb:52
+#: ../lib/apostrophe/export_format.rb:53
 msgid "HTML5 Slideshow (DZSlides)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:49
+#: ../lib/apostrophe/export_format.rb:50
 msgid "HTML5 Slideshow (reveal.js)"
 msgstr ""
 
@@ -309,7 +309,7 @@ msgstr "כותרת"
 msgid "Hemingway Mode"
 msgstr "מצב המינגווי"
 
-#: ../lib/apostrophe/main_window.rb:447
+#: ../lib/apostrophe/main_window.rb:449
 msgid "Hemingway Mode is on; text cannot be deleted"
 msgstr ""
 
@@ -344,19 +344,19 @@ msgstr "פריט"
 msgid "Keyboard Shortcuts"
 msgstr "קיצורי _מקלדת"
 
-#: ../lib/apostrophe/export_format.rb:53
+#: ../lib/apostrophe/export_format.rb:54
 msgid "LaTeX (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:50
+#: ../lib/apostrophe/export_format.rb:51
 msgid "LaTeX Beamer Slideshow (pdf)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:51
+#: ../lib/apostrophe/export_format.rb:52
 msgid "LaTeX Beamer Slideshow (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:46
+#: ../lib/apostrophe/export_format.rb:47
 msgid "LibreOffice Text Document"
 msgstr ""
 
@@ -370,12 +370,12 @@ msgstr "פריט ברשימה"
 msgid "Markdown"
 msgstr "‫Markdown"
 
-#: ../lib/apostrophe/main_window.rb:551
+#: ../lib/apostrophe/main_window.rb:553
 #, fuzzy
 msgid "Markdown (.md)"
 msgstr "‫Markdown"
 
-#: ../lib/apostrophe/main_window.rb:583
+#: ../lib/apostrophe/main_window.rb:585
 msgid "Markdown Files"
 msgstr "קובצי Markdown"
 
@@ -383,11 +383,11 @@ msgstr "קובצי Markdown"
 msgid "Markdown flavor documentation"
 msgstr "תיעוד תצורת ה־Markdown"
 
-#: ../lib/apostrophe/export_format.rb:55
+#: ../lib/apostrophe/export_format.rb:56
 msgid "MediaWiki Markup"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:47
+#: ../lib/apostrophe/export_format.rb:48
 msgid "Microsoft Word (docx)"
 msgstr ""
 
@@ -420,11 +420,11 @@ msgstr "לא נמצאה הערת שוליים מתאימה"
 msgid "Number Sections"
 msgstr "מספור סעיפים"
 
-#: ../lib/apostrophe/export_format.rb:83
+#: ../lib/apostrophe/export_format.rb:82
 msgid "ODT"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:565
 #: ../lib/apostrophe/shortcuts_window.rb:45
 msgid "Open"
 msgstr "פתיחה"
@@ -434,7 +434,7 @@ msgstr "פתיחה"
 msgid "Open Tutorial"
 msgstr "פתיחת _מדריך"
 
-#: ../lib/apostrophe/main_window.rb:560
+#: ../lib/apostrophe/main_window.rb:562
 msgid "Open a .md file"
 msgstr "פתיחת קובץ ‎.md"
 
@@ -443,7 +443,7 @@ msgstr "פתיחת קובץ ‎.md"
 msgid "Options"
 msgstr "אפשרויות HTML"
 
-#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+#: ../lib/apostrophe/export_format.rb:46 ../lib/apostrophe/export_format.rb:70
 msgid "PDF"
 msgstr ""
 
@@ -457,7 +457,7 @@ msgstr "גודל עמוד"
 msgid "Paste selected text from clipboard"
 msgstr "הדבקת הטקסט הנבחר מלוח הגזירים"
 
-#: ../lib/apostrophe/main_window.rb:590
+#: ../lib/apostrophe/main_window.rb:592
 msgid "Plain Text Files"
 msgstr "קובצי טקסט פשוט"
 
@@ -514,12 +514,12 @@ msgstr "החלפה"
 msgid "Replace All"
 msgstr "החלפה של הכול"
 
-#: ../lib/apostrophe/export_format.rb:60
+#: ../lib/apostrophe/export_format.rb:61
 msgid "Rich Text Format"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
-#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:521
+#: ../lib/apostrophe/main_window.rb:711
 #: ../lib/apostrophe/shortcuts_window.rb:46
 msgid "Save"
 msgstr "שמירה"
@@ -534,11 +534,11 @@ msgstr "שמירה בשם…"
 msgid "Save as"
 msgstr "שמירה בשם"
 
-#: ../lib/apostrophe/main_window.rb:701
+#: ../lib/apostrophe/main_window.rb:703
 msgid "Save changes?"
 msgstr "שמירה השינויים?"
 
-#: ../lib/apostrophe/main_window.rb:516
+#: ../lib/apostrophe/main_window.rb:518
 msgid "Save your File"
 msgstr "שמירת הקובץ שלך"
 
@@ -599,11 +599,11 @@ msgstr "תוכן העניינים"
 msgid "TexLive Required"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:59
+#: ../lib/apostrophe/export_format.rb:60
 msgid "Texinfo"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:57
+#: ../lib/apostrophe/export_format.rb:58
 #, fuzzy
 msgid "Textile"
 msgstr "גודל הכתב"
@@ -692,7 +692,7 @@ msgstr "טקסט מודגש"
 msgid "italic text"
 msgstr "טקסט נטוי"
 
-#: ../lib/apostrophe/export_format.rb:58
+#: ../lib/apostrophe/export_format.rb:59
 msgid "reStructuredText"
 msgstr ""
 
@@ -700,7 +700,11 @@ msgstr ""
 msgid "strikethrough text"
 msgstr "טקסט עם קו חוצה"
 
-#: ../lib/apostrophe/main_window.rb:703
+#: ../lib/apostrophe/text_view.rb:114
+msgid "web page"
+msgstr "דף אינטרנט"
+
+#: ../lib/apostrophe/main_window.rb:705
 #, fuzzy
 msgid ""
 "“%{title}” contains unsaved changes. If you don’t save, all your changes "
@@ -921,9 +925,6 @@ msgstr "‏„%s” מכיל שינויים שלא נשמור. ללא שמירה
 
 #~ msgid "{:d}:{:02d}:{:02d} Read Time"
 #~ msgstr "{:d}:{:02d}:{:02d} זמן קריאה"
-
-#~ msgid "web page"
-#~ msgstr "דף אינטרנט"
 
 #~| msgid "{:n} Word"
 #~| msgid_plural "{:n} Words"

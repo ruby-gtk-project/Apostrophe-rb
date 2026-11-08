@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apostrophe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"POT-Creation-Date: 2026-11-08 01:24+0000\n"
 "PO-Revision-Date: 2022-01-22 10:30+0800\n"
 "Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
 "Language-Team: Chinese (Taiwan) <>\n"
@@ -117,8 +117,8 @@ msgstr "粗體字"
 #: ../lib/apostrophe/advanced_export_dialog.rb:97
 #: ../lib/apostrophe/advanced_export_dialog.rb:412
 #: ../lib/apostrophe/advanced_export_dialog.rb:420
-#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
-#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:522
+#: ../lib/apostrophe/main_window.rb:566 ../lib/apostrophe/main_window.rb:709
 msgid "Cancel"
 msgstr "取消"
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "Close document"
 msgstr "關閉文件"
 
-#: ../lib/apostrophe/export_format.rb:56
+#: ../lib/apostrophe/export_format.rb:57
 msgid "ConTeXt"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr "複製已選文字"
 msgid "Cut selected text to clipboard"
 msgstr "剪下已選文字"
 
-#: ../lib/apostrophe/main_window.rb:708
+#: ../lib/apostrophe/main_window.rb:710
 msgid "Discard"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Discard Changes and Reload"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:48
+#: ../lib/apostrophe/export_format.rb:49
 msgid "EPUB v3"
 msgstr ""
 
@@ -249,11 +249,11 @@ msgstr "全螢幕"
 msgid "General"
 msgstr "一般"
 
-#: ../lib/apostrophe/export_format.rb:61
+#: ../lib/apostrophe/export_format.rb:62
 msgid "Groff Man"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#: ../lib/apostrophe/export_format.rb:55 ../lib/apostrophe/export_format.rb:76
 #, fuzzy
 msgid "HTML"
 msgstr "複製 HTML"
@@ -262,11 +262,11 @@ msgstr "複製 HTML"
 msgid "HTML Options"
 msgstr "HTML 選項"
 
-#: ../lib/apostrophe/export_format.rb:52
+#: ../lib/apostrophe/export_format.rb:53
 msgid "HTML5 Slideshow (DZSlides)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:49
+#: ../lib/apostrophe/export_format.rb:50
 msgid "HTML5 Slideshow (reveal.js)"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgstr "頁頭"
 msgid "Hemingway Mode"
 msgstr "Hemingway 模式"
 
-#: ../lib/apostrophe/main_window.rb:447
+#: ../lib/apostrophe/main_window.rb:449
 msgid "Hemingway Mode is on; text cannot be deleted"
 msgstr ""
 
@@ -322,19 +322,19 @@ msgstr "項目"
 msgid "Keyboard Shortcuts"
 msgstr "鍵盤捷徑"
 
-#: ../lib/apostrophe/export_format.rb:53
+#: ../lib/apostrophe/export_format.rb:54
 msgid "LaTeX (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:50
+#: ../lib/apostrophe/export_format.rb:51
 msgid "LaTeX Beamer Slideshow (pdf)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:51
+#: ../lib/apostrophe/export_format.rb:52
 msgid "LaTeX Beamer Slideshow (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:46
+#: ../lib/apostrophe/export_format.rb:47
 msgid "LibreOffice Text Document"
 msgstr ""
 
@@ -348,12 +348,12 @@ msgstr "清單項目"
 msgid "Markdown"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:551
+#: ../lib/apostrophe/main_window.rb:553
 #, fuzzy
 msgid "Markdown (.md)"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:583
+#: ../lib/apostrophe/main_window.rb:585
 msgid "Markdown Files"
 msgstr "Markdown 文件"
 
@@ -361,11 +361,11 @@ msgstr "Markdown 文件"
 msgid "Markdown flavor documentation"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:55
+#: ../lib/apostrophe/export_format.rb:56
 msgid "MediaWiki Markup"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:47
+#: ../lib/apostrophe/export_format.rb:48
 msgid "Microsoft Word (docx)"
 msgstr ""
 
@@ -399,11 +399,11 @@ msgstr "沒有發現相符和的註解"
 msgid "Number Sections"
 msgstr "數字區間"
 
-#: ../lib/apostrophe/export_format.rb:83
+#: ../lib/apostrophe/export_format.rb:82
 msgid "ODT"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:565
 #: ../lib/apostrophe/shortcuts_window.rb:45
 msgid "Open"
 msgstr "開啟"
@@ -412,7 +412,7 @@ msgstr "開啟"
 msgid "Open Tutorial"
 msgstr "怎麼用？"
 
-#: ../lib/apostrophe/main_window.rb:560
+#: ../lib/apostrophe/main_window.rb:562
 msgid "Open a .md file"
 msgstr "開啟 .md 文件"
 
@@ -421,7 +421,7 @@ msgstr "開啟 .md 文件"
 msgid "Options"
 msgstr "HTML 選項"
 
-#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+#: ../lib/apostrophe/export_format.rb:46 ../lib/apostrophe/export_format.rb:70
 msgid "PDF"
 msgstr ""
 
@@ -435,7 +435,7 @@ msgstr "頁面大小"
 msgid "Paste selected text from clipboard"
 msgstr "貼上文字"
 
-#: ../lib/apostrophe/main_window.rb:590
+#: ../lib/apostrophe/main_window.rb:592
 msgid "Plain Text Files"
 msgstr "文字文件"
 
@@ -492,12 +492,12 @@ msgstr "取代"
 msgid "Replace All"
 msgstr "全部取代"
 
-#: ../lib/apostrophe/export_format.rb:60
+#: ../lib/apostrophe/export_format.rb:61
 msgid "Rich Text Format"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
-#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:521
+#: ../lib/apostrophe/main_window.rb:711
 #: ../lib/apostrophe/shortcuts_window.rb:46
 msgid "Save"
 msgstr "儲存"
@@ -511,12 +511,12 @@ msgstr "儲存為..."
 msgid "Save as"
 msgstr "儲存為"
 
-#: ../lib/apostrophe/main_window.rb:701
+#: ../lib/apostrophe/main_window.rb:703
 #, fuzzy
 msgid "Save changes?"
 msgstr "儲存為"
 
-#: ../lib/apostrophe/main_window.rb:516
+#: ../lib/apostrophe/main_window.rb:518
 msgid "Save your File"
 msgstr "存取您的檔案"
 
@@ -577,11 +577,11 @@ msgstr "目錄"
 msgid "TexLive Required"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:59
+#: ../lib/apostrophe/export_format.rb:60
 msgid "Texinfo"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:57
+#: ../lib/apostrophe/export_format.rb:58
 #, fuzzy
 msgid "Textile"
 msgstr "文字文件"
@@ -662,7 +662,7 @@ msgstr "粗體字"
 msgid "italic text"
 msgstr "斜體字"
 
-#: ../lib/apostrophe/export_format.rb:58
+#: ../lib/apostrophe/export_format.rb:59
 msgid "reStructuredText"
 msgstr ""
 
@@ -670,7 +670,11 @@ msgstr ""
 msgid "strikethrough text"
 msgstr "刪除線"
 
-#: ../lib/apostrophe/main_window.rb:703
+#: ../lib/apostrophe/text_view.rb:114
+msgid "web page"
+msgstr "網頁"
+
+#: ../lib/apostrophe/main_window.rb:705
 #, fuzzy
 msgid ""
 "“%{title}” contains unsaved changes. If you don’t save, all your changes "
@@ -705,9 +709,6 @@ msgstr "如果不儲存，將永久失去所有變更。"
 
 #~ msgid "{:d}:{:02d}:{:02d} Read Time"
 #~ msgstr "需時 {:d}:{:02d}:{:02d} 閱讀"
-
-#~ msgid "web page"
-#~ msgstr "網頁"
 
 #~ msgid "Copyright (C) 2020, Wolf Vollprecht"
 #~ msgstr "版權 (C) 2020, Wolf Vollprecht"

@@ -315,23 +315,23 @@ module Apostrophe
 
       def install_actions
         install_markdown_shortcuts
-        install_window_action('find') { toggle_search }
-        install_window_action('find_replace') { search_bar.replace_mode_enabled = true }
-        install_property_action('focus_mode', focus_mode_button, 'active')
-        install_property_action('hemingway_mode', hemingway_button, 'active')
-        install_property_action('preview', preview_toggle_button, 'active')
+        install_window_action('find', accel: '<Control>f') { toggle_search }
+        install_window_action('find_replace', accel: '<Control>h') { search_bar.replace_mode_enabled = true }
+        install_property_action('focus_mode', focus_mode_button, 'active', accel: '<Control>d')
+        install_property_action('hemingway_mode', hemingway_button, 'active', accel: '<Control>t')
+        install_property_action('preview', preview_toggle_button, 'active', accel: '<Control>p')
         focus_mode_button.signal_connect('toggled') { on_focus_mode_toggled }
         hemingway_button.signal_connect('toggled') { on_hemingway_toggled }
 
         install_window_action('new') { new_document }
-        install_window_action('open') { open_document }
+        install_window_action('open', accel: '<Control>o') { open_document }
         install_window_action_with_string('open_file') { |uri| open_from_uri(uri) }
-        install_window_action('save') { save_document }
-        install_window_action('save_as') { save_document_as }
+        install_window_action('save', accel: '<Control>s') { save_document }
+        install_window_action('save_as', accel: '<Shift><Control>s') { save_document_as }
         install_window_action_with_string('export') { |format_key| open_export(format_key) }
         install_window_action('advanced_export') { open_advanced_export }
         install_window_action('copy_html') { copy_html_to_clipboard }
-        install_window_action('close') { do_close_request }
+        install_window_action('close', accel: '<Control>w') { do_close_request }
       end
 
       def install_markdown_shortcuts
@@ -344,11 +344,12 @@ module Apostrophe
         end
       end
 
-      def install_window_action(name, &block)
+      def install_window_action(name, accel: nil, &block)
         Gio::SimpleAction.new(name).tap do |action|
           action.signal_connect('activate') { block.call }
           window.add_action(action)
         end
+        @app.set_accels_for_action("win.#{name}", [accel]) if accel
       end
 
       def install_window_action_with_string(name, &block)
@@ -358,8 +359,9 @@ module Apostrophe
         end
       end
 
-      def install_property_action(name, object, property)
+      def install_property_action(name, object, property, accel: nil)
         window.add_action(Gio::PropertyAction.new(name, object, property))
+        @app.set_accels_for_action("win.#{name}", [accel]) if accel
       end
 
       def toggle_search

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apostrophe main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:42+0000\n"
+"POT-Creation-Date: 2026-11-08 01:24+0000\n"
 "PO-Revision-Date: 2022-10-05 17:06+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.gnome.org/teams/pt/>\n"
@@ -133,8 +133,8 @@ msgstr "Negrito"
 #: ../lib/apostrophe/advanced_export_dialog.rb:97
 #: ../lib/apostrophe/advanced_export_dialog.rb:412
 #: ../lib/apostrophe/advanced_export_dialog.rb:420
-#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:520
-#: ../lib/apostrophe/main_window.rb:564 ../lib/apostrophe/main_window.rb:707
+#: ../lib/apostrophe/export_dialog.rb:52 ../lib/apostrophe/main_window.rb:522
+#: ../lib/apostrophe/main_window.rb:566 ../lib/apostrophe/main_window.rb:709
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -151,7 +151,7 @@ msgstr "Fechar"
 msgid "Close document"
 msgstr "Fechar o documento"
 
-#: ../lib/apostrophe/export_format.rb:56
+#: ../lib/apostrophe/export_format.rb:57
 msgid "ConTeXt"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr "Copiar o texto selecionado para a área de transferência"
 msgid "Cut selected text to clipboard"
 msgstr "Cortar o texto selecionado para a área de transferência"
 
-#: ../lib/apostrophe/main_window.rb:708
+#: ../lib/apostrophe/main_window.rb:710
 msgid "Discard"
 msgstr "Descartar"
 
@@ -189,7 +189,7 @@ msgstr "Descartar"
 msgid "Discard Changes and Reload"
 msgstr "_Descartar alterações e recarregar"
 
-#: ../lib/apostrophe/export_format.rb:48
+#: ../lib/apostrophe/export_format.rb:49
 msgid "EPUB v3"
 msgstr ""
 
@@ -269,11 +269,11 @@ msgstr "Ecrã inteiro"
 msgid "General"
 msgstr "Geral"
 
-#: ../lib/apostrophe/export_format.rb:61
+#: ../lib/apostrophe/export_format.rb:62
 msgid "Groff Man"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:54 ../lib/apostrophe/export_format.rb:77
+#: ../lib/apostrophe/export_format.rb:55 ../lib/apostrophe/export_format.rb:76
 msgid "HTML"
 msgstr ""
 
@@ -281,11 +281,11 @@ msgstr ""
 msgid "HTML Options"
 msgstr "Opções HTML"
 
-#: ../lib/apostrophe/export_format.rb:52
+#: ../lib/apostrophe/export_format.rb:53
 msgid "HTML5 Slideshow (DZSlides)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:49
+#: ../lib/apostrophe/export_format.rb:50
 msgid "HTML5 Slideshow (reveal.js)"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr "Cabeçalho"
 msgid "Hemingway Mode"
 msgstr "Modo Hemingway"
 
-#: ../lib/apostrophe/main_window.rb:447
+#: ../lib/apostrophe/main_window.rb:449
 msgid "Hemingway Mode is on; text cannot be deleted"
 msgstr ""
 
@@ -342,19 +342,19 @@ msgstr "Item"
 msgid "Keyboard Shortcuts"
 msgstr "_Teclas de atalho"
 
-#: ../lib/apostrophe/export_format.rb:53
+#: ../lib/apostrophe/export_format.rb:54
 msgid "LaTeX (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:50
+#: ../lib/apostrophe/export_format.rb:51
 msgid "LaTeX Beamer Slideshow (pdf)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:51
+#: ../lib/apostrophe/export_format.rb:52
 msgid "LaTeX Beamer Slideshow (tex)"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:46
+#: ../lib/apostrophe/export_format.rb:47
 msgid "LibreOffice Text Document"
 msgstr ""
 
@@ -368,12 +368,12 @@ msgstr "Item de lista"
 msgid "Markdown"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:551
+#: ../lib/apostrophe/main_window.rb:553
 #, fuzzy
 msgid "Markdown (.md)"
 msgstr "Markdown"
 
-#: ../lib/apostrophe/main_window.rb:583
+#: ../lib/apostrophe/main_window.rb:585
 msgid "Markdown Files"
 msgstr "Ficheiros Markdown"
 
@@ -381,11 +381,11 @@ msgstr "Ficheiros Markdown"
 msgid "Markdown flavor documentation"
 msgstr "Documentação da variante markdown"
 
-#: ../lib/apostrophe/export_format.rb:55
+#: ../lib/apostrophe/export_format.rb:56
 msgid "MediaWiki Markup"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:47
+#: ../lib/apostrophe/export_format.rb:48
 msgid "Microsoft Word (docx)"
 msgstr ""
 
@@ -418,11 +418,11 @@ msgstr "Nenhuma nota de rodapé corresponde"
 msgid "Number Sections"
 msgstr "Secções numeradas"
 
-#: ../lib/apostrophe/export_format.rb:83
+#: ../lib/apostrophe/export_format.rb:82
 msgid "ODT"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:563
+#: ../lib/apostrophe/headerbar.rb:51 ../lib/apostrophe/main_window.rb:565
 #: ../lib/apostrophe/shortcuts_window.rb:45
 msgid "Open"
 msgstr "Abrir"
@@ -432,7 +432,7 @@ msgstr "Abrir"
 msgid "Open Tutorial"
 msgstr "Abrir _tutorial"
 
-#: ../lib/apostrophe/main_window.rb:560
+#: ../lib/apostrophe/main_window.rb:562
 msgid "Open a .md file"
 msgstr "Abrir um ficheiro .md"
 
@@ -441,7 +441,7 @@ msgstr "Abrir um ficheiro .md"
 msgid "Options"
 msgstr "Opções HTML"
 
-#: ../lib/apostrophe/export_format.rb:45 ../lib/apostrophe/export_format.rb:71
+#: ../lib/apostrophe/export_format.rb:46 ../lib/apostrophe/export_format.rb:70
 msgid "PDF"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgstr "Tamanho da página"
 msgid "Paste selected text from clipboard"
 msgstr "Colar o texto selecionado da área de transferência"
 
-#: ../lib/apostrophe/main_window.rb:590
+#: ../lib/apostrophe/main_window.rb:592
 msgid "Plain Text Files"
 msgstr "Ficheiros de texto simples"
 
@@ -513,12 +513,12 @@ msgstr "Substituir"
 msgid "Replace All"
 msgstr "Substituir todas"
 
-#: ../lib/apostrophe/export_format.rb:60
+#: ../lib/apostrophe/export_format.rb:61
 msgid "Rich Text Format"
 msgstr ""
 
-#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:519
-#: ../lib/apostrophe/main_window.rb:709
+#: ../lib/apostrophe/headerbar.rb:76 ../lib/apostrophe/main_window.rb:521
+#: ../lib/apostrophe/main_window.rb:711
 #: ../lib/apostrophe/shortcuts_window.rb:46
 msgid "Save"
 msgstr "Guardar"
@@ -533,11 +533,11 @@ msgstr "Gravar como…"
 msgid "Save as"
 msgstr "Guardar como"
 
-#: ../lib/apostrophe/main_window.rb:701
+#: ../lib/apostrophe/main_window.rb:703
 msgid "Save changes?"
 msgstr "Guardar alterações?"
 
-#: ../lib/apostrophe/main_window.rb:516
+#: ../lib/apostrophe/main_window.rb:518
 msgid "Save your File"
 msgstr "Guardar o ficheiro"
 
@@ -598,11 +598,11 @@ msgstr "Tabela de conteúdo"
 msgid "TexLive Required"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:59
+#: ../lib/apostrophe/export_format.rb:60
 msgid "Texinfo"
 msgstr ""
 
-#: ../lib/apostrophe/export_format.rb:57
+#: ../lib/apostrophe/export_format.rb:58
 #, fuzzy
 msgid "Textile"
 msgstr "Tamanho do texto"
@@ -692,7 +692,7 @@ msgstr "texto negrito"
 msgid "italic text"
 msgstr "texto itálico"
 
-#: ../lib/apostrophe/export_format.rb:58
+#: ../lib/apostrophe/export_format.rb:59
 msgid "reStructuredText"
 msgstr ""
 
@@ -700,7 +700,11 @@ msgstr ""
 msgid "strikethrough text"
 msgstr "texto rasurado"
 
-#: ../lib/apostrophe/main_window.rb:703
+#: ../lib/apostrophe/text_view.rb:114
+msgid "web page"
+msgstr "página web"
+
+#: ../lib/apostrophe/main_window.rb:705
 #, fuzzy
 msgid ""
 "“%{title}” contains unsaved changes. If you don’t save, all your changes "
@@ -925,9 +929,6 @@ msgstr ""
 
 #~ msgid "{:d}:{:02d}:{:02d} Read Time"
 #~ msgstr "{:d}:{:02d}:{:02d} Tempo de leitura"
-
-#~ msgid "web page"
-#~ msgstr "página web"
 
 #~ msgid "Apostrophe website"
 #~ msgstr "Sítio web do Apóstrofe"

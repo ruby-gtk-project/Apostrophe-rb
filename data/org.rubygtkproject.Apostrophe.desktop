@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Apostrophe
+Comment=Edit Markdown in style
+Keywords=markdown;editor;text;write;
+Categories=GNOME;GTK;Office;
+Exec=apostrophe %U
+Icon=org.rubygtkproject.Apostrophe
+Terminal=false
+Type=Application
+MimeType=text/x-markdown;text/plain;

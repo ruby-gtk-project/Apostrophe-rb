@@ -73,12 +73,16 @@ module Apostrophe
         # directory, so it is run with the temporary directory as its cwd
         # rather than with chdir around the whole process, which upstream does
         # and which is not safe with a UI running.
-        output, = Open3.capture2e(
-          'latex',
-          '-halt-on-error',
-          File.basename(texfile),
-          chdir: directory,
-        )
+        output, = begin
+          Open3.capture2e(
+            'latex',
+            '-halt-on-error',
+            File.basename(texfile),
+            chdir: directory,
+          )
+        rescue Errno::ENOENT
+          raise RenderError, 'latex is not installed'
+        end
 
         unless File.file?(dvifile)
           raise RenderError, latex_errors(output)
@@ -116,6 +120,8 @@ module Apostrophe
             raise RenderError, output.strip
           end
         end
+      rescue Errno::ENOENT
+        raise RenderError, 'dvipng is not installed'
       end
 
       # LaTeX prefixes each complaint with "! "; stripping that off and joining
